@@ -132,7 +132,7 @@ $$
  \mathbf{H}_\mathbf{1}: \mu < 500
 $$
 
-We started with great enthusiasm to prove the null hypothesis wrong.
+We start with great enthusiasm to prove the null hypothesis wrong.
 
 !!! Remember
 	In hypothesis testing, the quest is to always prove the null hypothesis wrong!
