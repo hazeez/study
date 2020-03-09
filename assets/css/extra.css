@@ -225,7 +225,7 @@ div.index_header {
     size: a4 portrait;
     margin: 10mm 10mm 10mm -30mm;
     counter-increment: page;
-    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     white-space: pre;
     color: grey;
     /*@top-left {
