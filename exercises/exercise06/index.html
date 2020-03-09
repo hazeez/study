@@ -536,11 +536,14 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
+			  
+				
                 
                   <a href="https://github.com/hazeez/IDS13/edit/master/docs/exercises/exercise06.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="confidence_level_vs_the_accuracy_of_estimation_of_the_population_mean">Confidence level Vs the accuracy of estimation of the population mean<a class="headerlink" href="#confidence_level_vs_the_accuracy_of_estimation_of_the_population_mean" title="Permanent link"></a></h1>
+                <p>date: Mar 08, 2020</p>
+<h1 id="confidence_level_vs_the_accuracy_of_estimation_of_the_population_mean">Confidence level Vs the accuracy of estimation of the population mean<a class="headerlink" href="#confidence_level_vs_the_accuracy_of_estimation_of_the_population_mean" title="Permanent link"></a></h1>
 <p>Does the more the confidence level in the confidence interval mean more the accurate prediction of the estimation of the population mean?</p>
 <h2 id="confidence_interval">Confidence Interval<a class="headerlink" href="#confidence_interval" title="Permanent link"></a></h2>
 <p>A confidence interval is the <em>range of numbers</em> that is believed to include an unknown population parameter.</p>
@@ -561,9 +564,9 @@ $$
 n = 100
 $$</li>
 <li>sample mean - 
-$$ 
+$$
 \bar{x} = 6.5
-$$ </li>
+$$</li>
 <li>population standard deviation - 
 $$
 \sigma = 3.2
@@ -591,41 +594,26 @@ $$</li>
 </div>
 <p>Since we don't know the population parameter $$ \mu $$ here, we will replace it with the value we know about the sample i.e. the sample mean $$ 
 \bar{x} 
-$$ </p>
-<p>So the confidence interval in this case is</p>
-<div>
-<div class="MathJax_Preview">
+$$
+So the confidence interval in this case is
+$$
 \bar{x} \pm Z * (\sigma / \sqrt n)
-</div>
-<script type="math/tex; mode=display">
-\bar{x} \pm Z * (\sigma / \sqrt n)
-</script>
-</div>
-<p>When substituted with values above, we get</p>
-<div>
-<div class="MathJax_Preview">
+$$
+When substituted with values above, we get
+$$
 confidence interval = 6.5 \pm 1.96 * (3.2 / \sqrt(100)
-</div>
-<script type="math/tex; mode=display">
-confidence interval = 6.5 \pm 1.96 * (3.2 / \sqrt(100)
-</script>
-</div>
+$$</p>
 <blockquote>
 <p>Note: The Z value for 95% confidence is 1.96</p>
 </blockquote>
 <p>We get the confidence interval as <code class="codehilite"><span class="err">[5.8728, 7.1272]</span></code></p>
 <h4>If we reduce the confidence level to 80%, what happens?</h4>
 <blockquote>
-<p>Note: the Z score for 80% confidence is 1.282</p>
+<p>Note: the Z score for 80% confidence is 1.282
+$$
+confidence interval = 6.5 \pm 1.28 * (3.2 / \sqrt(100)
+$$</p>
 </blockquote>
-<div>
-<div class="MathJax_Preview">
-confidence interval = 6.5 \pm 1.28 * (3.2 / \sqrt(100)
-</div>
-<script type="math/tex; mode=display">
-confidence interval = 6.5 \pm 1.28 * (3.2 / \sqrt(100)
-</script>
-</div>
 <p>The confidence interval becomes <code class="codehilite"><span class="err">[6.0904, 6.9096]</span></code></p>
 <h4>Inference</h4>
 <p>So, when the confidence level decreases from 95% to 80%, the confidence interval becomes narrorwer - which would mean our chance of finding the population mean reduces by 15%</p>
@@ -639,6 +627,10 @@ confidence interval = 6.5 \pm 1.28 * (3.2 / \sqrt(100)
                 
                   
                 
+				<!-- custom code begins --->
+				<hr/>
+				
+			    <!-- custom code ends --->
               
               
                 

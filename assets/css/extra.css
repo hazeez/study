@@ -250,3 +250,8 @@ div.index_header {
 .md-typeset .codehilite {
 	font-weight: bold;
 }
+
+.author_date {
+	font-size: .5rem;
+	font-color: lightgray;
+}
