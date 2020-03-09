@@ -7,7 +7,7 @@ theme:
   name: material
   custom_dir: 'material_theme'
   favicon: 'assets/images/favicon.ico'
-  logo: 'assets/images/logo-black-big.png'
+  logo: 'assets/images/profile_pic_white_bg.png'
   # shortcuts:
     # search: 191   # /
   feature:
@@ -18,8 +18,8 @@ theme:
   palette:
     primary: 'Indigo'
     accent: 'Pink'
-repo_name: 'hazeez/study'
-repo_url: 'https://github.com/hazeez/study'
+repo_name: 'hazeez/IDS13'
+repo_url: 'https://github.com/hazeez/IDS13'
 
 # plugins info
 plugins:
