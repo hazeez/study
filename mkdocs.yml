@@ -1,6 +1,8 @@
 site_name: DataScience Notes
 copyright: 'Creative Commons (CC) license'
 docs_dir: 'docs'
+site_url: 'https://hazeez.github.io/study'
+site_author: 'hazeez'
 
 # custom theme
 theme:

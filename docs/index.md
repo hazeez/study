@@ -10,7 +10,7 @@ In case you find any errors, please let me know in the respective comments secti
 
 
 
-| Topic      | Notes                                                    | Exercises                                                  |
+| Topic      | Notes Link                                                 | Exercises Link                                                 |
 | ---------- | -------------------------------------------------------- | ---------------------------------------------------------- |
-| Statistics | [Stat Notes](../statistics/) | [Stat Exercies](../exercises/) |
+| Statistics | [Statistics Notes](./statistics/) | [Statistics Exercises](./exercises/) |
 

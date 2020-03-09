@@ -2,6 +2,8 @@ title: Index
 
 # List of exercises and the solutions
 
+## Statistics Exercises
+
 | Course     | Class | Exercise Number + Link                 | Exercise Description                            |
 | ---------- | ----- | -------------------------------------- | ----------------------------------------------- |
 | Statistics | 01    | Exercise01                             |                                                 |

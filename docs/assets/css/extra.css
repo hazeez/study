@@ -225,7 +225,7 @@ div.index_header {
     size: a4 portrait;
     margin: 10mm 10mm 10mm -30mm;
     counter-increment: page;
-    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     white-space: pre;
     color: grey;
     /*@top-left {
@@ -250,8 +250,10 @@ div.index_header {
 .md-typeset .codehilite {
 	font-weight: bold;
 }
-
 .author_date {
 	font-size: .5rem;
 	font-color: lightgray;
+}
+[data-md-color-primary=indigo] .md-typeset a {
+	text-decoration: underline;
 }
