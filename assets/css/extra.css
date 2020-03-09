@@ -39,6 +39,9 @@
   box-shadow: inset 0 .05rem 0 #fff
 }
 
+md-typeset__table {
+width: 100%;
+}
 
 .md-typeset h1 {
   color: inherit;
