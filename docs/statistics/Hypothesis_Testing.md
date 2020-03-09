@@ -132,6 +132,11 @@ $$
  \mathbf{H}_\mathbf{1}: \mu < 500
 $$
 
+We started with great enthusiasm to prove the null hypothesis wrong.
+
+!!! Remember
+	In hypothesis testing, the quest is to always prove the null hypothesis wrong!
+
 We took a sample size of 30 i.e `n=30` and found the mean is `499`. 
 
 Ah! now comes the dilemma - whether we need to accept or reject the null hypothesis? The sample mean is just falling short by 1 from the population mean.
