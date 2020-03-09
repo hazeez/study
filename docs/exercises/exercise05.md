@@ -1,8 +1,10 @@
 title: Exercise05
+Author: hazeez
+Date: Mar 09, 2020
 
 # Normal Distribution is a probability distribution.
 
-### The topic in question is - Is normal distribution a probability distribution? Yes, it is and this writeup provides justification as to why it is so!
+The topic in question is - Is normal distribution a probability distribution? Yes, it is and this writeup provides justification as to why it is so!
 
 ## Revisiting the Normal distribution
 
@@ -128,5 +130,5 @@ In this way, we can find out the probability of a random variable falling under 
 ## Conclusion
 
 Thus we have emprically concluded that the normal distribution is a probability distribution as it helps to find the probability of a random variable falling within the normal distribution range.
- 
+
 

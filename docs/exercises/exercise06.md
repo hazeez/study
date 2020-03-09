@@ -1,5 +1,9 @@
 title: Exercise06
 
+author: hazeez
+
+date: Mar 08, 2020
+
 # Confidence level Vs the accuracy of estimation of the population mean
 
 Does the more the confidence level in the confidence interval mean more the accurate prediction of the estimation of the population mean?
@@ -29,9 +33,9 @@ $$
 n = 100
 $$
 - sample mean - 
-$$ 
+$$
 \bar{x} = 6.5
-$$ 
+$$
 - population standard deviation - 
 $$
 \sigma = 3.2
@@ -63,16 +67,12 @@ $$
 
 Since we don't know the population parameter $$ \mu $$ here, we will replace it with the value we know about the sample i.e. the sample mean $$ 
 \bar{x} 
-$$ 
-
+$$
 So the confidence interval in this case is
-
 $$
 \bar{x} \pm Z * (\sigma / \sqrt n)
 $$
-
 When substituted with values above, we get
-
 $$
 confidence interval = 6.5 \pm 1.96 * (3.2 / \sqrt(100)
 $$
@@ -83,7 +83,6 @@ We get the confidence interval as `[5.8728, 7.1272]`
 #### If we reduce the confidence level to 80%, what happens?
 
 > Note: the Z score for 80% confidence is 1.282
-
 $$
 confidence interval = 6.5 \pm 1.28 * (3.2 / \sqrt(100)
 $$

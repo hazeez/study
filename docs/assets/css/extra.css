@@ -39,7 +39,7 @@
   box-shadow: inset 0 .05rem 0 #fff
 }
 
-md-typeset__table {
+.md-typeset__table {
 width: 100%;
 }
 
@@ -249,4 +249,9 @@ div.index_header {
 
 .md-typeset .codehilite {
 	font-weight: bold;
+}
+
+.author_date {
+	font-size: .5rem;
+	font-color: lightgray;
 }

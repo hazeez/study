@@ -12,5 +12,5 @@ In case you find any errors, please let me know in the respective comments secti
 
 | Topic      | Notes                                                    | Exercises                                                  |
 | ---------- | -------------------------------------------------------- | ---------------------------------------------------------- |
-| Statistics | [Stat Notes](https://hazeez.github.io/study/statistics/) | [Stat Exercies](https://hazeez.github.io/study/exercises/) |
+| Statistics | [Stat Notes](../statistics/) | [Stat Exercies](../exercises/) |
 
