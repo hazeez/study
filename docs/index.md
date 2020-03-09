@@ -1,13 +1,11 @@
 title: Home
-template: custom-index.html 
-display: ["Templates", "Tasks", "Links", "QMG Projects", "Caret", "Mkdocs"]
 
-# About this blog
+# Study Notes Blog
 
-#### This is a personal note taking blog that comprises of all study notes, exercises and other research material related to data science.
-
-# Notes Index
-
-[Statistics Notes](https://hazeez.github.io/study/statistics/)
+## The aim of this blog is to document all the notes, exercises and research in Data Science
 
 
+
+At the moment, this blog has statistics notes along with the exercises.
+
+In case you find any errors, please let me know in the respective comments section.

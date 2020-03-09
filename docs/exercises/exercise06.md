@@ -1,4 +1,4 @@
-title: Class03/Exercise02
+title: Exercise06
 
 # Confidence level Vs the accuracy of estimation of the population mean
 
