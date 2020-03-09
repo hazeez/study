@@ -1,0 +1,698 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Class03/Exercise02</title>
+      
+    
+	
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700|PT+Mono">
+        <style>body,input{font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="../assets/css/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#confidence_level_vs_the_accuracy_of_estimation_of_the_population_mean" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="DataScience Notes" class="md-header-nav__button md-logo">
+          
+            <img src="../assets/images/logo-black-big.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              DataScience Notes
+            </span>
+            <span class="md-header-nav__topic">
+              Class03/Exercise02
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/hazeez/IDS13/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    hazeez/IDS13
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Intro" class="md-tabs__link md-tabs__link--active">
+          Intro
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../statistics/" title="Statistics" class="md-tabs__link">
+          Statistics
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="DataScience Notes" class="md-nav__button md-logo">
+      
+        <img src="../assets/images/logo-black-big.png" width="48" height="48">
+      
+    </a>
+    DataScience Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/hazeez/IDS13/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    hazeez/IDS13
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Intro
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Intro
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Class03/Exercise02
+      </label>
+    
+    <a href="./" title="Class03/Exercise02" class="md-nav__link md-nav__link--active">
+      Class03/Exercise02
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#confidence_interval" title="Confidence Interval" class="md-nav__link">
+    Confidence Interval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confidence_level" title="Confidence Level" class="md-nav__link">
+    Confidence Level
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a_case_study" title="A case study" class="md-nav__link">
+    A case study
+  </a>
+  
+</li>
+      
+      
+      
+      
+      <!-- 
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+       -->
+    </ul>
+  
+</nav>
+    
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="about/" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../statistics/" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../statistics/about/" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#confidence_interval" title="Confidence Interval" class="md-nav__link">
+    Confidence Interval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confidence_level" title="Confidence Level" class="md-nav__link">
+    Confidence Level
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a_case_study" title="A case study" class="md-nav__link">
+    A case study
+  </a>
+  
+</li>
+      
+      
+      
+      
+      <!-- 
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+       -->
+    </ul>
+  
+</nav> 
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/hazeez/IDS13/edit/master/docs/intro/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="confidence_level_vs_the_accuracy_of_estimation_of_the_population_mean">Confidence level Vs the accuracy of estimation of the population mean<a class="headerlink" href="#confidence_level_vs_the_accuracy_of_estimation_of_the_population_mean" title="Permanent link"></a></h1>
+<p>Does the more the confidence level in the confidence interval mean more the accurate prediction of the estimation of the population mean?</p>
+<h2 id="confidence_interval">Confidence Interval<a class="headerlink" href="#confidence_interval" title="Permanent link"></a></h2>
+<p>A confidence interval is the <em>range of numbers</em> that is believed to include an unknown population parameter.</p>
+<h2 id="confidence_level">Confidence Level<a class="headerlink" href="#confidence_level" title="Permanent link"></a></h2>
+<p>It is the measure of confidence that the unknown parameter (of the population) lies within the confidence interval.</p>
+<h2 id="a_case_study">A case study<a class="headerlink" href="#a_case_study" title="Permanent link"></a></h2>
+<p>Comcast, the computer services company, is planning to invest heavily in online television
+service. As part of the decision, the company wants to estimate the average
+number of online shows a family of four would watch per day. A random sample of
+<code class="codehilite"><span class="err">100</span></code> families is obtained, and in this sample the average number of shows viewed
+per day is <code class="codehilite"><span class="err">6.5</span></code> and the population standard deviation is known to be <code class="codehilite"><span class="err">3.2</span></code>. Construct a
+<code class="codehilite"><span class="err">95%</span></code> confidence interval for the average number of online television shows watched
+by the entire population of families of four.</p>
+<h4>Known measures</h4>
+<ul>
+<li>sample size - 
+$$
+n = 100
+$$</li>
+<li>sample mean - 
+$$ 
+\bar{x} = 6.5
+$$ </li>
+<li>population standard deviation - 
+$$
+\sigma = 3.2
+$$</li>
+<li>confidence interval
+$$
+Z = 1.96 (for the value of 95 percent)
+$$</li>
+</ul>
+<h4>To be found:</h4>
+<p>Confidence interval of within which the population mean i.e. the average number of online television shows are watched by the entire population</p>
+<h4>Let's picturize it</h4>
+<p><img alt="" src="https://i.imgur.com/eERtscN.png" /></p>
+<h4>Let's understand the picture</h4>
+<p><img alt="" src="https://i.imgur.com/yEdaHfO.png" /></p>
+<h4>Let's compute the confidence interval</h4>
+<p>Confidence interval = </p>
+<div>
+<div class="MathJax_Preview">
+\mu \pm Z * (\sigma / \sqrt n)
+</div>
+<script type="math/tex; mode=display">
+\mu \pm Z * (\sigma / \sqrt n)
+</script>
+</div>
+<p>Since we don't know the population parameter $$ \mu $$ here, we will replace it with the value we know about the sample i.e. the sample mean $$ 
+\bar{x} 
+$$ </p>
+<p>So the confidence interval in this case is</p>
+<div>
+<div class="MathJax_Preview">
+\bar{x} \pm Z * (\sigma / \sqrt n)
+</div>
+<script type="math/tex; mode=display">
+\bar{x} \pm Z * (\sigma / \sqrt n)
+</script>
+</div>
+<p>When substituted with values above, we get</p>
+<div>
+<div class="MathJax_Preview">
+confidence interval = 6.5 \pm 1.96 * (3.2 / \sqrt(100)
+</div>
+<script type="math/tex; mode=display">
+confidence interval = 6.5 \pm 1.96 * (3.2 / \sqrt(100)
+</script>
+</div>
+<blockquote>
+<p>Note: The Z value for 95% confidence is 1.96</p>
+</blockquote>
+<p>We get the confidence interval as <code class="codehilite"><span class="err">[5.8728, 7.1272]</span></code></p>
+<h4>If we reduce the confidence level to 80%, what happens?</h4>
+<blockquote>
+<p>Note: the Z score for 80% confidence is 1.282</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+confidence interval = 6.5 \pm 1.28 * (3.2 / \sqrt(100)
+</div>
+<script type="math/tex; mode=display">
+confidence interval = 6.5 \pm 1.28 * (3.2 / \sqrt(100)
+</script>
+</div>
+<p>The confidence interval becomes <code class="codehilite"><span class="err">[6.0904, 6.9096]</span></code></p>
+<h4>Inference</h4>
+<p>So, when the confidence level decreases from 95% to 80%, the confidence interval becomes narrorwer - which would mean our chance of finding the population mean reduces by 15%</p>
+<p>So it is better to always have a high confidence level to get more accurate estimations of the population mean</p>
+<h4>What if i need to have a good confidence level i.e. 95% but the confidence interval should be narrower to get closer to the population mean - more accuracy in predicting?</h4>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>Increase the sample size i.e. increase the sample size <code class="codehilite"><span class="err">n=100</span></code> provided above to <code class="codehilite"><span class="err">n=200</span></code>. </p>
+</div>
+<p>The confidence interval becomes <code class="codehilite"><span class="err">[6.0565, 6.9434]</span></code></p>
+                
+                  
+                
+              
+              
+                
+
+
+  <h4 id="__comments">Comments</h4>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "None";
+      this.page.identifier =
+        "None";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//hazeez.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="about/" title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Home
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Creative Commons (CC) license
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.48c2c9de.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../assets/javascript/jquery-min.js"></script>
+      
+        <script src="../assets/javascript/mermaid.min.js"></script>
+      
+        <script src="../assets/javascript/raphael.min.js"></script>
+      
+        <script src="../assets/javascript/flowchart.min.js"></script>
+      
+        <script src="../assets/javascript/jquery-plugin.js"></script>
+      
+        <script src="../assets/javascript/extra.js"></script>
+      
+    
+  </body>
+</html>
