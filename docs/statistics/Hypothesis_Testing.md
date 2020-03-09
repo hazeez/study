@@ -139,21 +139,21 @@ We start with great enthusiasm to prove the null hypothesis wrong.
 
 We took a sample size of 30 i.e `n=30` and found the mean is `499`. 
 
-Ah! now comes the dilemma - whether we need to accept or reject the null hypothesis? The sample mean is just falling short by 1 from the population mean.
+Ah! now comes the dilemma - whether we need to accept or reject the null hypothesis? The sample mean is just falling short by 1 from the population mean. We start cursing ourselves.
 
 We go into self-doubt if we have taken the correct sample size or what happens if the sample size is increased or worst case, should I have to repeat the experiment once again and my manager fires me for wasting the time and effort?
 
-So, what we are contemplating here is the probability of the evidence (sample picked) being unfavorable to the null hypothesis. 
+So, what we are contemplating here is the probability of the evidence (sample picked) going wrong and becoming unfavorable to the null hypothesis. 
 
 This probablility is called as the _p-value_
 
 If we say the _p_value_ or probability is `2%`, it means that our sample has `2%` chances of going wrong in rejecting the null hypothesis.
 
-If we say the _p_value_ or probability is `30%`, it means that our sample has `30%` chances of going wrong in rejecting the null hypothesis and our chances of getting a promotion will be adversely impacted.
+If we say the _p_value_ or probability is `30%`, it means that our sample has `30%` chances of going wrong in rejecting the null hypothesis - and our chances of getting a promotion will be adversely impacted.
 
 But, we are humans and we need to have a leeway (a threshold) for making some mistakes / error with the samples.
 
-This threshold is called as the **level of significance**
+This threshold is called the **level of significance**
 
 In other words, **level of significance** is the maximum level of risk that we may take in rejecting the null hypothesis while the null hypothesis is actually true. 
 
