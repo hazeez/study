@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://hazeez.github.io/study/statistics/Hypothesis_Testing/">
+        <link rel="canonical" href="https://hazeez.github.io/study/statistics/Hypothesis_Testing_01/">
       
       
         <meta name="author" content="h">
@@ -111,7 +111,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#hypothesis_testing" tabindex="1" class="md-skip">
+      <a href="#hypothesis_testing_-_part_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -450,6 +450,13 @@
       <ul class="md-nav__list">
         
 			<li class="md-nav__item">
+  <a href="#confidence_level" title="Confidence level" class="md-nav__link">
+    Confidence level
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
   <a href="#summary" title="Summary" class="md-nav__link">
     Summary
   </a>
@@ -520,6 +527,13 @@
       <ul class="md-nav__list">
         
 			<li class="md-nav__item">
+  <a href="#confidence_level" title="Confidence level" class="md-nav__link">
+    Confidence level
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
   <a href="#summary" title="Summary" class="md-nav__link">
     Summary
   </a>
@@ -555,12 +569,12 @@
 			  
 				
                 
-                  <a href="https://github.com/hazeez/IDS13/edit/master/docs/statistics/Hypothesis_Testing.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/hazeez/IDS13/edit/master/docs/statistics/Hypothesis_Testing_01.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="hypothesis_testing">Hypothesis Testing<a class="headerlink" href="#hypothesis_testing" title="Permanent link"></a></h1>
+                <h1 id="hypothesis_testing_-_part_1">Hypothesis Testing - Part 1<a class="headerlink" href="#hypothesis_testing_-_part_1" title="Permanent link"></a></h1>
 <h2 id="what_is_hypothesis_testing">What is Hypothesis Testing?<a class="headerlink" href="#what_is_hypothesis_testing" title="Permanent link"></a></h2>
-<p>First let us understand what does the word <em>hypothesis</em> mean. Let us break the word into two parts <em>hypo</em> + <em>thesis</em>. That's interesting!</p>
+<p>First let us understand what does the word <em>hypothesis</em> mean. Let us break the word into two parts <em>hypo</em> + <em>thesis</em>. </p>
 <p>What does <em>thesis</em> mean?
 <em>thesis</em> means something that has already been proven to be true. 
 e.g Atleast 60% of the adult human body is made up of water.</p>
@@ -589,16 +603,7 @@ e.g Atleast 60% of the adult human body is made up of water.</p>
 \mathbf{H}_\mathbf{0} : \mu = 500
 </script>
 </div>
-<p>where the symbol </p>
-<div>
-<div class="MathJax_Preview"> 
-\mathbf{H}_\mathbf{0} 
-</div>
-<script type="math/tex; mode=display"> 
-\mathbf{H}_\mathbf{0} 
-</script>
-</div>
-<p>denotes Null hypothesis.</p>
+<p>where the symbol <span><span class="MathJax_Preview">\space\mathbf{H}_\mathbf{0}</span><script type="math/tex">\space\mathbf{H}_\mathbf{0}</script></span> denotes Null hypothesis.</p>
 <p>The <em>opposite</em> of Null hypothesis is called as <em>Alternate Hypothesis</em>. That is, the <em>negation</em> of the null hypothesis. </p>
 <p>If there is a way to represent the null hypothesis, then there should be a way to represent the alternate hypothesis. Agreed? Ah, I see I have quoted a null hypothesis there!</p>
 <div>
@@ -609,16 +614,7 @@ e.g Atleast 60% of the adult human body is made up of water.</p>
  \mathbf{H}_\mathbf{1}: \mu \ne 500
  </script>
 </div>
-<p>where the symbol</p>
-<div>
-<div class="MathJax_Preview">
- \mathbf{H}_\mathbf{1}
-</div>
-<script type="math/tex; mode=display">
- \mathbf{H}_\mathbf{1}
-</script>
-</div>
-<p>denotes alternate hypothesis</p>
+<p>where the symbol <span><span class="MathJax_Preview">\space\mathbf{H}_\mathbf{1}</span><script type="math/tex">\space\mathbf{H}_\mathbf{1}</script></span> denotes alternate hypothesis</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Since the null hypothesis and the alternate hypothesis are exactly opposite statements, only one can be true. Rejecting one is accepting the other.</p>
@@ -650,10 +646,10 @@ e.g Atleast 60% of the adult human body is made up of water.</p>
   \mathbf{H}_\mathbf{1}: Resolution\space period > 5 days
 </script>
 </div>
-<h4>Let's see how we can prove / contradict the above hypothesis</h4>
+<h4>Let's see how we can prove the alternate hypothesis</h4>
 <p><strong>Example 1</strong></p>
-<p>To check the internet speed, I visit speedtest.net from my home computer and measure the speed. I do this 'n' number of times and find that the mean speed is around 100 Mbps.</p>
-<p>So we reject the null hypothesis and accept the alternate hypothesis.</p>
+<p>To check the internet speed, I visit <a href="speedtest.net">Speed Test</a> from my home computer and measure the speed. I do this 'n' number of times and find that the mean speed is around 100 Mbps.</p>
+<p>So we reject the null hypothesis and accept the alternate hypothesis - which is the internet speed is less than 150 Mbps</p>
 <p><strong>Example 2</strong></p>
 <p>To verify the claims of the project manager, I take all of the 5 projects managed by him. He is relatively new to the project manager role and has only managed 5 projects so far.  I get the bug details from the bug tracking system - bugzilla / jira for example.</p>
 <p>I compute the mean of all the bug resolution time by doing some computations ( calculate the difference between the bug start date and bug end date and so on). I find that the resolution time is indeed less than 5 days.</p>
@@ -680,30 +676,17 @@ e.g Atleast 60% of the adult human body is made up of water.</p>
  \mathbf{H}_\mathbf{1}: \mu < 500
 </script>
 </div>
-<p>We start with great enthusiasm to prove the null hypothesis wrong.</p>
-<div class="admonition remember">
-<p class="admonition-title">Remember</p>
-<p>In hypothesis testing, the quest is to always prove the null hypothesis wrong!</p>
-</div>
 <p>We took a sample size of 30 i.e <code class="codehilite"><span class="err">n=30</span></code> and found the mean is <code class="codehilite"><span class="err">499</span></code>. </p>
-<p>Ah! now comes the dilemma - whether we need to accept or reject the null hypothesis? The sample mean is just falling short by 1 from the population mean. We start cursing ourselves.</p>
+<p>Ah! now comes the dilemma - whether we need to accept or reject the null hypothesis? The sample mean is just falling short by 1 from the population mean.</p>
 <p>We go into self-doubt if we have taken the correct sample size or what happens if the sample size is increased or worst case, should I have to repeat the experiment once again and my manager fires me for wasting the time and effort?</p>
-<p>So, what we are contemplating here is the probability of the evidence (sample picked) going wrong and becoming unfavorable to the null hypothesis. </p>
+<p>So, what we are contemplating here is the probability of the evidence (sample picked) being unfavorable to the null hypothesis. </p>
 <p>This probablility is called as the <em>p-value</em></p>
 <p>If we say the <em>p_value</em> or probability is <code class="codehilite"><span class="err">2%</span></code>, it means that our sample has <code class="codehilite"><span class="err">2%</span></code> chances of going wrong in rejecting the null hypothesis.</p>
-<p>If we say the <em>p_value</em> or probability is <code class="codehilite"><span class="err">30%</span></code>, it means that our sample has <code class="codehilite"><span class="err">30%</span></code> chances of going wrong in rejecting the null hypothesis - and our chances of getting a promotion will be adversely impacted.</p>
+<p>If we say the <em>p_value</em> or probability is <code class="codehilite"><span class="err">30%</span></code>, it means that our sample has <code class="codehilite"><span class="err">30%</span></code> chances of going wrong in rejecting the null hypothesis and our chances of getting a promotion will be adversely impacted.</p>
 <p>But, we are humans and we need to have a leeway (a threshold) for making some mistakes / error with the samples.</p>
-<p>This threshold is called the <strong>level of significance</strong></p>
-<p>In other words, <strong>level of significance</strong> is the maximum level of risk that we may take in rejecting the null hypothesis while the null hypothesis is actually true. </p>
-<p>Level of significance is denoted by the letter - alpha</p>
-<div>
-<div class="MathJax_Preview">
-\alpha
-</div>
-<script type="math/tex; mode=display">
-\alpha
-</script>
-</div>
+<p>This threshold is called as the <strong>level of significance</strong></p>
+<p>In other words, <strong>level of significance</strong> is the maximum level of risk (maximum acceptable probability - in statistical terms) that we may take in rejecting the null hypothesis while the null hypothesis is actually true. </p>
+<p>Level of significance is denoted by the letter <span><span class="MathJax_Preview">\space\alpha</span><script type="math/tex">\space\alpha</script></span> (alpha)</p>
 <p><code class="codehilite"><span class="err">alpha</span></code> is normally represented as <code class="codehilite"><span class="err">1%</span></code> or <code class="codehilite"><span class="err">5%</span></code> or <code class="codehilite"><span class="err">10%</span></code> etc. </p>
 <h4>Let's consolidate our understanding!</h4>
 <ol>
@@ -719,9 +702,31 @@ e.g Atleast 60% of the adult human body is made up of water.</p>
 <p>Let's say the <em>p-value</em> is <code class="codehilite"><span class="err">10%</span></code> and the <em>level of significance</em> is <code class="codehilite"><span class="err">5%</span></code>. What does this mean?</p>
 <p>It means the probability of getting our samples wrong is <code class="codehilite"><span class="err">10%</span></code>  but the maximum risk that we can take is <code class="codehilite"><span class="err">5%</span></code>. Correct?</p>
 <p>In this case, our samples are above the permissible limits of going wrong and hence we cannot reject the null hypothesis and have to accept the null hypothesis.</p>
+<h3 id="confidence_level">Confidence level<a class="headerlink" href="#confidence_level" title="Permanent link"></a></h3>
+<p>When the null hypothesis is rejected with a level of significance of <code class="codehilite"><span class="err">5%</span></code> , we may be questioned of how confident we are in rejecting the null hypothesis</p>
+<p>In other words, it is to say that what is our confidence level in rejecting the null hypothesis. </p>
+<p>The relationship between confidence level and the level of significance is given by the relation</p>
+<div>
+<div class="MathJax_Preview">
+confidence \space level = (1 - \alpha) \\ 
+</div>
+<script type="math/tex; mode=display">
+confidence \space level = (1 - \alpha) \\ 
+</script>
+</div>
+<p>which in this case is</p>
+<div>
+<div class="MathJax_Preview">
+confidence \space level = (1 - 0.05) \space = 0.95
+</div>
+<script type="math/tex; mode=display">
+confidence \space level = (1 - 0.05) \space = 0.95
+</script>
+</div>
+<p>So that is we need to have atleast 95% confidence level to reject the null hypothesis.</p>
 <h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link"></a></h3>
 <p>To summarize, we have seen what is hypothesis, what is a null hypothesis, what is an alternate hypothesis and when hypothesis testing can go wrong.</p>
-<p>In the class, we have not seen the level of significance in detail and what important role it has in hypothesis testing. The last part of the article was included to make this grey area slightly more visible.</p>
+<p>In the class, we have not seen the level of significance in detail and what important role it has in hypothesis testing. The last part of the article was included to make this grey area more clearer.</p>
                 
                   
                 
@@ -749,9 +754,9 @@ e.g Atleast 60% of the adult human body is made up of water.</p>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "https://hazeez.github.io/study/statistics/Hypothesis_Testing/";
+      this.page.url = "https://hazeez.github.io/study/statistics/Hypothesis_Testing_01/";
       this.page.identifier =
-        "/statistics/Hypothesis_Testing/";
+        "/statistics/Hypothesis_Testing_01/";
     };
     (function() {
       var d = document, s = d.createElement("script");
