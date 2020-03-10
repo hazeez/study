@@ -1,0 +1,67 @@
+title: Hypothesis Tests
+author: hazeez
+date: Mar 10, 2020
+
+# Hypothesis Tests
+
+In the previous article, we got introduced to the concept of hypothesis - null hypothesis and the alternate hypothesis. We concluded with how the _p-value_ is compared with the level of significance to either accept or reject the null hypothesis.
+
+## Hypothesis test steps
+
+Just to recap, hypothesis testing is _the process of determining whether a given hypothesis is true or not_
+
+The highlight is on the word **process**. If it is called a process, then there have to be some steps associated.
+
+The steps for testing the hypothesis are mentioned below
+
+1. State the null hypothesis  $\mathbf{H}_\mathbf{0}$ and the alternate hypothesis $\mathbf{H}_\mathbf{1}$
+2. Choose the level of significance
+3. Find critical values
+4. Find test statistic
+5. Draw your conclusion
+
+Ok. Sounds good! Let us take stock of what knowledge we have about the above-mentioned steps. 
+
+We know what the null and the alternate hypothesis are, level of significance, and probably presume what draw your conclusion means.
+
+What we don't know about is step 4 - Find critical values and step 5 - find test statistic.
+
+Good! Let's see what a critical value is! 
+
+To understand the critical value, we need to first understand what _one-tailed_ and _two-tailed_ tests are.
+
+## One-Tailed and Two-Tailed
+
+We have already seen tails in statistics - when there is a long tail to the right, the data is positively skewed and where is a long tail to the left, the data is negatively skewed.
+
+So it has to do something with the distribution curve. Yes, you are right! 
+
+Let's go step by step!
+
+### What are tails?
+
+In the normal context, we know tails are that extra portion that is attached to the body of an animal. 
+
+Similarly, in the context of statistics, tails are that portion that is attached to the side of distribution - see figure below - _the grey area_
+
+![](https://i.imgur.com/o35gMNp.png)
+
+!!! Note
+	Distribution does not have to have two tails always. There can be only one tail as well. 
+
+Now that we have seen the tails, we understand things better.
+But, there are two tails here - do we have names that distinguish between these tails?
+
+### Upper tail and lower tail
+
+![](https://i.imgur.com/yvJK9if.png)
+
+#### Upper tail
+
+Upper tail is towards the upper side i.e. the positive side of the graph. Remember positive values lie on the right. So it is called as "right-tail" also.
+
+#### Lower tail
+
+Lower tail is towards the lower side i.e the negative side of the graph. Hence it is referred to as "left-tail" as well.
+
+
