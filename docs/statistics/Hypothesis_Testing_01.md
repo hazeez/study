@@ -2,7 +2,7 @@ title: Hypothesis Testing
 author: hazeez
 date: Mar 09, 2020
 
-# Hypothesis Testing - Part 1
+# Hypothesis Testing
 
 ## What is Hypothesis Testing?
 
@@ -88,7 +88,7 @@ $$
 
 **Example 1**
 
-To check the internet speed, I visit [Speed Test](speedtest.net) from my home computer and measure the speed. I do this 'n' number of times and find that the mean speed is around 100 Mbps.
+To check the internet speed, I visit [Speed Test](http://speedtest.net) from my home computer and measure the speed. I do this 'n' number of times and find that the mean speed is around 100 Mbps.
 
 So we reject the null hypothesis and accept the alternate hypothesis - which is the internet speed is less than 150 Mbps
 
@@ -102,11 +102,13 @@ So we accept the null hypothesis here i.e. resolution time is less than or equal
 
 Wow, Hypothesis testing is very easy! 
 
-#### Life is not easy always, Isn't it?
+### Level of significance
+
+Life is not easy always, Isn't it?
 
 In the above two cases, taking the samples was easy and our agreement / rejection of the null hypothesis was indeed accurate.
 
-In real life scenarios, we need to estimate a population parameter based on the sample and things might go wrong. That is to say, we might reject the null hypothesis when it is actually true or we might accept the null hypothesis when it is otherwise. This depends on the sample we take and if we don't have enough samples things might go wrong.
+In real life scenarios, we need to estimate a population parameter based on the sample and things might go wrong. That is to say, we might reject the null hypothesis when it is actually true or we might accept the null hypothesis when it is otherwise. This depends on the sample we take and if we don't have enough samples (or worse picked up wrong samples), things might go wrong.
 
 Say for example, the null hypothesis states that the mean of the population is greater than or equal to 500 i.e. 
 
@@ -120,13 +122,13 @@ $$
  \mathbf{H}_\mathbf{1}: \mu < 500
 $$
 
-We took a sample size of 30 i.e `n=30` and found the mean is `499`. 
+Let's say, we took a sample size of 30 i.e `n=30` and found the mean is `499`. 
 
 Ah! now comes the dilemma - whether we need to accept or reject the null hypothesis? The sample mean is just falling short by 1 from the population mean.
 
 We go into self-doubt if we have taken the correct sample size or what happens if the sample size is increased or worst case, should I have to repeat the experiment once again and my manager fires me for wasting the time and effort?
 
-So, what we are contemplating here is the probability of the evidence (sample picked) being unfavorable to the null hypothesis. 
+So, what we are contemplating here is the probability of the evidence (samples picked) being unfavorable to the null hypothesis. 
 
 This probablility is called as the _p-value_
 
@@ -134,13 +136,13 @@ If we say the _p_value_ or probability is `2%`, it means that our sample has `2%
 
 If we say the _p_value_ or probability is `30%`, it means that our sample has `30%` chances of going wrong in rejecting the null hypothesis and our chances of getting a promotion will be adversely impacted.
 
-But, we are humans and we need to have a leeway (a threshold) for making some mistakes / error with the samples.
+But, we are humans and we need to have a leeway (a threshold) for making some mistakes / error with the samples. 
 
 This threshold is called as the **level of significance**
 
 In other words, **level of significance** is the maximum level of risk (maximum acceptable probability - in statistical terms) that we may take in rejecting the null hypothesis while the null hypothesis is actually true. 
 
-Level of significance is denoted by the letter $\space\alpha$ (alpha)
+Level of significance is denoted by the letter $\alpha$ (alpha)
 
 `alpha` is normally represented as `1%` or `5%` or `10%` etc. 
 
@@ -185,7 +187,7 @@ $$
 confidence \space level = (1 - 0.05) \space = 0.95
 $$
 
-So that is we need to have atleast 95% confidence level to reject the null hypothesis.
+which means, we need to have atleast 95% confidence level to reject the null hypothesis.
 
 ### Summary
 
