@@ -2,11 +2,11 @@ title: Hypothesis Testing
 author: hazeez
 date: Mar 09, 2020
 
-# Hypothesis Testing
+# Hypothesis Testing - Part 1
 
 ## What is Hypothesis Testing?
 
-First let us understand what does the word _hypothesis_ mean. Let us break the word into two parts _hypo_ + _thesis_. That's interesting!
+First let us understand what does the word _hypothesis_ mean. Let us break the word into two parts _hypo_ + _thesis_. 
 
 What does _thesis_ mean?
 _thesis_ means something that has already been proven to be true. 
@@ -45,13 +45,7 @@ $$
 \mathbf{H}_\mathbf{0} : \mu = 500
 $$
 
-where the symbol 
-
-$$ 
-\mathbf{H}_\mathbf{0} 
-$$ 
-
-denotes Null hypothesis.
+where the symbol $\space\mathbf{H}_\mathbf{0}$ denotes Null hypothesis.
 
 The _opposite_ of Null hypothesis is called as _Alternate Hypothesis_. That is, the _negation_ of the null hypothesis. 
 
@@ -61,13 +55,7 @@ $$
  \mathbf{H}_\mathbf{1}: \mu \ne 500
  $$
  
-where the symbol
-
-$$
- \mathbf{H}_\mathbf{1}
-$$
-
-denotes alternate hypothesis
+where the symbol $\space\mathbf{H}_\mathbf{1}$ denotes alternate hypothesis
 
 !!! Note
 	Since the null hypothesis and the alternate hypothesis are exactly opposite statements, only one can be true. Rejecting one is accepting the other.
@@ -96,13 +84,13 @@ $$
   \mathbf{H}_\mathbf{1}: Resolution\space period > 5 days
 $$
 
-#### Let's see how we can prove / contradict the above hypothesis
+#### Let's see how we can prove the alternate hypothesis
 
 **Example 1**
 
-To check the internet speed, I visit speedtest.net from my home computer and measure the speed. I do this 'n' number of times and find that the mean speed is around 100 Mbps.
+To check the internet speed, I visit [Speed Test](speedtest.net) from my home computer and measure the speed. I do this 'n' number of times and find that the mean speed is around 100 Mbps.
 
-So we reject the null hypothesis and accept the alternate hypothesis.
+So we reject the null hypothesis and accept the alternate hypothesis - which is the internet speed is less than 150 Mbps
 
 **Example 2**
 
@@ -132,36 +120,27 @@ $$
  \mathbf{H}_\mathbf{1}: \mu < 500
 $$
 
-We start with great enthusiasm to prove the null hypothesis wrong.
-
-!!! Remember
-	In hypothesis testing, the quest is to always prove the null hypothesis wrong!
-
 We took a sample size of 30 i.e `n=30` and found the mean is `499`. 
 
-Ah! now comes the dilemma - whether we need to accept or reject the null hypothesis? The sample mean is just falling short by 1 from the population mean. We start cursing ourselves.
+Ah! now comes the dilemma - whether we need to accept or reject the null hypothesis? The sample mean is just falling short by 1 from the population mean.
 
 We go into self-doubt if we have taken the correct sample size or what happens if the sample size is increased or worst case, should I have to repeat the experiment once again and my manager fires me for wasting the time and effort?
 
-So, what we are contemplating here is the probability of the evidence (sample picked) going wrong and becoming unfavorable to the null hypothesis. 
+So, what we are contemplating here is the probability of the evidence (sample picked) being unfavorable to the null hypothesis. 
 
 This probablility is called as the _p-value_
 
 If we say the _p_value_ or probability is `2%`, it means that our sample has `2%` chances of going wrong in rejecting the null hypothesis.
 
-If we say the _p_value_ or probability is `30%`, it means that our sample has `30%` chances of going wrong in rejecting the null hypothesis - and our chances of getting a promotion will be adversely impacted.
+If we say the _p_value_ or probability is `30%`, it means that our sample has `30%` chances of going wrong in rejecting the null hypothesis and our chances of getting a promotion will be adversely impacted.
 
 But, we are humans and we need to have a leeway (a threshold) for making some mistakes / error with the samples.
 
-This threshold is called the **level of significance**
+This threshold is called as the **level of significance**
 
-In other words, **level of significance** is the maximum level of risk that we may take in rejecting the null hypothesis while the null hypothesis is actually true. 
+In other words, **level of significance** is the maximum level of risk (maximum acceptable probability - in statistical terms) that we may take in rejecting the null hypothesis while the null hypothesis is actually true. 
 
-Level of significance is denoted by the letter - alpha
-
-$$
-\alpha
-$$
+Level of significance is denoted by the letter $\space\alpha$ (alpha)
 
 `alpha` is normally represented as `1%` or `5%` or `10%` etc. 
 
@@ -188,8 +167,28 @@ It means the probability of getting our samples wrong is `10%`  but the maximum 
 
 In this case, our samples are above the permissible limits of going wrong and hence we cannot reject the null hypothesis and have to accept the null hypothesis.
 
+### Confidence level 
+
+When the null hypothesis is rejected with a level of significance of `5%` , we may be questioned of how confident we are in rejecting the null hypothesis
+
+In other words, it is to say that what is our confidence level in rejecting the null hypothesis. 
+
+The relationship between confidence level and the level of significance is given by the relation
+
+$$
+confidence \space level = (1 - \alpha) \\ 
+$$
+
+which in this case is
+
+$$
+confidence \space level = (1 - 0.05) \space = 0.95
+$$
+
+So that is we need to have atleast 95% confidence level to reject the null hypothesis.
+
 ### Summary
 
 To summarize, we have seen what is hypothesis, what is a null hypothesis, what is an alternate hypothesis and when hypothesis testing can go wrong.
 
-In the class, we have not seen the level of significance in detail and what important role it has in hypothesis testing. The last part of the article was included to make this grey area slightly more visible.
+In the class, we have not seen the level of significance in detail and what important role it has in hypothesis testing. The last part of the article was included to make this grey area more clearer.
