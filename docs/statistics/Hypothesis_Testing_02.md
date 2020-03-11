@@ -101,7 +101,7 @@ One-tailed tests can be either an upper tailed test or a lower tailed test.
 
 How can we spot or understand which tailed-tests the problem we have at hand belong to? Upper tail or lower tail?
 
-Remember in the previous article, we had stated the hypothesis for two examples. Let's revisit those examples.
+Remember in the [previous article](..\hypothesis_testing_01), we had stated the hypothesis for two examples. Let's revisit those examples.
 
 **Example 1**
 
@@ -158,7 +158,7 @@ Here we see the symbol of the alternate hypothesis is $\ne$ which means the test
 
 So the critical region / tails are split over both the ends.
 
-Both the ends contain $\alpha/2$, making a total of $\alpha$ - which is the level of significance. Refer to the previous article.
+Both the ends contain $\alpha/2$, making a total of $\alpha$ - which is the level of significance. Refer to the [previous article](..\hypothesis_testing_01\#level_of_significance).
 
 ![](https://i.imgur.com/5tayxLc.png)
 
