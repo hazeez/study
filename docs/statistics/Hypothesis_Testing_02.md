@@ -1,4 +1,4 @@
-title: Hypothesis Tests
+title: Hypothesis Test Process
 author: hazeez
 date: Mar 10, 2020
 
@@ -12,7 +12,7 @@ date: Mar 10, 2020
 
 Just to recap, hypothesis testing is _the process of determining whether a given hypothesis is true or not_
 
-The highlight is on the word **process**. If it is called a process, then there has to be some steps associated with it.
+The highlight is on the word **process**. If it is called a process, then there have to be some steps associated with it.
 
 The steps for testing the hypothesis are mentioned below
 
@@ -29,7 +29,7 @@ We know what the null and the alternate hypothesis are, level of significance, a
 What we don't know about at this point is
 
 - Step 4 - Find critical values and 
-- Step 5 - find test statistic.
+- Step 5 - find the test statistic.
 
 Good! Let's see what a critical value is! 
 
@@ -65,7 +65,7 @@ The following image shows the lower tail and upper tail respectively.
 
 #### Upper tail
 
-The upper tail is towards the upper side i.e. the positive side of the graph (see image above). Remember positive values lie on the right of the graph (1, 2, 3 etc). So it is called as "right-tail" also.
+The upper tail is towards the upper side i.e. the positive side of the graph (see image above). Remember positive values lie on the right of the graph (1, 2, 3, etc). So it is called as "right-tail" also.
 
 #### Lower tail
 
@@ -125,7 +125,7 @@ So we see the symbol of alternate hypothesis i.e - if it is less than `<` 150 Mb
 
 The project manager claims that the software defects raised are resolved within 5 business days. I being the quality department manager think it is taking longer to fix the bugs. 
 
-The null and alternate hypothesis are mentioned below
+The null and alternate hypothesis is mentioned below
 
 $$
  \mathbf{H}_\mathbf{0}: Resolution\space  period \le 5 days \\
@@ -156,9 +156,9 @@ $$
 
 Here we see the symbol of the alternate hypothesis is $\ne$ which means the test is a _two-tailed_ test. We don't check for increase or decrease i.e. $\ge$ or $\le$ but, we check for a change in the parameter.
 
-So the critical region / tails is split over both the ends.
+So the critical region / tails are split over both the ends.
 
-Both the ends contain $\alpha/2$, making a total of $\alpha$ - which is the level of significance. Refer previous article.
+Both the ends contain $\alpha/2$, making a total of $\alpha$ - which is the level of significance. Refer to the previous article.
 
 ![](https://i.imgur.com/5tayxLc.png)
 
@@ -172,6 +172,8 @@ Let's understand what a critical value is and then we will see how to compute th
 
 We know what a critical region or a rejection region is! So critical value should be near or in that critical region.
 
+To take an analogy, the critical values of water - i.e. the boiling point is 100 deg Celcius and the freezing point is 0 deg Celcius. It is an important measure that helps us make important decisions.
+
 #### Definition of critical value
 
 A critical value is a line on a graph that splits the graph into sections. If our test value falls into that region, then you reject the null hypothesis - which means the samples and the evidence we had taken supports the alternate hypothesis
@@ -180,13 +182,66 @@ Critical value depicted in the graph below - for lower-tailed graph
 
 ![](https://i.imgur.com/aTaG3bX.png)
 
-Similarly, the critical value for upper-tailed graph is below
+Similarly, the critical value for the upper-tailed graph is below
 
 ![](https://i.imgur.com/mIsCOBT.png)
 
 Critical values for a two-tailed graph is below
 
-In case of two-tailed graph, the value that we are computing should be either below or above the critical value for rejecting the null hypothesis.
+In the case of a two-tailed graph, the value that we are computing should be either below or above the critical value for rejecting the null hypothesis.
 
 ![](https://i.imgur.com/kHb4sZ1.png)
 
+Ok - now we have visualized what a critical value is. This critical value is nothing but the =='Z' score==
+
+We already know some of the common 'Z' scores.
+
+#### Example of a 'Z' score
+
+Let's say we have a sample normal distribution. We know that as per the empirical split (or rule), 68% lie within the `1` standard deviation from the mean, 95% lie within `2` standard deviation from the mean and 99.7% of the values lie within `3` standard deviations from the mean.
+
+We know that 'Z' score for `+2.0` standard deviation is `1.96` and for `-2.0` standard deviation is `-1.96`. We have used this in several computations in the class. We will see how to compute 'Z' scores in another post.
+
+Let us see how the level of significance ($\alpha$) is used to find the critical value (Z score).
+
+### Critical value and level of significance
+
+We use the level of significance ($\alpha$) to determine the critical value. How?
+
+Determine the critical value at `5%` level of significance. Presume its a ==right-tailed / upper-tailed test==.
+
+We know $\alpha$ = `5%` (see image below to find where level of significance of 5% falls)
+and 1 - $\alpha$ is `95%`
+
+![](https://i.imgur.com/AgZGTmb.png)
+
+We know that `95%` of the values fall within the `2` standard deviation mark, the 'Z' score is `1.96`.
+
+So the critical value is `1.96`.
+
+#### So how will we determine if we have to accept or reject the null hypothesis?
+
+> I am quoting a new word _test statistic_ here. We will see what it is and how it is computed in the next post. At the moment, just think of _test statistic_ as a number.
+
+If the test statistic (_test Z_) is less than the critical value (_Z_), we will accept the null hypothesis. In other words, we have not stepped into the rejection region 
+
+$$
+test\space Z < Z : \space accept \space  \mathbf{H}_\mathbf{0} \\
+test\space Z > Z : \space reject \space  \mathbf{H}_\mathbf{0}
+$$
+
+Let's visualize the above scenario with an example graph!
+Critical value _Z_ = `1.96`
+Test statistic (_test Z_) = `0.5`
+
+Since the test statistic is less than the critical value, we will accept the null hypothesis $\mathbf{H}_\mathbf{0}$
+
+![](https://i.imgur.com/4AbSXzL.png)
+
+### Summary
+
+In this article, we focussed on the 3rd step of the hypothesis testing process - _Find the critical value_
+
+We started with what are tails, upper tail and lower tail, one-tailed tests and two-tailed tests, critical region / rejection region, critical values and when to accept or reject the null hypothesis.
+
+In the next post, we will explore more on finding the _test statistic_ which is the 4th step of the hypothesis testing process.
