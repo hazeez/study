@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://hazeez.github.io/study/statistics/Hypothesis_Testing_02/">
+        <link rel="canonical" href="https://hazeez.github.io/study/statistics/hypothesis_testing_02/">
       
       
         <meta name="author" content="h">
@@ -40,7 +40,7 @@
     
     
       
-        <title>Hypothesis Tests</title>
+        <title>Hypothesis Test Process</title>
       
     
 	
@@ -136,7 +136,7 @@
               DataScience Notes
             </span>
             <span class="md-header-nav__topic">
-              Hypothesis Tests
+              Hypothesis Test Process
             </span>
           
         </div>
@@ -408,7 +408,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Hypothesis_Testing_01/" title="Hypothesis Testing" class="md-nav__link">
+    <a href="../hypothesis_testing_01/" title="Hypothesis Testing" class="md-nav__link">
       Hypothesis Testing
     </a>
   </li>
@@ -431,11 +431,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Hypothesis Tests
+        Hypothesis Test Process
       </label>
     
-    <a href="./" title="Hypothesis Tests" class="md-nav__link md-nav__link--active">
-      Hypothesis Tests
+    <a href="./" title="Hypothesis Test Process" class="md-nav__link md-nav__link--active">
+      Hypothesis Test Process
     </a>
     
       
@@ -487,6 +487,20 @@
 			<li class="md-nav__item">
   <a href="#critical_value" title="Critical value" class="md-nav__link">
     Critical value
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#critical_value_and_level_of_significance" title="Critical value and level of significance" class="md-nav__link">
+    Critical value and level of significance
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
@@ -582,6 +596,20 @@
   
 </li>
         
+			<li class="md-nav__item">
+  <a href="#critical_value_and_level_of_significance" title="Critical value and level of significance" class="md-nav__link">
+    Critical value and level of significance
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -611,17 +639,17 @@
 			  
 				
                 
-                  <a href="https://github.com/hazeez/IDS13/edit/master/docs/statistics/Hypothesis_Testing_02.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/hazeez/IDS13/edit/master/docs/statistics/hypothesis_testing_02.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="hypothesis_tests">Hypothesis Tests<a class="headerlink" href="#hypothesis_tests" title="Permanent link"></a></h1>
+                <h1 id="hypothesis_tests">Hypothesis Tests<a class="headerlink" href="#hypothesis_tests" title="Permanent link">#</a></h1>
 <blockquote>
-<p>In the previous article, we got introduced to the concept of hypothesis - null hypothesis and the alternate hypothesis. We concluded with how the <em>p-value</em> is compared with the level of significance to either accept or reject the null hypothesis.
+<p>In the <a href="..\hypothesis_testing_01">previous article</a>, we got introduced to the concept of hypothesis - null hypothesis and the alternate hypothesis. We concluded with how the <em>p-value</em> is compared with the level of significance to either accept or reject the null hypothesis.
 We will keep <em>p-value</em> aside at the moment and will later see how it is calculated; less we know - less we are confused.</p>
 </blockquote>
-<h2 id="hypothesis_test_steps">Hypothesis test steps<a class="headerlink" href="#hypothesis_test_steps" title="Permanent link"></a></h2>
+<h2 id="hypothesis_test_steps">Hypothesis test steps<a class="headerlink" href="#hypothesis_test_steps" title="Permanent link">#</a></h2>
 <p>Just to recap, hypothesis testing is <em>the process of determining whether a given hypothesis is true or not</em></p>
-<p>The highlight is on the word <strong>process</strong>. If it is called a process, then there has to be some steps associated with it.</p>
+<p>The highlight is on the word <strong>process</strong>. If it is called a process, then there have to be some steps associated with it.</p>
 <p>The steps for testing the hypothesis are mentioned below</p>
 <ol>
 <li>State the null hypothesis  <span><span class="MathJax_Preview">\mathbf{H}_\mathbf{0}</span><script type="math/tex">\mathbf{H}_\mathbf{0}</script></span> and the alternate hypothesis <span><span class="MathJax_Preview">\mathbf{H}_\mathbf{1}</span><script type="math/tex">\mathbf{H}_\mathbf{1}</script></span></li>
@@ -635,15 +663,15 @@ We will keep <em>p-value</em> aside at the moment and will later see how it is c
 <p>What we don't know about at this point is</p>
 <ul>
 <li>Step 4 - Find critical values and </li>
-<li>Step 5 - find test statistic.</li>
+<li>Step 5 - find the test statistic.</li>
 </ul>
 <p>Good! Let's see what a critical value is! </p>
 <p>To understand the critical value and critical region, we need to first understand what <em>one-tailed</em> and <em>two-tailed</em> tests are.</p>
-<h2 id="one-tailed_and_two-tailed_tests">One-Tailed and Two-Tailed Tests<a class="headerlink" href="#one-tailed_and_two-tailed_tests" title="Permanent link"></a></h2>
+<h2 id="one-tailed_and_two-tailed_tests">One-Tailed and Two-Tailed Tests<a class="headerlink" href="#one-tailed_and_two-tailed_tests" title="Permanent link">#</a></h2>
 <p>We have already seen tails in statistics - when there is a long tail to the right of a frequency distribution, the data is positively skewed and where is a long tail to the left, the data is negatively skewed.</p>
 <p>So it has to do something with the distribution curve? Yes, you are right! </p>
 <p>Let's dive into detail!</p>
-<h3 id="what_are_tails">What are tails?<a class="headerlink" href="#what_are_tails" title="Permanent link"></a></h3>
+<h3 id="what_are_tails">What are tails?<a class="headerlink" href="#what_are_tails" title="Permanent link">#</a></h3>
 <p>In the day-to-day context, we know a tail is that extra portion that is attached to the body of an animal. </p>
 <p>Similarly, in the context of statistics, tails are that portion that is attached to the side of distribution - see figure below - <em>the grey area</em></p>
 <p><img alt="" src="https://i.imgur.com/o35gMNp.png" /></p>
@@ -657,7 +685,7 @@ But, there are two tails here - do we have names that distinguish between these 
 <p>The following image shows the lower tail and upper tail respectively.</p>
 <p><img alt="" src="https://i.imgur.com/yvJK9if.png" /></p>
 <h4>Upper tail</h4>
-<p>The upper tail is towards the upper side i.e. the positive side of the graph (see image above). Remember positive values lie on the right of the graph (1, 2, 3 etc). So it is called as "right-tail" also.</p>
+<p>The upper tail is towards the upper side i.e. the positive side of the graph (see image above). Remember positive values lie on the right of the graph (1, 2, 3, etc). So it is called as "right-tail" also.</p>
 <h4>Lower tail</h4>
 <p>The lower tail is towards the lower side i.e the negative side of the graph. Hence it is referred to as "left-tail" as well. </p>
 <blockquote>
@@ -674,7 +702,7 @@ But, there are two tails here - do we have names that distinguish between these 
 <p>So far, so good!?</p>
 <p>Now in real-life problems, we will not be given the graph to understand if the tail is towards the left or right or it is two-tailed.</p>
 <p>The problem statement will be provided. We need to figure out the hypothesis and then decide if its right-tailed or left-tailed or both!</p>
-<h3 id="one-tailed_tests">One-Tailed tests<a class="headerlink" href="#one-tailed_tests" title="Permanent link"></a></h3>
+<h3 id="one-tailed_tests">One-Tailed tests<a class="headerlink" href="#one-tailed_tests" title="Permanent link">#</a></h3>
 <p>One-tailed tests can be either an upper tailed test or a lower tailed test.</p>
 <p>How can we spot or understand which tailed-tests the problem we have at hand belong to? Upper tail or lower tail?</p>
 <p>Remember in the previous article, we had stated the hypothesis for two examples. Let's revisit those examples.</p>
@@ -696,7 +724,7 @@ But, there are two tails here - do we have names that distinguish between these 
 <p><img alt="" src="https://i.imgur.com/z4RRP87.png" /></p>
 <p><strong>Example 2</strong></p>
 <p>The project manager claims that the software defects raised are resolved within 5 business days. I being the quality department manager think it is taking longer to fix the bugs. </p>
-<p>The null and alternate hypothesis are mentioned below</p>
+<p>The null and alternate hypothesis is mentioned below</p>
 <div>
 <div class="MathJax_Preview">
  \mathbf{H}_\mathbf{0}: Resolution\space  period \le 5 days \\
@@ -716,7 +744,7 @@ But, there are two tails here - do we have names that distinguish between these 
 <blockquote>
 <p>To conclude, one-tailed tests can be either an <em>upper-tail</em> test or a <em>lower-tail</em> test and the test is determined by the <em>symbol of the alternate hypothesis</em> <span><span class="MathJax_Preview">\mathbf{H}_\mathbf{1}</span><script type="math/tex">\mathbf{H}_\mathbf{1}</script></span></p>
 </blockquote>
-<h3 id="two-tailed_tests">Two-Tailed tests<a class="headerlink" href="#two-tailed_tests" title="Permanent link"></a></h3>
+<h3 id="two-tailed_tests">Two-Tailed tests<a class="headerlink" href="#two-tailed_tests" title="Permanent link">#</a></h3>
 <h4>So how does the hypothesis of a two-tailed test look like?</h4>
 <p>A residential school claims that the average time the students of the school get to do extra-curricular activities is 200 hours per year but, the parents doubt that the students spend so much time.</p>
 <p>The null and the alternate hypothesis looks like the below</p>
@@ -731,25 +759,69 @@ But, there are two tails here - do we have names that distinguish between these 
 </script>
 </div>
 <p>Here we see the symbol of the alternate hypothesis is <span><span class="MathJax_Preview">\ne</span><script type="math/tex">\ne</script></span> which means the test is a <em>two-tailed</em> test. We don't check for increase or decrease i.e. <span><span class="MathJax_Preview">\ge</span><script type="math/tex">\ge</script></span> or <span><span class="MathJax_Preview">\le</span><script type="math/tex">\le</script></span> but, we check for a change in the parameter.</p>
-<p>So the critical region / tails is split over both the ends.</p>
-<p>Both the ends contain <span><span class="MathJax_Preview">\alpha/2</span><script type="math/tex">\alpha/2</script></span>, making a total of <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> - which is the level of significance. Refer previous article.</p>
+<p>So the critical region / tails are split over both the ends.</p>
+<p>Both the ends contain <span><span class="MathJax_Preview">\alpha/2</span><script type="math/tex">\alpha/2</script></span>, making a total of <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> - which is the level of significance. Refer to the previous article.</p>
 <p><img alt="" src="https://i.imgur.com/5tayxLc.png" /></p>
 <blockquote>
 <p>Milestone reached: So from the hypothesis statement, we are understanding if the test is either a one-tailed (upper or lower tail) or two-tailed.</p>
 <p>We are still in step 3 - Finding the critical value</p>
 </blockquote>
 <p>Let's understand what a critical value is and then we will see how to compute the critical value.</p>
-<h3 id="critical_value">Critical value<a class="headerlink" href="#critical_value" title="Permanent link"></a></h3>
+<h3 id="critical_value">Critical value<a class="headerlink" href="#critical_value" title="Permanent link">#</a></h3>
 <p>We know what a critical region or a rejection region is! So critical value should be near or in that critical region.</p>
+<p>To take an analogy, the critical values of water - i.e. the boiling point is 100 deg Celcius and the freezing point is 0 deg Celcius. It is an important measure that helps us make important decisions.</p>
 <h4>Definition of critical value</h4>
 <p>A critical value is a line on a graph that splits the graph into sections. If our test value falls into that region, then you reject the null hypothesis - which means the samples and the evidence we had taken supports the alternate hypothesis</p>
 <p>Critical value depicted in the graph below - for lower-tailed graph</p>
 <p><img alt="" src="https://i.imgur.com/aTaG3bX.png" /></p>
-<p>Similarly, the critical value for upper-tailed graph is below</p>
+<p>Similarly, the critical value for the upper-tailed graph is below</p>
 <p><img alt="" src="https://i.imgur.com/mIsCOBT.png" /></p>
 <p>Critical values for a two-tailed graph is below</p>
-<p>In case of two-tailed graph, the value that we are computing should be either below or above the critical value for rejecting the null hypothesis.</p>
+<p>In the case of a two-tailed graph, the value that we are computing should be either below or above the critical value for rejecting the null hypothesis.</p>
 <p><img alt="" src="https://i.imgur.com/kHb4sZ1.png" /></p>
+<p>Ok - now we have visualized what a critical value is. This critical value is nothing but the <mark>'Z' score</mark></p>
+<p>We already know some of the common 'Z' scores.</p>
+<h4>Example of a 'Z' score</h4>
+<p>Let's say we have a sample normal distribution. We know that as per the empirical split (or rule), 68% lie within the <code class="codehilite"><span class="err">1</span></code> standard deviation from the mean, 95% lie within <code class="codehilite"><span class="err">2</span></code> standard deviation from the mean and 99.7% of the values lie within <code class="codehilite"><span class="err">3</span></code> standard deviations from the mean.</p>
+<p>We know that 'Z' score for <code class="codehilite"><span class="err">+2.0</span></code> standard deviation is <code class="codehilite"><span class="err">1.96</span></code> and for <code class="codehilite"><span class="err">-2.0</span></code> standard deviation is <code class="codehilite"><span class="err">-1.96</span></code>. We have used this in several computations in the class. We will see how to compute 'Z' scores in another post.</p>
+<p>Let us see how the level of significance (<span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>) is used to find the critical value (Z score).</p>
+<blockquote>
+<p>Level of significance is covered in <a href="../hypothesis_testing_01/#level_of_significance">this post</a></p>
+</blockquote>
+<h3 id="critical_value_and_level_of_significance">Critical value and level of significance<a class="headerlink" href="#critical_value_and_level_of_significance" title="Permanent link">#</a></h3>
+<p>We use the level of significance (<span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>) to determine the critical value. How?</p>
+<p><strong>Example:</strong> </p>
+<p>Determine the critical value at <code class="codehilite"><span class="err">5%</span></code> level of significance. Presume its a <mark>right-tailed / upper-tailed test</mark>.</p>
+<p>We know <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> = <code class="codehilite"><span class="err">5%</span></code> (see image below to find where level of significance <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> of 5% falls)
+and 1 - <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> is <code class="codehilite"><span class="err">95%</span></code></p>
+<p><img alt="" src="https://i.imgur.com/AgZGTmb.png" /></p>
+<p>We know that <code class="codehilite"><span class="err">95%</span></code> of the values fall within the <code class="codehilite"><span class="err">2</span></code> standard deviation mark and the corresponding the 'Z' score is <code class="codehilite"><span class="err">1.96</span></code>.</p>
+<p>So the critical value (<em>Z</em>) is <code class="codehilite"><span class="err">1.96</span></code>.</p>
+<h4>So how will we determine if we have to accept or reject the null hypothesis?</h4>
+<blockquote>
+<p>I am quoting a new word <em>test statistic</em> here. We will see what it is and how it is computed in the next post. At the moment, just think of <em>test statistic</em> as a number computed from our samples.</p>
+</blockquote>
+<p>If the test statistic (<em>test Z</em>) is less than the critical value (<em>Z</em>), we will accept the null hypothesis. In other words, we have not stepped into the rejection region and hence will accept.</p>
+<div>
+<div class="MathJax_Preview">
+test\space Z \le Z : \space accept \space  \mathbf{H}_\mathbf{0} \\
+test\space Z &gt; Z : \space reject \space  \mathbf{H}_\mathbf{0}
+</div>
+<script type="math/tex; mode=display">
+test\space Z \le Z : \space accept \space  \mathbf{H}_\mathbf{0} \\
+test\space Z > Z : \space reject \space  \mathbf{H}_\mathbf{0}
+</script>
+</div>
+<p>Let's visualize the above scenario with an example graph!</p>
+<p>The below are the  numbers</p>
+<p>Critical value <em>Z</em> = <code class="codehilite"><span class="err">1.96</span></code>
+Test statistic (<em>test Z</em>) = <code class="codehilite"><span class="err">0.5</span></code></p>
+<p>Since the test statistic is less than the critical value, we will accept the null hypothesis <span><span class="MathJax_Preview">\mathbf{H}_\mathbf{0}</span><script type="math/tex">\mathbf{H}_\mathbf{0}</script></span></p>
+<p><img alt="" src="https://i.imgur.com/4AbSXzL.png" /></p>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h3>
+<p>In this article, we focussed on the 3<sup>rd</sup> step of the hypothesis testing process - <em>Find the critical value</em></p>
+<p>We started with what are tails, upper tail and lower tail, one-tailed tests and two-tailed tests, critical region / rejection region, critical values and when to accept or reject the null hypothesis.</p>
+<p>In the next post, we will explore more on finding the <em>test statistic</em> which is the 4<sup>th</sup> step of the hypothesis testing process.</p>
                 
                   
                 
@@ -762,7 +834,7 @@ But, there are two tails here - do we have names that distinguish between these 
 					<td><b>Author</b></td>
 					<td><b>hazeez</b></td>
 					<td><b>Date Modified</b></td>
-					<td><b>Mar 10, 2020</b></td>
+					<td><b>Mar 12, 2020</b></td>
 				  </tr>
 				</table>
 				</div>
@@ -777,9 +849,9 @@ But, there are two tails here - do we have names that distinguish between these 
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "https://hazeez.github.io/study/statistics/Hypothesis_Testing_02/";
+      this.page.url = "https://hazeez.github.io/study/statistics/hypothesis_testing_02/";
       this.page.identifier =
-        "/statistics/Hypothesis_Testing_02/";
+        "/statistics/hypothesis_testing_02/";
     };
     (function() {
       var d = document, s = d.createElement("script");
@@ -850,7 +922,7 @@ But, there are two tails here - do we have names that distinguish between these 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Hypothesis_Testing_01/" title="Hypothesis Testing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../hypothesis_testing_01/" title="Hypothesis Testing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
