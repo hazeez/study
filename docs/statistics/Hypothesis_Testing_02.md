@@ -1,10 +1,10 @@
 title: Hypothesis Test Process
 author: hazeez
-date: Mar 10, 2020
+date: Mar 12, 2020
 
 # Hypothesis Tests
 
-> In the previous article, we got introduced to the concept of hypothesis - null hypothesis and the alternate hypothesis. We concluded with how the _p-value_ is compared with the level of significance to either accept or reject the null hypothesis.
+> In the [previous article](..\hypothesis_testing_01), we got introduced to the concept of hypothesis - null hypothesis and the alternate hypothesis. We concluded with how the _p-value_ is compared with the level of significance to either accept or reject the null hypothesis.
 > We will keep _p-value_ aside at the moment and will later see how it is calculated; less we know - less we are confused.
 
 
@@ -204,33 +204,40 @@ We know that 'Z' score for `+2.0` standard deviation is `1.96` and for `-2.0` st
 
 Let us see how the level of significance ($\alpha$) is used to find the critical value (Z score).
 
+> Level of significance is covered in [this post](../hypothesis_testing_01/#level_of_significance)
+
 ### Critical value and level of significance
 
 We use the level of significance ($\alpha$) to determine the critical value. How?
 
+**Example:** 
+
 Determine the critical value at `5%` level of significance. Presume its a ==right-tailed / upper-tailed test==.
 
-We know $\alpha$ = `5%` (see image below to find where level of significance of 5% falls)
+We know $\alpha$ = `5%` (see image below to find where level of significance $\alpha$ of 5% falls)
 and 1 - $\alpha$ is `95%`
 
 ![](https://i.imgur.com/AgZGTmb.png)
 
-We know that `95%` of the values fall within the `2` standard deviation mark, the 'Z' score is `1.96`.
+We know that `95%` of the values fall within the `2` standard deviation mark and the corresponding the 'Z' score is `1.96`.
 
-So the critical value is `1.96`.
+So the critical value (_Z_) is `1.96`.
 
 #### So how will we determine if we have to accept or reject the null hypothesis?
 
-> I am quoting a new word _test statistic_ here. We will see what it is and how it is computed in the next post. At the moment, just think of _test statistic_ as a number.
+> I am quoting a new word _test statistic_ here. We will see what it is and how it is computed in the next post. At the moment, just think of _test statistic_ as a number computed from our samples.
 
-If the test statistic (_test Z_) is less than the critical value (_Z_), we will accept the null hypothesis. In other words, we have not stepped into the rejection region 
+If the test statistic (_test Z_) is less than the critical value (_Z_), we will accept the null hypothesis. In other words, we have not stepped into the rejection region and hence will accept.
 
 $$
-test\space Z < Z : \space accept \space  \mathbf{H}_\mathbf{0} \\
+test\space Z \le Z : \space accept \space  \mathbf{H}_\mathbf{0} \\
 test\space Z > Z : \space reject \space  \mathbf{H}_\mathbf{0}
 $$
 
 Let's visualize the above scenario with an example graph!
+
+The below are the  numbers
+
 Critical value _Z_ = `1.96`
 Test statistic (_test Z_) = `0.5`
 

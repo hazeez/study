@@ -194,3 +194,7 @@ which means, we need to have atleast 95% confidence level to reject the null hyp
 To summarize, we have seen what is hypothesis, what is a null hypothesis, what is an alternate hypothesis and when hypothesis testing can go wrong.
 
 In the class, we have not seen the level of significance in detail and what important role it has in hypothesis testing. The last part of the article was included to make this grey area more clearer.
+
+#### Next post
+
+[Hypothesis Test Process](../hypothesis_testing_02)

@@ -76,6 +76,6 @@ markdown_extensions:
       custom_checkbox: True
   - pymdownx.tilde
   - toc:
-      permalink: ""
+      permalink: "#"
       separator: "_"
       toc_depth: 3
