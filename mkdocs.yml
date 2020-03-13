@@ -79,3 +79,4 @@ markdown_extensions:
       permalink: "#"
       separator: "_"
       toc_depth: 3
+google_analytics: ['UA-160625988-1', 'hazeez.github.io/study']

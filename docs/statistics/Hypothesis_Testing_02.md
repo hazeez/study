@@ -252,3 +252,7 @@ In this article, we focussed on the 3rd step of the hypothesis testing process -
 We started with what are tails, upper tail and lower tail, one-tailed tests and two-tailed tests, critical region / rejection region, critical values and when to accept or reject the null hypothesis.
 
 In the next post, we will explore more on finding the _test statistic_ which is the 4th step of the hypothesis testing process.
+
+#### Next post
+
+[Test statistic](../hypothesis_testing_03)
