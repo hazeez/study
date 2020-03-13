@@ -74,6 +74,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-160625988-1", "hazeez.github.io/study")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -528,6 +553,20 @@
 
 			
         
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../hypothesis_testing_03/" title="Test statistic - Z & t" class="md-nav__link">
+      Test statistic - Z & t
+    </a>
+  </li>
+
+			
+        
       </ul>
     </nav>
   </li>
@@ -822,6 +861,8 @@ Test statistic (<em>test Z</em>) = <code class="codehilite"><span class="err">0.
 <p>In this article, we focussed on the 3<sup>rd</sup> step of the hypothesis testing process - <em>Find the critical value</em></p>
 <p>We started with what are tails, upper tail and lower tail, one-tailed tests and two-tailed tests, critical region / rejection region, critical values and when to accept or reject the null hypothesis.</p>
 <p>In the next post, we will explore more on finding the <em>test statistic</em> which is the 4<sup>th</sup> step of the hypothesis testing process.</p>
+<h4>Next post</h4>
+<p><a href="../hypothesis_testing_03">Test statistic</a></p>
                 
                   
                 
@@ -936,6 +977,20 @@ Test statistic (<em>test Z</em>) = <code class="codehilite"><span class="err">0.
             </div>
           </a>
         
+        
+          <a href="../hypothesis_testing_03/" title="Test statistic - Z & t" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Test statistic - Z & t
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>

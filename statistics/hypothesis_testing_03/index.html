@@ -1,0 +1,1237 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://hazeez.github.io/study/statistics/hypothesis_testing_03/">
+      
+      
+        <meta name="author" content="h">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Test statistic - Z & t</title>
+      
+    
+	
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700|PT+Mono">
+        <style>body,input{font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/css/mermaid.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-160625988-1", "hazeez.github.io/study")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#test_statistic" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://hazeez.github.io/study" title="DataScience Notes" class="md-header-nav__button md-logo">
+          
+            <img src="../../assets/images/profile_pic_white_bg.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              DataScience Notes
+            </span>
+            <span class="md-header-nav__topic">
+              Test statistic - Z & t
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/hazeez/IDS13/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    hazeez/IDS13
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../exercises/" title="Exercises" class="md-tabs__link">
+          Exercises
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" title="Statistics" class="md-tabs__link md-tabs__link--active">
+          Statistics
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://hazeez.github.io/study" title="DataScience Notes" class="md-nav__button md-logo">
+      
+        <img src="../../assets/images/profile_pic_white_bg.png" width="48" height="48">
+      
+    </a>
+    DataScience Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/hazeez/IDS13/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    hazeez/IDS13
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Exercises
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Exercises
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/exercise05/" title="Exercise05" class="md-nav__link">
+      Exercise05
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/exercise06/" title="Exercise06" class="md-nav__link">
+      Exercise06
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Stats Home" class="md-nav__link">
+      Stats Home
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../hypothesis_testing_01/" title="Hypothesis Testing" class="md-nav__link">
+      Hypothesis Testing
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../hypothesis_testing_02/" title="Hypothesis Test Process" class="md-nav__link">
+      Hypothesis Test Process
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Test statistic - Z & t
+      </label>
+    
+    <a href="./" title="Test statistic - Z & t" class="md-nav__link md-nav__link--active">
+      Test statistic - Z & t
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what_is_a_test_statistic" title="What is a test statistic?" class="md-nav__link">
+    What is a test statistic?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods_of_finding_the_test_statistic" title="Methods of finding the test statistic" class="md-nav__link">
+    Methods of finding the test statistic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z_test" title="Z test" class="md-nav__link">
+    Z test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#assumptions_of_a_z_test" title="Assumptions of a Z test" class="md-nav__link">
+    Assumptions of a Z test
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#formula_for_z_test" title="Formula for Z test" class="md-nav__link">
+    Formula for Z test
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t_test_or_student_t_test" title="'t' test or Student 't' test" class="md-nav__link">
+    't' test or Student 't' test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#assumptions_of_a_t_test" title="Assumptions of a 't' test" class="md-nav__link">
+    Assumptions of a 't' test
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#formula_for_t_test" title="Formula for 't' test" class="md-nav__link">
+    Formula for 't' test
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#confidence_interval_to_estimate_the_population_mean" title="Confidence interval to estimate the population mean" class="md-nav__link">
+    Confidence interval to estimate the population mean
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example_1" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#degree_of_freedom" title="Degree of Freedom" class="md-nav__link">
+    Degree of Freedom
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example_2" title="Example:" class="md-nav__link">
+    Example:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+      
+      <!-- 
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+       -->
+    </ul>
+  
+</nav>
+    
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what_is_a_test_statistic" title="What is a test statistic?" class="md-nav__link">
+    What is a test statistic?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods_of_finding_the_test_statistic" title="Methods of finding the test statistic" class="md-nav__link">
+    Methods of finding the test statistic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z_test" title="Z test" class="md-nav__link">
+    Z test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#assumptions_of_a_z_test" title="Assumptions of a Z test" class="md-nav__link">
+    Assumptions of a Z test
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#formula_for_z_test" title="Formula for Z test" class="md-nav__link">
+    Formula for Z test
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t_test_or_student_t_test" title="'t' test or Student 't' test" class="md-nav__link">
+    't' test or Student 't' test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#assumptions_of_a_t_test" title="Assumptions of a 't' test" class="md-nav__link">
+    Assumptions of a 't' test
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#formula_for_t_test" title="Formula for 't' test" class="md-nav__link">
+    Formula for 't' test
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#confidence_interval_to_estimate_the_population_mean" title="Confidence interval to estimate the population mean" class="md-nav__link">
+    Confidence interval to estimate the population mean
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example_1" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#degree_of_freedom" title="Degree of Freedom" class="md-nav__link">
+    Degree of Freedom
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example_2" title="Example:" class="md-nav__link">
+    Example:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+      
+      <!-- 
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+       -->
+    </ul>
+  
+</nav> 
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+			  
+				
+                
+                  <a href="https://github.com/hazeez/IDS13/edit/master/docs/statistics/hypothesis_testing_03.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="test_statistic">Test statistic<a class="headerlink" href="#test_statistic" title="Permanent link">#</a></h1>
+<blockquote>
+<p>In the <a href="../hypothesis_testing_02">previous article</a>, we used test statistic as a value to compare against the critical value. This helps us to accept or reject our null hypothesis.
+In this article, we will see what is a test statistic and how to compute it.</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are in the fourth step of the hypothesis testing process 
+- Find the test statistic</p>
+</div>
+<h2 id="what_is_a_test_statistic">What is a test statistic?<a class="headerlink" href="#what_is_a_test_statistic" title="Permanent link">#</a></h2>
+<p>A test statistic is used in a hypothesis test to decide to support or reject a null hypothesis. A test statistic is a number that is calculated from a sample and is compared with the null hypothesis.</p>
+<p>So what does this mean?</p>
+<p>We know that for the population we have parameters and for sample, we have statistics. i.e. any value that represents the population is called as <em>parameter</em> and any value that represents sample is called as a <em>statistic</em></p>
+<p>We use this sample and come up with a value (statistic). This is called the test statistic.</p>
+<h2 id="methods_of_finding_the_test_statistic">Methods of finding the test statistic<a class="headerlink" href="#methods_of_finding_the_test_statistic" title="Permanent link">#</a></h2>
+<p>There are various methods/tests for finding the test statistic. Usually, the following four methods are used.</p>
+<ul>
+<li><em>Z</em> test</li>
+<li><em>t</em> test</li>
+<li>Chi-squared test (<span><span class="MathJax_Preview">\chi^2</span><script type="math/tex">\chi^2</script></span>)</li>
+<li>F test</li>
+</ul>
+<p>In this article, we will cover the <em>Z</em> test and <em>t</em> test.</p>
+<p>We have these tests - how are they different? </p>
+<p>When the null hypothesis is about the <strong>mean</strong> of the population, the <em>Z</em> test or the <em>t</em> test is used.</p>
+<p>When the null hypothesis is about the <strong>variance</strong> of the population, the <span><span class="MathJax_Preview">\chi^2</span><script type="math/tex">\chi^2</script></span> (chi-square) test and the <em>F</em> test is used.</p>
+<p>Let us see the <em>Z</em> test first.</p>
+<h2 id="z_test">Z test<a class="headerlink" href="#z_test" title="Permanent link">#</a></h2>
+<h3 id="assumptions_of_a_z_test">Assumptions of a Z test<a class="headerlink" href="#assumptions_of_a_z_test" title="Permanent link">#</a></h3>
+<p>Z test is used when the following conditions are met.</p>
+<ol>
+<li>The sample size <code class="codehilite"><span class="err">n</span></code> should be greater than 30 i.e. <span><span class="MathJax_Preview">n &gt; 30</span><script type="math/tex">n > 30</script></span></li>
+<li>The population standard deviation should be known</li>
+<li>The variable should be continuous (remember, this is a continuous sampling distribution)</li>
+</ol>
+<h3 id="formula_for_z_test">Formula for Z test<a class="headerlink" href="#formula_for_z_test" title="Permanent link">#</a></h3>
+<p>The test statistic for <em>Z</em> test is represented as <strong><em>test Z</em></strong></p>
+<p>The formula for finding the test statistic in a <em>Z</em> test is</p>
+<div>
+<div class="MathJax_Preview">
+\textrm {test}\space Z = \frac{\bar{x} - \mu} {\sigma / \sqrt n}
+</div>
+<script type="math/tex; mode=display">
+\textrm {test}\space Z = \frac{\bar{x} - \mu} {\sigma / \sqrt n}
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">\bar{x}</span><script type="math/tex">\bar{x}</script></span> is the sample mean, <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> is the population mean, <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> is the population standard deviation and  <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> is the number of samples.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
+<p>Let's say the null and the alternate hypothesis are</p>
+<div>
+<div class="MathJax_Preview">
+\mathbf{H}_\mathbf{0} : \mu \ge 1000 \\
+\mathbf{H}_\mathbf{1} : \mu &lt; 1000
+</div>
+<script type="math/tex; mode=display">
+\mathbf{H}_\mathbf{0} : \mu \ge 1000 \\
+\mathbf{H}_\mathbf{1} : \mu < 1000
+</script>
+</div>
+<p>and the population standard deviation <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> is known and a random sample of size <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> = 30 is taken, then the test statistic of <span><span class="MathJax_Preview">Z</span><script type="math/tex">Z</script></span> would be</p>
+<div>
+<div class="MathJax_Preview">
+test\space Z = \frac{\bar{x} - 1000}{\sigma / \sqrt 30}
+</div>
+<script type="math/tex; mode=display">
+test\space Z = \frac{\bar{x} - 1000}{\sigma / \sqrt 30}
+</script>
+</div>
+<h4>Let's check our understanding with a detailed example</h4>
+<blockquote>
+<p>Let's highlight the keywords along with the problem statement</p>
+</blockquote>
+<p>An automatic bottling machine fills cola into 2-liter (<code class="codehilite"><span class="err">2,000</span></code>- cubic cm) bottles. A consumer advocate wants to <mark>test the null hypothesis that the average amount filled by the machine into a bottle is at least <code class="codehilite"><span class="err">2,000</span></code> cubic cm</mark>. A random <mark>sample of<code class="codehilite"><span class="err">40</span></code> bottles</mark> coming out of the machine was selected and the exact contents of the selected bottles are recorded.
+The <mark>sample mean was <code class="codehilite"><span class="err">1,999.6</span></code> cubic cm</mark>. The <mark>population standard deviation</mark> is known from past experience to be 1.30 cubic cm. Test the null hypothesis at an <mark><span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> of 5%.</mark></p>
+<p>Let's write the values that have been provided</p>
+<p><span><span class="MathJax_Preview">\mu = 2000; \space n = 40; \space \bar{x} = 1999.6;\space\sigma=1.30; \space \alpha = 5%</span><script type="math/tex">\mu = 2000; \space n = 40; \space \bar{x} = 1999.6;\space\sigma=1.30; \space \alpha = 5%</script></span></p>
+<p>Let's try to follow the hypothesis test process</p>
+<ol>
+<li>State the null and the alternate hypothesis</li>
+<li>Choose the level of significance</li>
+<li>Find the critical value</li>
+<li>Find the test statistic</li>
+<li>Draw the conclusion</li>
+</ol>
+<h4>1. Stating the null and the alternate hypothesis</h4>
+<div>
+<div class="MathJax_Preview">
+\mathbf{H}_\mathbf{0}: \mu \ge 2000 \\
+\mathbf{H}_\mathbf{1}: \mu &lt; 2000 
+</div>
+<script type="math/tex; mode=display">
+\mathbf{H}_\mathbf{0}: \mu \ge 2000 \\
+\mathbf{H}_\mathbf{1}: \mu < 2000 
+</script>
+</div>
+<p>We see the sign of the alternate hypothesis and it is <code class="codehilite"><span class="err">&lt;</span></code> (less than symbol) which means the test is a <mark>one-tailed lower-tail test.</mark></p>
+<h4>2. Choose the level of significance</h4>
+<p>The level of significance provided is <span><span class="MathJax_Preview">\alpha = 5</span><script type="math/tex">\alpha = 5</script></span>%. 
+So the confidence level is , 1 - <span><span class="MathJax_Preview">\alpha\space = 95</span><script type="math/tex">\alpha\space = 95</script></span>% </p>
+<h4>3. Find the critical value</h4>
+<p>The corresponding Z score (critical value) is <span><span class="MathJax_Preview">z_c = -1.64</span><script type="math/tex">z_c = -1.64</script></span> 
+Here the <code class="codehilite"><span class="err">-</span></code> (negative) sign implies that it is a lower tail test.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Z score for 95% is 1.64 but, since this is a lower-tailed test, we take the Z score as -1.64</p>
+</div>
+<p>The rejection region is highlighted in the graph below</p>
+<p><img alt="" src="https://i.imgur.com/1zzXU27.png" /></p>
+<h4>4. Find the test statistic</h4>
+<p>Here the sample is <span><span class="MathJax_Preview">n = 40</span><script type="math/tex">n = 40</script></span> which means it confirms to the first condition of the <span><span class="MathJax_Preview">Z</span><script type="math/tex">Z</script></span> test mentioned above</p>
+<p>Second, the population standard deviation is known - which means we can use the <span><span class="MathJax_Preview">Z</span><script type="math/tex">Z</script></span> test to find the test statistic</p>
+<p>The formula for computing the <span><span class="MathJax_Preview">Z</span><script type="math/tex">Z</script></span> score is</p>
+<div>
+<div class="MathJax_Preview">
+\textrm {test}\space Z = \frac{\bar{x} - \mu} {\sigma / \sqrt n}
+</div>
+<script type="math/tex; mode=display">
+\textrm {test}\space Z = \frac{\bar{x} - \mu} {\sigma / \sqrt n}
+</script>
+</div>
+<p>When we substitute the values, we get </p>
+<div>
+<div class="MathJax_Preview">
+\textrm {test}\space Z = \frac{1999.6 - 2000} {1.30 / \sqrt 40}
+</div>
+<script type="math/tex; mode=display">
+\textrm {test}\space Z = \frac{1999.6 - 2000} {1.30 / \sqrt 40}
+</script>
+</div>
+<p>which yeilds the result <span><span class="MathJax_Preview">\textrm {test} \space z</span><script type="math/tex">\textrm {test} \space z</script></span> = -1.95</p>
+<p>When we plot it in the graph, the graph would look like the below image</p>
+<p><img alt="" src="https://i.imgur.com/XIaMrcJ.png" /></p>
+<p>The test statistic <span><span class="MathJax_Preview">\textrm{test} \space z</span><script type="math/tex">\textrm{test} \space z</script></span> falls within the rejection range. Hence the null hypothesis will be rejected.</p>
+<h4>5. Drawing the conclusion</h4>
+<p>The hypothesis that the average amount filled by the cola machine into a cola bottle is less than <code class="codehilite"><span class="err">2,000</span></code> cubic cm and hence, it is rejected.</p>
+<blockquote>
+<p>To sum up, the Z test is used to calculate the test statistic when the null hypothesis is about the means of the population and it satisfies the assumption mentioned above.</p>
+</blockquote>
+<h2 id="t_test_or_student_t_test">'t' test or Student 't' test<a class="headerlink" href="#t_test_or_student_t_test" title="Permanent link">#</a></h2>
+<p>We saw that the 'Z' test is applicable when the sample size is greater than 30 i.e. <code class="codehilite"><span class="err">n&gt;30</span></code>. There arises a logical question as to what test is to be done when the sample size is less than 30 i.e. <code class="codehilite"><span class="err">n&lt;30</span></code>. We use the 't' test for computing the test statistic for null hypothesis testing.</p>
+<h3 id="assumptions_of_a_t_test">Assumptions of a 't' test<a class="headerlink" href="#assumptions_of_a_t_test" title="Permanent link">#</a></h3>
+<p><span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> test is used when the following conditions are met.</p>
+<ol>
+<li>The sample size <code class="codehilite"><span class="err">n</span></code> should be less than 30 i.e. <span><span class="MathJax_Preview">n &lt; 30</span><script type="math/tex">n < 30</script></span></li>
+<li>The population standard deviation is not known irrespective of the sample size</li>
+<li>The population is normally distributed</li>
+</ol>
+<h3 id="formula_for_t_test">Formula for 't' test<a class="headerlink" href="#formula_for_t_test" title="Permanent link">#</a></h3>
+<div>
+<div class="MathJax_Preview">
+t \space statistic \space (or \space t\space score), t= \frac{\bar{x} - \mu}{s /\sqrt n}
+</div>
+<script type="math/tex; mode=display">
+t \space statistic \space (or \space t\space score), t= \frac{\bar{x} - \mu}{s /\sqrt n}
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">\bar{x}</span><script type="math/tex">\bar{x}</script></span> is the sample mean, <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> is the population mean, <span><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> is the sample standard deviation[^1] and  <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> is the number of samples.
+[^1] Since we don't know the population standard deviation in a 't' test, we use the sample standard deviation</p>
+<h4>Characteristics of the 't' distribution</h4>
+<ul>
+<li>it has degrees-of-freedom parameter <span><span class="MathJax_Preview">df</span><script type="math/tex">df</script></span></li>
+<li>it is symmetric and bell-shaped</li>
+<li>has wider tails than the Z distribution</li>
+</ul>
+<div class="admonition extra_research">
+<p class="admonition-title">Extra_research</p>
+<p>Why does a <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> distribution has wider tails than the Z distribution?</p>
+<p>In a <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> distribution, the population standard deviation (<span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span>) is not known and only the sample standard deviation (<span><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>) is known. We know that by using the sample standard deviation, we cannot accurately project the population variance. Hence, to accommodate the level of <em>uncertainity</em> in computing the population variance, it has wider tails.</p>
+<p>As the degree of freedom (<span><span class="MathJax_Preview">df</span><script type="math/tex">df</script></span>) increases, the t-distribution approaches the 'Z' distribution</p>
+<p><img alt="" src="https://i.imgur.com/dpRUXEb.png" /></p>
+<p>The 't' distribution with infinite degrees-of-freedom is called as the <em>standard normal distribution.</em></p>
+</div>
+<h3 id="confidence_interval_to_estimate_the_population_mean">Confidence interval to estimate the population mean<a class="headerlink" href="#confidence_interval_to_estimate_the_population_mean" title="Permanent link">#</a></h3>
+<p>As the population standard deviation, <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> is not known in a <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>, we will not able to estimate the population mean <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> - but, we can find the range (confidence interval) of the population mean <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span></p>
+<p>The formula for computing the confidence interval to estimate <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> is</p>
+<div>
+<div class="MathJax_Preview">
+\bar{x} - t_{n-1,\frac{\alpha}{2}} \frac{s}{\sqrt n} \le \mu \le \bar{x} + t_{n-1,\frac{\alpha}{2}} \frac{s}{\sqrt n}
+</div>
+<script type="math/tex; mode=display">
+\bar{x} - t_{n-1,\frac{\alpha}{2}} \frac{s}{\sqrt n} \le \mu \le \bar{x} + t_{n-1,\frac{\alpha}{2}} \frac{s}{\sqrt n}
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">\bar{x}</span><script type="math/tex">\bar{x}</script></span> is the sample mean, <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> is the test statistic of the <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> distribution, <span><span class="MathJax_Preview">n-1</span><script type="math/tex">n-1</script></span> is the degree of freedom, <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> is the level of significance, <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> is the sample standard deviation, <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> is the number of samples.</p>
+<h4>Why <span><span class="MathJax_Preview">\frac{\alpha}{2}</span><script type="math/tex">\frac{\alpha}{2}</script></span> ?</h4>
+<p>In a confidence interval, the area is symmetrically distributed between the two tails. </p>
+<p><img alt="" src="https://i.imgur.com/Yq74Mrd.png" /></p>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">#</a></h3>
+<p>A stock market analyst wants to estimate the average return on a certain stock. A random sample of 15 days yields an average (annualized) return of <span><span class="MathJax_Preview">\bar{x}</span><script type="math/tex">\bar{x}</script></span> 10.37% and a standard deviation of s <span><span class="MathJax_Preview">=</span><script type="math/tex">=</script></span> 3.5%. Assuming a normal population of returns, give a 95% confidence interval for the average return on this stock.</p>
+<h4>What we know here?</h4>
+<p>Sample of 15 days i.e. <span><span class="MathJax_Preview">s = 15</span><script type="math/tex">s = 15</script></span> (since sample is less than 30, <em>t</em> test is to be used)
+We need to use <em>t</em> distribution with <span><span class="MathJax_Preview">n-1</span><script type="math/tex">n-1</script></span> degrees of freedom. So, <span><span class="MathJax_Preview">df = 14</span><script type="math/tex">df = 14</script></span>.
+Sample standard deviation <span><span class="MathJax_Preview">s = 3.5</span><script type="math/tex">s = 3.5</script></span>
+Sample mean <span><span class="MathJax_Preview">\bar{x} = 10.37</span><script type="math/tex">\bar{x} = 10.37</script></span>
+Confidence level is 95%. So the level of significance deduced is 5%.</p>
+<div class="admonition remember the formula">
+<p class="admonition-title">Remember</p>
+<p>confidence level = 1 - <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> which means
+<span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> = 100 - confidence level</p>
+</div>
+<h4>Solution</h4>
+<p>We know the formula for the confidence interval of the <em>t</em> distribution is </p>
+<div>
+<div class="MathJax_Preview">
+\bar{x} - t_{n-1,\frac{\alpha}{2}} \frac{s}{\sqrt n} \le \mu \le \bar{x} + t_{n-1,\frac{\alpha}{2}} \frac{s}{\sqrt n}
+</div>
+<script type="math/tex; mode=display">
+\bar{x} - t_{n-1,\frac{\alpha}{2}} \frac{s}{\sqrt n} \le \mu \le \bar{x} + t_{n-1,\frac{\alpha}{2}} \frac{s}{\sqrt n}
+</script>
+</div>
+<p>If we substitute the values, we get</p>
+<div>
+<div class="MathJax_Preview">
+10.37 - t_{14,0.025} \frac{3.5}{\sqrt 15} \le \mu \le 10.37 + t_{14,0.025} \frac{3.5}{\sqrt 15}
+</div>
+<script type="math/tex; mode=display">
+10.37 - t_{14,0.025} \frac{3.5}{\sqrt 15} \le \mu \le 10.37 + t_{14,0.025} \frac{3.5}{\sqrt 15}
+</script>
+</div>
+<p>From the <em>t</em> tables, we can find the <em>t</em> statistic value for <span><span class="MathJax_Preview">df = 14</span><script type="math/tex">df = 14</script></span> and <span><span class="MathJax_Preview">\alpha /2 = 0.025</span><script type="math/tex">\alpha /2 = 0.025</script></span> is</p>
+<div>
+<div class="MathJax_Preview">
+t_{14,0.025} = 2.145
+</div>
+<script type="math/tex; mode=display">
+t_{14,0.025} = 2.145
+</script>
+</div>
+<p>See below image for finding the t value for <span><span class="MathJax_Preview">df = 14</span><script type="math/tex">df = 14</script></span> and <span><span class="MathJax_Preview">\alpha = 0.025</span><script type="math/tex">\alpha = 0.025</script></span></p>
+<p><img alt="" src="https://i.imgur.com/U4arKUU.png" /></p>
+<p>Substituting in the formula, we get</p>
+<div>
+<div class="MathJax_Preview">
+10.37 - 2.145 \frac{3.5}{\sqrt 15} \le \mu \le 10.37 + 2.145 \frac{3.5}{\sqrt 15}
+</div>
+<script type="math/tex; mode=display">
+10.37 - 2.145 \frac{3.5}{\sqrt 15} \le \mu \le 10.37 + 2.145 \frac{3.5}{\sqrt 15}
+</script>
+</div>
+<p>the confidence interval range is <span><span class="MathJax_Preview">[8.43, 12.31]</span><script type="math/tex">[8.43, 12.31]</script></span>. This is represented as </p>
+<div>
+<div class="MathJax_Preview">
+CI(0.05) = [8.43, 12.31]
+</div>
+<script type="math/tex; mode=display">
+CI(0.05) = [8.43, 12.31]
+</script>
+</div>
+<p>Thus, the analyst may be 95% sure that the average annualized return on the stock is anywhere from 8.43% to 12.31%.</p>
+<h3 id="degree_of_freedom">Degree of Freedom<a class="headerlink" href="#degree_of_freedom" title="Permanent link">#</a></h3>
+<p>Degrees of freedom refers to the maximum number of logically independent values in a data sample which have the freedom to vary within. What does that mean?</p>
+<p>We will take an example and try to understand.</p>
+<h3 id="example_2">Example:<a class="headerlink" href="#example_2" title="Permanent link">#</a></h3>
+<p>Let us consider that we have a sample of 3 values </p>
+<div>
+<div class="MathJax_Preview">
+{5, x , 15}
+</div>
+<script type="math/tex; mode=display">
+{5, x , 15}
+</script>
+</div>
+<p>and the mean of all the values is 10. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> is unknown here</p>
+</div>
+<p>It is easy to deduce that the value of <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> would be 10 as the mean of these 3 values has to equate to 10.</p>
+<p>But, let's say 2 values from this sample are not known, </p>
+<div>
+<div class="MathJax_Preview">
+{5, x, y}
+</div>
+<script type="math/tex; mode=display">
+{5, x, y}
+</script>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>(<span><span class="MathJax_Preview">x, y</span><script type="math/tex">x, y</script></span> are unknown) </p>
+</div>
+<p>with the same mean 10, then we cannot be sure about the exact values of <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> and <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>.</p>
+<p>It could be any values of these values - (10, 15), (15, 10), (5, 20), (20, 5) or even (1, 24).</p>
+<p>So we cannot determine the exact value of these variables <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> and <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>.</p>
+<p>These 2 values have the freedom to vary. So, the degree of freedom (<span><span class="MathJax_Preview">df</span><script type="math/tex">df</script></span>) of this sample data of size 3 is 2.</p>
+<h4>Formula:</h4>
+<div>
+<div class="MathJax_Preview">
+df = n – 1
+</div>
+<script type="math/tex; mode=display">
+df = n – 1
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">df</span><script type="math/tex">df</script></span> is the degree of freedom and <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> is the  sample size</p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<p>In this article, we saw what a test statistic is!, the different types of tests, when to use <em>Z</em> test and <em>t</em> test and their respective formulas. At the end, we saw what is the degree of freedom.</p>
+                
+                  
+                
+				<!-- custom code begins --->
+				<hr/>
+				
+				<div class=".md-typeset__table">
+				<table>
+				  <tr>
+					<td><b>Author</b></td>
+					<td><b>hazeez</b></td>
+					<td><b>Date Modified</b></td>
+					<td><b>Mar 12, 2020</b></td>
+				  </tr>
+				</table>
+				</div>
+				
+			    <!-- custom code ends --->
+              
+              
+                
+
+
+  <h4 id="__comments">Comments</h4>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://hazeez.github.io/study/statistics/hypothesis_testing_03/";
+      this.page.identifier =
+        "/statistics/hypothesis_testing_03/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//hazeez.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+	  
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../exercises/" title="Exercises" class="md-tabs__link">
+          Exercises
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" title="Statistics" class="md-tabs__link md-tabs__link--active">
+          Statistics
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../hypothesis_testing_02/" title="Hypothesis Test Process" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Hypothesis Test Process
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Creative Commons (CC) license
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.48c2c9de.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../../assets/javascript/jquery-min.js"></script>
+      
+        <script src="../../assets/javascript/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascript/raphael.min.js"></script>
+      
+        <script src="../../assets/javascript/flowchart.min.js"></script>
+      
+        <script src="../../assets/javascript/jquery-plugin.js"></script>
+      
+        <script src="../../assets/javascript/extra.js"></script>
+      
+    
+  </body>
+</html>
