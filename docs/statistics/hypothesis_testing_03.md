@@ -275,7 +275,7 @@ Degrees of freedom refers to the maximum number of logically independent values 
 
 We will take an example and try to understand.
 
-### Example:
+#### Example
 
 Let us consider that we have a sample of 3 values 
 
@@ -307,7 +307,7 @@ So we cannot determine the exact value of these variables $x$ and $y$.
 
 These 2 values have the freedom to vary. So, the degree of freedom ($df$) of this sample data of size 3 is 2.
 
-#### Formula:
+#### Formula
 
 $$
 df = n – 1
@@ -318,3 +318,5 @@ where $df$ is the degree of freedom and $n$ is the  sample size
 ## Summary
 
 In this article, we saw what a test statistic is!, the different types of tests, when to use _Z_ test and _t_ test and their respective formulas. At the end, we saw what is the degree of freedom.
+
+We also got more familiar with the hypothesis testing process and following it would help us accept or reject the null hypothesis.
