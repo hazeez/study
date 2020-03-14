@@ -1,9 +1,9 @@
 title: Test statistic - Z & t
 author: hazeez
-date: Mar 12, 2020
+date: Mar 14, 2020
 
 
-# Test statistic
+# Test statistic - Z & t
 
 > In the [previous article](../hypothesis_testing_02), we used test statistic as a value to compare against the critical value. This helps us to accept or reject our null hypothesis.
 > In this article, we will see what is a test statistic and how to compute it.
@@ -341,12 +341,12 @@ We know the hypothesis testing steps
 
 1. State the null and the alternate hypothesis
 
-$$
- \mathbf{H}_\mathbf{0}: \mu = 100 \\
-  \mathbf{H}_\mathbf{1}: \mu > 100
-$$
+	$$
+		\mathbf{H}_\mathbf{0}: \mu = 100 \\
+		\mathbf{H}_\mathbf{1}: \mu > 100
+	$$
 
-Since the symbol of the alternate hypothesis is greater than, it is a _right-tailed_ test.
+	Since the symbol of the alternate hypothesis is greater than, it is a _right-tailed_ test.
 
 2. Find the level of significance.
 	
@@ -357,36 +357,36 @@ Since the symbol of the alternate hypothesis is greater than, it is a _right-tai
 	Since this is a t test, we need to use the t-table to find the critical value.
 	The t-table has the degree of freedom and corresponding level of significance to provide the critical value.
 
-	Here the degree of freedom $df = n - 1$ which is $15 - 1 = 14$
+	Here the degree of freedom $df = n - 1$ which is $25 - 1 = 24$
 
 	Looking into the critical table for $df = 24$ and $\alpha =  0.05$, we get the critical value $t_c = 1.711$ (see figure below)
 
-![](https://i.imgur.com/SAImuwn.png)
+	![](https://i.imgur.com/SAImuwn.png)
 
 
 4. Find the test statistic
 
 	We know the formula for the _t_ test is 
 
-$$
-t_{score} = \frac{\bar{x} - \mu}{s / \sqrt n }
-$$
+	$$
+	t_{score} = \frac{\bar{x} - \mu}{s / \sqrt n }
+	$$
 
-Substituting the above values, we get 
+	Substituting the above values, we get 
 
-$$
-t_{score} = \frac{130 - 100}{15 / \sqrt 25}
-$$
+	$$
+	t_{score} = \frac{130 - 100}{15 / \sqrt 25}
+	$$
 
-which gives us the $t_{score} = 10$
+	which gives us the $t_{score} = 10$
 
 5. Drawing the conclusions
 
-We see that the $t_{score}$ falls beyond the rejection region and hence the null hypothesis is rejected.
+	We see that the $t_{score}$ falls beyond the rejection region and hence the null hypothesis is rejected.
 
-![](https://i.imgur.com/9muLuQb.png)
+	![](https://i.imgur.com/9muLuQb.png)
 
-This means to say that indeed the average sales increased after the training.
+	This means to say that indeed the average sales increased after the training.
 
 ## Summary
 
