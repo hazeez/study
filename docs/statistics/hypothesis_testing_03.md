@@ -1,6 +1,7 @@
 title: Test statistic - Z & t
 author: hazeez
-date: Mar 14, 2020
+date: Mar 12, 2020
+date modified: Mar 15, 2020
 
 
 # Test statistic - Z & t
@@ -321,7 +322,7 @@ Your company wants to improve sales. Past sales data indicate that the average s
 
 #### What is given?
 
-From the problem, first we need to understand if the given problem belongs to which category of tests - Z or t.
+From the problem, first, we need to understand if the given problem belongs to which category of tests - Z or t.
 
 The average sale is provided $\mu	= 100$. Sample is $n = 25$.
 Recent sales data (sample)  is given - ie. average sale $\bar{x} =  130$.
@@ -390,6 +391,6 @@ We know the hypothesis testing steps
 
 ## Summary
 
-In this article, we saw what a test statistic is!, the different types of tests, when to use _Z_ test and _t_ test and their respective formulas. At the end, we saw what is the degree of freedom along with an application of t-test using an example.
+In this article, we saw what a test statistic is!, the different types of tests, when to use _Z_ test and _t_ test and their respective formulas. In the end, we saw what is the degree of freedom along with an application of t-test using an example.
 
 We also got more familiar with the hypothesis testing process and following it would help us accept or reject the null hypothesis in a logical manner.
