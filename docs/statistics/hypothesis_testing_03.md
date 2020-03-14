@@ -315,8 +315,81 @@ $$
 
 where $df$ is the degree of freedom and $n$ is the  sample size
 
+### Application of t-test
+
+Your company wants to improve sales. Past sales data indicate that the average sale was $100 per transaction. After training your sales force, recent sales data (taken from a sample of 25 salesmen) indicates an average sale of $130, with a standard deviation of $15. Did the training work? Test your hypothesis at a 5% alpha level.
+
+#### What is given?
+
+From the problem, first we need to understand if the given problem belongs to which category of tests - Z or t.
+
+The average sale is provided $\mu	= 100$. Sample is $n = 25$.
+Recent sales data (sample)  is given - ie. average sale $\bar{x} =  130$.
+Sample standard deviation $s = 15$.
+Level of significance = 5% or 0.05
+
+_Since the sample size is less than 30 and we don't know the population standard deviation, we will go with the t test_
+
+#### Solution Approach
+
+Did the training work? 
+In other words, is there an increase in sales after the training is provided.
+
+#### Hypothesis testing steps
+
+We know the hypothesis testing steps 
+
+1. State the null and the alternate hypothesis
+
+$$
+ \mathbf{H}_\mathbf{0}: \mu = 100 \\
+  \mathbf{H}_\mathbf{1}: \mu > 100
+$$
+
+Since the symbol of the alternate hypothesis is greater than, it is a _right-tailed_ test.
+
+2. Find the level of significance.
+	
+	Here the level of significance is provided - which is $\alpha = 0.05$
+
+3. Find the critical value
+
+	Since this is a t test, we need to use the t-table to find the critical value.
+	The t-table has the degree of freedom and corresponding level of significance to provide the critical value.
+
+	Here the degree of freedom $df = n - 1$ which is $15 - 1 = 14$
+
+	Looking into the critical table for $df = 24$ and $\alpha =  0.05$, we get the critical value $t_c = 1.711$ (see figure below)
+
+![](https://i.imgur.com/SAImuwn.png)
+
+
+4. Find the test statistic
+
+	We know the formula for the _t_ test is 
+
+$$
+t_{score} = \frac{\bar{x} - \mu}{s / \sqrt n }
+$$
+
+Substituting the above values, we get 
+
+$$
+t_{score} = \frac{130 - 100}{15 / \sqrt 25}
+$$
+
+which gives us the $t_{score} = 10$
+
+5. Drawing the conclusions
+
+We see that the $t_{score}$ falls beyond the rejection region and hence the null hypothesis is rejected.
+
+![](https://i.imgur.com/9muLuQb.png)
+
+This means to say that indeed the average sales increased after the training.
+
 ## Summary
 
-In this article, we saw what a test statistic is!, the different types of tests, when to use _Z_ test and _t_ test and their respective formulas. At the end, we saw what is the degree of freedom.
+In this article, we saw what a test statistic is!, the different types of tests, when to use _Z_ test and _t_ test and their respective formulas. At the end, we saw what is the degree of freedom along with an application of t-test using an example.
 
-We also got more familiar with the hypothesis testing process and following it would help us accept or reject the null hypothesis.
+We also got more familiar with the hypothesis testing process and following it would help us accept or reject the null hypothesis in a logical manner.
