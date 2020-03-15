@@ -394,3 +394,7 @@ We know the hypothesis testing steps
 In this article, we saw what a test statistic is!, the different types of tests, when to use _Z_ test and _t_ test and their respective formulas. In the end, we saw what is the degree of freedom along with an application of t-test using an example.
 
 We also got more familiar with the hypothesis testing process and following it would help us accept or reject the null hypothesis in a logical manner.
+
+#### Next post
+
+[Test statistic - chi-square and F](../hypothesis_testing_04)

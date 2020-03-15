@@ -255,4 +255,4 @@ In the next post, we will explore more on finding the _test statistic_ which is 
 
 #### Next post
 
-[Test statistic](../hypothesis_testing_03)
+[Test statistic - Z and t](../hypothesis_testing_03)
