@@ -1,0 +1,1231 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://hazeez.github.io/study/probability/probability_theory/">
+      
+      
+        <meta name="author" content="h">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Probability theory</title>
+      
+    
+	
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700|PT+Mono">
+        <style>body,input{font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/css/mermaid.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-160625988-1", "hazeez.github.io")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#probability" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://hazeez.github.io/study" title="DataScience Notes" class="md-header-nav__button md-logo">
+          
+            <img src="../../assets/images/profile_pic_white_bg.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              DataScience Notes
+            </span>
+            <span class="md-header-nav__topic">
+              Probability theory
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/hazeez/IDS13/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    hazeez/IDS13
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../exercises/" title="Exercises" class="md-tabs__link">
+          Exercises
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" title="Probability" class="md-tabs__link md-tabs__link--active">
+          Probability
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../statistics/" title="Statistics" class="md-tabs__link">
+          Statistics
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://hazeez.github.io/study" title="DataScience Notes" class="md-nav__button md-logo">
+      
+        <img src="../../assets/images/profile_pic_white_bg.png" width="48" height="48">
+      
+    </a>
+    DataScience Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/hazeez/IDS13/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    hazeez/IDS13
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Exercises
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Exercises
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/" title="Exercises Index" class="md-nav__link">
+      Exercises Index
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/exercise05/" title="Exercise05" class="md-nav__link">
+      Exercise05
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/exercise06/" title="Exercise06" class="md-nav__link">
+      Exercise06
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Probability
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Probability
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+        
+			
+			  
+			  
+			  
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Probability theory
+      </label>
+    
+    <a href="./" title="Probability theory" class="md-nav__link md-nav__link--active">
+      Probability theory
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic_definitions" title="Basic Definitions" class="md-nav__link">
+    Basic Definitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic_rules_of_probability" title="Basic rules of probability" class="md-nav__link">
+    Basic rules of probability
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#mutually_exclusive_events" title="Mutually exclusive events" class="md-nav__link">
+    Mutually exclusive events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional_probability" title="Conditional probability" class="md-nav__link">
+    Conditional probability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independence_of_events" title="Independence of events" class="md-nav__link">
+    Independence of events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bayes_theorem" title="Bayes Theorem" class="md-nav__link">
+    Bayes Theorem
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#derivation_of_bayes_theorem" title="Derivation of Bayes Theorem" class="md-nav__link">
+    Derivation of Bayes Theorem
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+      
+      <!-- 
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+       -->
+    </ul>
+  
+</nav>
+    
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/hypothesis_testing_01/" title="Hypothesis Testing" class="md-nav__link">
+      Hypothesis Testing
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/hypothesis_testing_02/" title="Hypothesis Test Process" class="md-nav__link">
+      Hypothesis Test Process
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/hypothesis_testing_03/" title="Test statistic - Z & t" class="md-nav__link">
+      Test statistic - Z & t
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/hypothesis_testing_04/" title="Test statistic - Chi-square & F" class="md-nav__link">
+      Test statistic - Chi-square & F
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic_definitions" title="Basic Definitions" class="md-nav__link">
+    Basic Definitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic_rules_of_probability" title="Basic rules of probability" class="md-nav__link">
+    Basic rules of probability
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#mutually_exclusive_events" title="Mutually exclusive events" class="md-nav__link">
+    Mutually exclusive events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional_probability" title="Conditional probability" class="md-nav__link">
+    Conditional probability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independence_of_events" title="Independence of events" class="md-nav__link">
+    Independence of events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bayes_theorem" title="Bayes Theorem" class="md-nav__link">
+    Bayes Theorem
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#derivation_of_bayes_theorem" title="Derivation of Bayes Theorem" class="md-nav__link">
+    Derivation of Bayes Theorem
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+      
+      <!-- 
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+       -->
+    </ul>
+  
+</nav> 
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+			
+			  
+                
+                  <a href="https://github.com/hazeez/IDS13/edit/master/docs/probability/probability_theory.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+				<!-- custom code begins --->
+				
+					
+					<h6 class="author_date">By hazeez on Mar 15, 2020 in
+						<a href="../">Probability </a>
+					</h6>
+					
+						<h6 class="author_date">Date modified: Mar 16, 2020</h6>
+					
+				
+			    <!-- custom code ends --->
+                <h1 id="probability">Probability<a class="headerlink" href="#probability" title="Permanent link">#</a></h1>
+<p>A probability is a <em>quantitative measure of uncertainity</em>. </p>
+<h2 id="basic_definitions">Basic Definitions<a class="headerlink" href="#basic_definitions" title="Permanent link">#</a></h2>
+<h4>Set</h4>
+<p>A set is a collection of elements</p>
+<h4>Empty set</h4>
+<p>A set containing no elements</p>
+<h4>Universal set</h4>
+<p>A set containing all elements. Represented by <em>S</em></p>
+<h4>Compliment of a set</h4>
+<p>The complement of set A is the set containing all the elements in the universal
+set S that are not members of set A. Represented by <span><span class="MathJax_Preview">\bar{A}</span><script type="math/tex">\bar{A}</script></span></p>
+<h4>Intersection of a set</h4>
+<p>Denoted by <span><span class="MathJax_Preview">A \cap B</span><script type="math/tex">A \cap B</script></span>, the intersection is the set containing all elements that are members of both A and B.</p>
+<p><img alt="" src="https://i.imgur.com/lgdCCj2.png" /></p>
+<h4>Union of a set</h4>
+<p>Denoted by <span><span class="MathJax_Preview">A \cup B</span><script type="math/tex">A \cup B</script></span>, is the set containing all the elements that are members of both A and B</p>
+<p><img alt="" src="https://i.imgur.com/BttCVn5.png" /></p>
+<h4>Experiment and Outcome</h4>
+<p>An experiment is a process that leads to one or several possible outcomes.</p>
+<p>An outcome of an experiment is some observation or measurement.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Drawing a card out of a deck of 52 cards is an experiment. One outcome of the experiment may be that the queen of diamonds is drawn.</p>
+</div>
+<h4>Sample space</h4>
+<p>Sample space is the set of all possible outcomes of an experiment.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The sample space for the experiment of drawing a card out of a deck is the set of all cards in the deck.</p>
+</div>
+<h4>Event</h4>
+<p>An event is a subset of a sample space.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>An ace is drawn out of a deck of cards.</p>
+</div>
+<h4>Probability of event A</h4>
+<div>
+<div class="MathJax_Preview">
+P(A) = \frac{n(A)}{n(S)}
+</div>
+<script type="math/tex; mode=display">
+P(A) = \frac{n(A)}{n(S)}
+</script>
+</div>
+<p>where</p>
+<p><span><span class="MathJax_Preview">n(A)=</span><script type="math/tex">n(A)=</script></span> the number of elements in the set of the event A</p>
+<p><span><span class="MathJax_Preview">n(S)=</span><script type="math/tex">n(S)=</script></span> the number of elements in the sample space S</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The probability of drawing an Ace is </p>
+<div>
+<div class="MathJax_Preview">
+    P(A) = \frac{n(A)}{n(S)} = \frac{4}{52}
+</div>
+<script type="math/tex; mode=display">
+    P(A) = \frac{n(A)}{n(S)} = \frac{4}{52}
+</script>
+</div>
+<p>Note: There are 4 Ace's in a deck of cards - Spade, Club, Heart, and Diamond</p>
+</div>
+<div class="admonition practice">
+<p class="admonition-title">Practice</p>
+<p>Roulette is a popular casino game. As the game is played in Las Vegas or Atlantic City, the roulette wheel has 36 numbers, 1 through 36, and the number 0 as well as the number 00 (double zero). What is the probability of winning on a single number that you bet?</p>
+<p>Solution:</p>
+<p>total elements in the set = 36 + 2 (include 0 and 00) = 38</p>
+<p>Probability of winning a single number = <span><span class="MathJax_Preview">\frac{1}{38}</span><script type="math/tex">\frac{1}{38}</script></span></p>
+</div>
+<h2 id="basic_rules_of_probability">Basic rules of probability<a class="headerlink" href="#basic_rules_of_probability" title="Permanent link">#</a></h2>
+<h4>The range of values</h4>
+<p>For any event A, the probability <span><span class="MathJax_Preview">P(A)</span><script type="math/tex">P(A)</script></span> lies between 0 and 1.
+i.e. <span><span class="MathJax_Preview">0 \le P(A) \le 1</span><script type="math/tex">0 \le P(A) \le 1</script></span></p>
+<p>When a probability cannot occur, the probability is zero. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>What is the probability of drawing a green card from the deck of cards? </p>
+<p>It's 0 as the deck of cards has only red/black cards.</p>
+</div>
+<p>When a probability is certain to occur, the probability is one.</p>
+<h4>Rule of complements</h4>
+<p>Probability of a complement is <span><span class="MathJax_Preview">P(\bar{A}) = 1 - P(A)</span><script type="math/tex">P(\bar{A}) = 1 - P(A)</script></span></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The probability of rain tomorrow is 0.3. </p>
+<p>This means the probability of no rain is 1 - 0.3 = 0.7</p>
+</div>
+<h4>Rule of unions</h4>
+<p>The rule of unions:</p>
+<p><span><span class="MathJax_Preview">P(A \cup B) = P(A) + P(B) - P(A \cap B)</span><script type="math/tex">P(A \cup B) = P(A) + P(B) - P(A \cap B)</script></span></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The probability of an Ace in a deck of cards is <span><span class="MathJax_Preview">\frac{4}{52}</span><script type="math/tex">\frac{4}{52}</script></span> and the probability of a heart in a deck of cards is <span><span class="MathJax_Preview">\frac{13}{52}</span><script type="math/tex">\frac{13}{52}</script></span>. The probability of an ace with heart is <span><span class="MathJax_Preview">\frac{1}{52}</span><script type="math/tex">\frac{1}{52}</script></span></p>
+<p>So <span><span class="MathJax_Preview">P(A \cup \heartsuit) = \frac{4}{52} + \frac{13}{52} - \frac{1}{52} = \frac{16}{52}</span><script type="math/tex">P(A \cup \heartsuit) = \frac{4}{52} + \frac{13}{52} - \frac{1}{52} = \frac{16}{52}</script></span></p>
+</div>
+<h3 id="mutually_exclusive_events">Mutually exclusive events<a class="headerlink" href="#mutually_exclusive_events" title="Permanent link">#</a></h3>
+<p>When the sets corresponding to two events are disjoint (i.e. have not an intersection), the two events are called mutually exclusive or in other words, they can't occur together.</p>
+<p>To simplify, events are <em>mutually exclusive</em> if they cannot occur simultaneously.</p>
+<p><img alt="" src="https://i.imgur.com/2UOmVZ4.png" /></p>
+<p><strong>Intersection:</strong> For mutually exclusive events A and B: </p>
+<p><span><span class="MathJax_Preview">P(A \cap B) = 0</span><script type="math/tex">P(A \cap B) = 0</script></span></p>
+<p>Since there is no intersection, it is always 0</p>
+<p><strong>Union:</strong> For mutualy exclusive events A and B:</p>
+<p><span><span class="MathJax_Preview">P(A \cup B) = P(A) + P(B)</span><script type="math/tex">P(A \cup B) = P(A) + P(B)</script></span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since there is no intersection, </p>
+<p><span><span class="MathJax_Preview">P(A \cup B) = P(A) + P(B) - P(A \cap B)</span><script type="math/tex">P(A \cup B) = P(A) + P(B) - P(A \cap B)</script></span> </p>
+<p>is reduced to </p>
+<p><span><span class="MathJax_Preview">P(A \cup B) = P(A) + P(B)</span><script type="math/tex">P(A \cup B) = P(A) + P(B)</script></span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>What is the probability of drawing either a heart or a club?</p>
+<p>The probability of drawing a heart is <span><span class="MathJax_Preview">\frac{13}{52}</span><script type="math/tex">\frac{13}{52}</script></span>.
+The probability of drawing a club is <span><span class="MathJax_Preview">\frac{13}{52}</span><script type="math/tex">\frac{13}{52}</script></span>.</p>
+<p>Since they are mutually exclusive,</p>
+<p><span><span class="MathJax_Preview">P(\heartsuit \cup \clubsuit) = P(\heartsuit) + P(\clubsuit)</span><script type="math/tex">P(\heartsuit \cup \clubsuit) = P(\heartsuit) + P(\clubsuit)</script></span> which is </p>
+<p><span><span class="MathJax_Preview">\frac{13}{52} + \frac{13}{52} = \frac{26}{52} = \frac{1}{2}</span><script type="math/tex">\frac{13}{52} + \frac{13}{52} = \frac{26}{52} = \frac{1}{2}</script></span></p>
+</div>
+<h2 id="conditional_probability">Conditional probability<a class="headerlink" href="#conditional_probability" title="Permanent link">#</a></h2>
+<p>The probability depends on information.</p>
+<p>Say for example - what is the probability that the company Mannar &amp; Co's stock price would go up?</p>
+<p>Well, it would depend on the information we have about the company like it's performance in recent times.</p>
+<p>So the probability of the stock price going up depends upon some information. This is called as <em>conditional probability</em></p>
+<h4>Formula</h4>
+<p>The <strong><em>conditional probability</em></strong> of an event A given the occurrence of event B is</p>
+<div>
+<div class="MathJax_Preview">
+    P(A|B) = \frac{P(A \cap B)}{P(B)}
+</div>
+<script type="math/tex; mode=display">
+    P(A|B) = \frac{P(A \cap B)}{P(B)}
+</script>
+</div>
+<p>The vertical line in P(A|B) is read <em>given</em> or <em>conditional upon</em>. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>A consulting firm is bidding for two jobs, one with each of two large multinational corporations. The company executives estimate that the probability of obtaining the consulting job with firm A, event A, is 0.45. The executives also feel that if the company should get the job with firm A, then there is a 0.90 probability that firm B will also give the company the consulting job. What are the company’s chances of getting both jobs?</p>
+<p>Solution:</p>
+<div>
+<div class="MathJax_Preview">
+P(A) = 0.45 \\
+P(B|A) = 0.90
+</div>
+<script type="math/tex; mode=display">
+P(A) = 0.45 \\
+P(B|A) = 0.90
+</script>
+</div>
+<p>We are looking for <span><span class="MathJax_Preview">P(A \cap B)</span><script type="math/tex">P(A \cap B)</script></span> - i.e. chance of getting both jobs</p>
+<p>We know the formula is <span><span class="MathJax_Preview">P(B|A) = \frac{P(B \cap A)}{P(A)}</span><script type="math/tex">P(B|A) = \frac{P(B \cap A)}{P(A)}</script></span></p>
+<p>So the formula becomes, <span><span class="MathJax_Preview">P(B \cap A) = P(B|A).P(A)</span><script type="math/tex">P(B \cap A) = P(B|A).P(A)</script></span></p>
+<p>which is <span><span class="MathJax_Preview">0.90 * 0.45 = 0.405</span><script type="math/tex">0.90 * 0.45 = 0.405</script></span></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Conditional probability is not symmetrical </p>
+<p><span><span class="MathJax_Preview">P(A|B) \ne P(B|A)</span><script type="math/tex">P(A|B) \ne P(B|A)</script></span></p>
+</div>
+<h2 id="independence_of_events">Independence of events<a class="headerlink" href="#independence_of_events" title="Permanent link">#</a></h2>
+<p>As an example of independent events, consider the following: </p>
+<p>Suppose I roll a single die. What is the probability that the number 6 will turn up? </p>
+<p>The answer is <span><span class="MathJax_Preview">\frac{1}{6}</span><script type="math/tex">\frac{1}{6}</script></span>. </p>
+<p>Now suppose that I told you that I just tossed a coin and it turned up heads. </p>
+<p>What is now the probability that the die will show the number 6? </p>
+<p>The answer is unchanged, <span><span class="MathJax_Preview">\frac{1}{6}</span><script type="math/tex">\frac{1}{6}</script></span>, because events of the die and the coin are independent of each other. </p>
+<p>We see that <span><span class="MathJax_Preview">P(6 | H) = P(6)</span><script type="math/tex">P(6 | H) = P(6)</script></span></p>
+<p>So when do we say that the events are independent of each other?</p>
+<h4>Conditions for the independence of two events A and B</h4>
+<p>The events are said to be independent when they meet the below conditions:</p>
+<div>
+<div class="MathJax_Preview">
+    P(A|B) = P(A) \\
+    P(B|A) = P(B) \\
+    and \\
+    P(A \cap B) = P(A)P(B)
+</div>
+<script type="math/tex; mode=display">
+    P(A|B) = P(A) \\
+    P(B|A) = P(B) \\
+    and \\
+    P(A \cap B) = P(A)P(B)
+</script>
+</div>
+<p>The first equation <span><span class="MathJax_Preview">P(A|B)=P(A)</span><script type="math/tex">P(A|B)=P(A)</script></span> implies that the probability of A would not be affected by the probability of B as they are both independent. So the probability of A would remain the same.</p>
+<p>Similarly, the second equation <span><span class="MathJax_Preview">P(B|A)=P(B)</span><script type="math/tex">P(B|A)=P(B)</script></span> implies that the probability of B would remain the same as B is not affected by the probability of A since both are independent.</p>
+<p>The third equation <span><span class="MathJax_Preview">P(A \cap B)= P(A)P(B)</span><script type="math/tex">P(A \cap B)= P(A)P(B)</script></span> is called the <em>intersection rule for independent events</em>.</p>
+<h4>Intersection rule for independent events</h4>
+<p><span><span class="MathJax_Preview">P(A \cap B)= P(A)P(B)</span><script type="math/tex">P(A \cap B)= P(A)P(B)</script></span></p>
+<p>The probability of the intersection of several independent events is just the
+product of the separate probabilities.</p>
+<p>Let's understand this rule with an example.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The rate of defects in corks of wine bottles is very high say 75%. Assuming independence, if four bottles are opened, what is the probability that all four corks are defective?</p>
+<p>Solution:</p>
+<p>P (all 4 are defective) = 
+P (first cork is defective) * P (second cork is defective) * 
+P (third cork is defective) * P (fourth cork is defective)</p>
+<p>which is equal to</p>
+<p>P (all 4 are defective) = 0.75 * 0.75 * 0.75 * 0.75 = 0.316</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Whenever a random sampling is done, it would mean independence - as the outcome of one event will not be dependent on the outcome of another event.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>What is the difference between a mutually exclusive event and an independent event?</p>
+<p>mutually exclusive - Two events cannot occur at the same time. e.g., the head &amp; tail of a coin cannot occur at the same time. They're dependent in fact.</p>
+<p>independent - Two events can occur at the same time and they are not dependent on each other. e.g., events of tossing a coin &amp; events of rolling a dice at the same time are independent.</p>
+</div>
+<h2 id="bayes_theorem">Bayes Theorem<a class="headerlink" href="#bayes_theorem" title="Permanent link">#</a></h2>
+<p>Bayes theorem is a technique for calculating a conditional probability.</p>
+<h3 id="derivation_of_bayes_theorem">Derivation of Bayes Theorem<a class="headerlink" href="#derivation_of_bayes_theorem" title="Permanent link">#</a></h3>
+<p>We have already seen the conditional probability which is</p>
+<p>Equation 1:</p>
+<div>
+<div class="MathJax_Preview">
+    P(A|B) = \frac{P(A \cap B)}{P(B)} \space provided \space that \space P(B) &gt; 0
+</div>
+<script type="math/tex; mode=display">
+    P(A|B) = \frac{P(A \cap B)}{P(B)} \space provided \space that \space P(B) > 0
+</script>
+</div>
+<p>Equation 2:</p>
+<p>This also means that</p>
+<div>
+<div class="MathJax_Preview">
+    P(B|A) = \frac{P(B \cap A)}{P(A)} \space provided \space that \space P(A) &gt; 0
+</div>
+<script type="math/tex; mode=display">
+    P(B|A) = \frac{P(B \cap A)}{P(A)} \space provided \space that \space P(A) > 0
+</script>
+</div>
+<p>So from equation 2, we can say that (Equation 3)</p>
+<div>
+<div class="MathJax_Preview"> 
+P(B \cap A) = P(B|A)P(A)
+</div>
+<script type="math/tex; mode=display"> 
+P(B \cap A) = P(B|A)P(A)
+</script>
+</div>
+<p>We also know that </p>
+<div>
+<div class="MathJax_Preview">
+P(A \cap B) = P(B \cap A)
+</div>
+<script type="math/tex; mode=display">
+P(A \cap B) = P(B \cap A)
+</script>
+</div>
+<p>So substituting the Equation 3 in Equation 1, we get the <strong>Bayes theorem.</strong></p>
+<div>
+<div class="MathJax_Preview">
+    P(A|B) = \frac{P(B|A).P(A)}{P(B)} \space provided \space that \space P(A), P(B) &gt; 0
+</div>
+<script type="math/tex; mode=display">
+    P(A|B) = \frac{P(B|A).P(A)}{P(B)} \space provided \space that \space P(A), P(B) > 0
+</script>
+</div>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
+<p>Refer to Example 1 (Elderly fall and death) in this <a href="https://machinelearningmastery.com/intuition-for-bayes-theorem-with-worked-examples/">article</a> for how to apply the Bayes theorem </p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<p>In this post, we had seen what probability is, definition of terms used in probability, mutually-exclusive and independent events, conditional probability and then the Bayes theorem.</p>
+                
+                  
+                
+				<hr/>
+				<!--
+				custom code begins
+				<hr/>
+				
+				<div class=".md-typeset__table">
+				<table>
+				  <tr>
+					<td><b>Author</b></td>
+					<td><b>hazeez</b></td>
+					<td><b>Date Modified</b></td>
+					<td><b>Mar 15, 2020</b></td>
+				  </tr>
+				</table>
+				</div>
+				
+			    custom code ends --->
+				
+              
+              
+                
+
+
+  <h4 id="__comments">Comments</h4>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://hazeez.github.io/study/probability/probability_theory/";
+      this.page.identifier =
+        "/probability/probability_theory/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//hazeez.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+	  
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../exercises/" title="Exercises" class="md-tabs__link">
+          Exercises
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" title="Probability" class="md-tabs__link md-tabs__link--active">
+          Probability
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../statistics/" title="Statistics" class="md-tabs__link">
+          Statistics
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../" title="_Probability Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                _Probability Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../statistics/" title="_Stats Home" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                _Stats Home
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Creative Commons (CC) license
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.48c2c9de.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../../assets/javascript/jquery-min.js"></script>
+      
+        <script src="../../assets/javascript/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascript/raphael.min.js"></script>
+      
+        <script src="../../assets/javascript/flowchart.min.js"></script>
+      
+        <script src="../../assets/javascript/jquery-plugin.js"></script>
+      
+        <script src="../../assets/javascript/extra.js"></script>
+      
+    
+  </body>
+</html>
