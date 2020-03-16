@@ -1,11 +1,10 @@
-title: Stats Home
+title: _Stats Home
 Author: HAZEEZ
-Date: Mar 09, 2020
+date: Mar 09, 2020
+template: custom-sub-index.html
+disqus: 
+display: ["Statistics"]
 
-# Stats Home
 
-The following topics are covered in statistics here
-
-- Descriptive Statistics
-- Inferential Statistics
+# Statistics Index
 

@@ -22,6 +22,7 @@ theme:
     accent: 'Pink'
 repo_name: 'hazeez/IDS13'
 repo_url: 'https://github.com/hazeez/IDS13'
+#edit_url: false
 
 # plugins info
 plugins:

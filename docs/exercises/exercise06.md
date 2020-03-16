@@ -1,7 +1,5 @@
 title: Exercise06
-
 author: hazeez
-
 date: Mar 08, 2020
 
 # Confidence level Vs the accuracy of estimation of the population mean

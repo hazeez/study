@@ -87,7 +87,9 @@ div.highlight{
 }
 
 h6.home-list-items{
-  margin: 0px 0px 0px 20px;
+  margin: 0px 0px 5px 20px;
+  font-size: 0.7rem;
+  font-weight: normal;
 }
 
 .list-emoji{
@@ -250,10 +252,20 @@ div.index_header {
 .md-typeset .codehilite {
 	font-weight: bold;
 }
-.author_date {
-	font-size: .5rem;
+h6.author_date {
 	font-color: lightgray;
+	margin: 0px;
+	font-size: 0.6rem;
+	font-weight: normal;
 }
 [data-md-color-primary=indigo] .md-typeset a {
 	text-decoration: underline;
+}
+
+.md-typeset h1 {
+	margin: 0px;
+}
+
+.md-typeset h2 {
+	margin-top: 15px;
 }

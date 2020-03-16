@@ -1,4 +1,4 @@
-title: Index
+title: Exercises Index
 
 # List of exercises and the solutions
 

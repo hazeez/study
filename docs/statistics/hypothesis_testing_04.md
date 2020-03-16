@@ -1,7 +1,6 @@
 title: Test statistic - Chi-square & F
 author: hazeez
 date: Mar 15, 2020
-date_modified: Mar 15, 2020
 
 # Test statistic - $\chi^2$ & F
 

@@ -1,6 +1,7 @@
 title: Hypothesis Testing
 author: hazeez
 date: Mar 09, 2020
+date_modified: Mar 10, 2020
 
 # Hypothesis Testing
 

@@ -1,7 +1,7 @@
 title: Test statistic - Z & t
 author: hazeez
 date: Mar 12, 2020
-date modified: Mar 15, 2020
+date_modified: Mar 15, 2020
 
 
 # Test statistic - Z & t
