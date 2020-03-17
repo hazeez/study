@@ -4,6 +4,7 @@
   height: 2.4rem;
 }
 
+
 .md-typeset hr {
   margin: 1em 0;
   border-bottom: .05rem solid rgba(0, 0, 0, .26)
@@ -104,7 +105,7 @@ hr.horizontal-rule{
 }
 
 .md-tabs__link--active{
-  font-weight: bold;
+	font-weight: bold;
 }
 
 /* for flowchart js */
@@ -268,4 +269,22 @@ h6.author_date {
 
 .md-typeset h2 {
 	margin-top: 15px;
+}
+
+.left {
+	float: left;
+}
+
+#author_profile_photo {
+	margin-left: 15px;
+	margin-right: 15px;
+	border: 1px solid lightgray;
+}
+
+#profile_desc {
+	font-size: 0.6rem;
+	color: gray;
+}
+.md-header {
+	background: red;
 }
