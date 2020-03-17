@@ -1,8 +1,8 @@
-site_name: DataScience Notes
+site_name: Data Science Notes
 copyright: 'Creative Commons (CC) license'
 docs_dir: 'docs'
 site_url: 'https://hazeez.github.io/study'
-site_author: 'hazeez'
+site_author: 'Hafizul Azeez'
 
 # custom theme
 theme:
@@ -13,9 +13,9 @@ theme:
   # shortcuts:
     # search: 191   # /
   feature:
-    tabs: true
+    tabs: false
   font: 
-    text: "Open Sans"
+    text: "Roboto"
     code: "PT Mono"
   palette:
     primary: 'Indigo'
