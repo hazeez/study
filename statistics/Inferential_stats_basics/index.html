@@ -1,0 +1,1457 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://hazeez.github.io/study/statistics/Inferential_stats_basics/">
+      
+      
+        <meta name="author" content="h">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Inferential Stats - Basics</title>
+      
+    
+	
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|PT+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/css/mermaid.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-160625988-1", "hazeez.github.io")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#inferential_statistics" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://hazeez.github.io/study" title="Data Science Notes" class="md-header-nav__button md-logo">
+          
+            <img src="../../assets/images/profile_pic_white_bg.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Data Science Notes
+            </span>
+            <span class="md-header-nav__topic">
+              Inferential Stats - Basics
+            </span>
+          
+        </div>
+      </div>
+      
+	  <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+	  
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/hazeez/IDS13/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    hazeez/IDS13
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://hazeez.github.io/study" title="Data Science Notes" class="md-nav__button md-logo">
+      
+        <img src="../../assets/images/profile_pic_white_bg.png" width="48" height="48">
+      
+    </a>
+    Data Science Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/hazeez/IDS13/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    hazeez/IDS13
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      <strong>Exercises</strong>
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Exercises
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/" title="Exercises Index" class="md-nav__link">
+      Exercises Index
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/exercise05/" title="Exercise05" class="md-nav__link">
+      Exercise05
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/exercise06/" title="Exercise06" class="md-nav__link">
+      Exercise06
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/exercises-todo-class5/" title="Exercises to do - Class 5" class="md-nav__link">
+      Exercises to do - Class 5
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      <strong>Probability</strong>
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Probability
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../probability/probability_theory/" title="Probability theory" class="md-nav__link">
+      Probability theory
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      <strong>Statistics</strong>
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+        
+			
+			  
+			  
+			  
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Inferential Stats - Basics
+      </label>
+    
+    <a href="./" title="Inferential Stats - Basics" class="md-nav__link md-nav__link--active">
+      Inferential Stats - Basics
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+
+	<div class="author_info">         
+    <span class="left">
+	<img id = "author_profile_photo" src="../../assets/images/profile_photo_ss.jpg" width="48" height="48">
+	</span>
+	
+	<p id="profile_desc">hazeez can be reached at hafizul (dot) azeez (at) gmail (dot) com</p>
+	
+	</div>
+	
+	<br/>
+	
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameter_and_statistic" title="Parameter and Statistic" class="md-nav__link">
+    Parameter and Statistic
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#notations_of_parameter_and_statistic" title="Notations of parameter and statistic" class="md-nav__link">
+    Notations of parameter and statistic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confidence_levels_and_confidence_intervals" title="Confidence levels and confidence intervals" class="md-nav__link">
+    Confidence levels and confidence intervals
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#population_distribution" title="Population distribution" class="md-nav__link">
+    Population distribution
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#sampling_distribution" title="Sampling distribution" class="md-nav__link">
+    Sampling distribution
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#standard_error" title="Standard error" class="md-nav__link">
+    Standard error
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#standard_error_of_the_mean" title="Standard error of the mean" class="md-nav__link">
+    Standard error of the mean
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#confidence_interval" title="Confidence interval" class="md-nav__link">
+    Confidence interval
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#margin_of_error" title="Margin of error" class="md-nav__link">
+    Margin of error
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example_2" title="Example 2" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#additional_material" title="Additional material" class="md-nav__link">
+    Additional material
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z-score" title="Z-Score" class="md-nav__link">
+    Z-Score
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#example_1" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      <!-- 
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+       -->
+    </ul>
+  
+</nav>
+    
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../hypothesis_testing_01/" title="Hypothesis Testing" class="md-nav__link">
+      Hypothesis Testing
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../hypothesis_testing_02/" title="Hypothesis Test Process" class="md-nav__link">
+      Hypothesis Test Process
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../hypothesis_testing_03/" title="Test statistic - Z & t" class="md-nav__link">
+      Test statistic - Z & t
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../hypothesis_testing_04/" title="Test statistic - Chi-square & F" class="md-nav__link">
+      Test statistic - Chi-square & F
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+
+	<div class="author_info">         
+    <span class="left">
+	<img id = "author_profile_photo" src="../../assets/images/profile_photo_ss.jpg" width="48" height="48">
+	</span>
+	
+	<p id="profile_desc">hazeez can be reached at hafizul (dot) azeez (at) gmail (dot) com</p>
+	
+	</div>
+	
+	<br/>
+	
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameter_and_statistic" title="Parameter and Statistic" class="md-nav__link">
+    Parameter and Statistic
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#notations_of_parameter_and_statistic" title="Notations of parameter and statistic" class="md-nav__link">
+    Notations of parameter and statistic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confidence_levels_and_confidence_intervals" title="Confidence levels and confidence intervals" class="md-nav__link">
+    Confidence levels and confidence intervals
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#population_distribution" title="Population distribution" class="md-nav__link">
+    Population distribution
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#sampling_distribution" title="Sampling distribution" class="md-nav__link">
+    Sampling distribution
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#standard_error" title="Standard error" class="md-nav__link">
+    Standard error
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#standard_error_of_the_mean" title="Standard error of the mean" class="md-nav__link">
+    Standard error of the mean
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#confidence_interval" title="Confidence interval" class="md-nav__link">
+    Confidence interval
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#margin_of_error" title="Margin of error" class="md-nav__link">
+    Margin of error
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#example_2" title="Example 2" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#additional_material" title="Additional material" class="md-nav__link">
+    Additional material
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z-score" title="Z-Score" class="md-nav__link">
+    Z-Score
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#example_1" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      <!-- 
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+       -->
+    </ul>
+  
+</nav> 
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+			
+			  
+                
+                  <a href="https://github.com/hazeez/IDS13/edit/master/docs/statistics/Inferential_stats_basics.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+				<!-- custom code begins --->
+				
+					
+					<h6 class="author_date">By <b>hazeez </b> on Mar 17, 2020 in
+						<a href="../">Statistics </a>
+					</h6>
+					
+						<h6 class="author_date">Date updated: Mar 18, 2020</h6>
+					
+				
+			    <!-- custom code ends --->
+                <h1 id="inferential_statistics">Inferential Statistics<a class="headerlink" href="#inferential_statistics" title="Permanent link">#</a></h1>
+<p>In real-life situations, we may not be able to know the entire population in which case, we use the <em>known</em> random sample to extract information about the <em>unknown</em> population from which the sample is drawn.</p>
+<p>To put it simply, using the sample to come up with an estimation of the population is called as <em>Inferential statistics</em></p>
+<h2 id="parameter_and_statistic">Parameter and Statistic<a class="headerlink" href="#parameter_and_statistic" title="Permanent link">#</a></h2>
+<p>A numerical measure of a population is called a <strong><em>population parameter</em></strong> or more simply, a <strong><em>parameter</em></strong>.</p>
+<p>Examples of parameters are population mean, population variance, population standard deviation, etc.</p>
+<p>A numerical measure of the sample is called a <strong><em>sample statistic</em></strong>, or simply a <strong><em>statistic</em></strong>.</p>
+<p>Examples of sample statistics are the sample mean, sample variance, sample standard deviation, etc.</p>
+<p>In inferential statistics, population parameters are estimated by sample statistics.</p>
+<p>When a simple statistic is used to estimate the population parameter, the statistic is called an <strong><em>estimator</em></strong> of the parameter.</p>
+<h3 id="notations_of_parameter_and_statistic">Notations of parameter and statistic<a class="headerlink" href="#notations_of_parameter_and_statistic" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Population</th>
+<th>Symbol</th>
+<th></th>
+<th>Sample</th>
+<th>Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mean</td>
+<td><span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span></td>
+<td></td>
+<td>Mean</td>
+<td><span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span></td>
+</tr>
+<tr>
+<td>Variance</td>
+<td><span><span class="MathJax_Preview">\sigma^2</span><script type="math/tex">\sigma^2</script></span></td>
+<td></td>
+<td>Variance</td>
+<td><span><span class="MathJax_Preview">s^2</span><script type="math/tex">s^2</script></span></td>
+</tr>
+<tr>
+<td>Std deviation</td>
+<td><span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span></td>
+<td></td>
+<td>Std deviation</td>
+<td><span><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>To summarize, we have the following relationships between a sample statistic and a population parameter</p>
+<div>
+<div class="MathJax_Preview">
+\bar{x} \space \space \space \overrightarrow{estimates} \space \space \space \mu \\
+\\
+S^2 \space \space \space \overrightarrow{estimates} \space \space \space  \sigma^2 
+</div>
+<script type="math/tex; mode=display">
+\bar{x} \space \space \space \overrightarrow{estimates} \space \space \space \mu \\
+\\
+S^2 \space \space \space \overrightarrow{estimates} \space \space \space  \sigma^2 
+</script>
+</div>
+<h2 id="confidence_levels_and_confidence_intervals">Confidence levels and confidence intervals<a class="headerlink" href="#confidence_levels_and_confidence_intervals" title="Permanent link">#</a></h2>
+<p>To understand confidence level and confidence intervals, we will need to understand what a population distribution and a sampling distribution is.</p>
+<h3 id="population_distribution">Population distribution<a class="headerlink" href="#population_distribution" title="Permanent link">#</a></h3>
+<p>The population is the entire set of values/data points that we are interested in. For example, if we know the age of all Indian residents, it is called the population.</p>
+<p>The population characteristics are mean <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span>, standard deviation <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span>, median, percentiles, etc.</p>
+<p><img alt="" src="https://i.imgur.com/walJM6I.png" /></p>
+<h3 id="sampling_distribution">Sampling distribution<a class="headerlink" href="#sampling_distribution" title="Permanent link">#</a></h3>
+<p>The sample is a subset of the population which is used to estimate the population characteristic. </p>
+<p>This sample has a few characteristics like mean <span><span class="MathJax_Preview">\bar{x}</span><script type="math/tex">\bar{x}</script></span>, standard deviation <span><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>, etc. </p>
+<p>Samples are used to draw inferences about the population. This is done by drawing samples and computing the sample statistics. When the sample statistics are plotted, the distribution (represented as a histogram) is called the sampling distribution. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The sampling distribution is also called as theoretical distribution</p>
+</div>
+<p><img alt="" src="https://i.imgur.com/Y8TyQi7.png" /></p>
+<h4>How is a sampling distribution plotted?</h4>
+<p>From the population, we take <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> samples of <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> size and compute the mean. Then we compute the frequency of these means and plot a histogram that would give the sampling distribution.</p>
+<p><img alt="" src="https://media.giphy.com/media/VHZTZYWw8Zon8dWhe0/giphy.gif" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the population is normally distributed, then the sampling distribution will also be normally distributed.</p>
+</div>
+<h3 id="standard_error">Standard error<a class="headerlink" href="#standard_error" title="Permanent link">#</a></h3>
+<p>The standard error <span><span class="MathJax_Preview">SE</span><script type="math/tex">SE</script></span> is the standard deviation of the sampling distribution</p>
+<h3 id="standard_error_of_the_mean">Standard error of the mean<a class="headerlink" href="#standard_error_of_the_mean" title="Permanent link">#</a></h3>
+<p>The standard error (or deviation) of the mean can be expressed as</p>
+<div>
+<div class="MathJax_Preview">
+SE = \sigma_{\bar{x}} = \frac{\sigma}{\sqrt n}
+</div>
+<script type="math/tex; mode=display">
+SE = \sigma_{\bar{x}} = \frac{\sigma}{\sqrt n}
+</script>
+</div>
+<p>where</p>
+<p><span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> is the standard deviation of the population
+<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> is the size of the sample</p>
+<p>Since the standard deviation of the population is rarely known, the standard error of the mean is usually estimated as the sample standard deviation divided by the square root of the sample size i.e.</p>
+<div>
+<div class="MathJax_Preview">
+SE = \sigma_{\bar{x}} \approx \frac{s}{\sqrt n}
+</div>
+<script type="math/tex; mode=display">
+SE = \sigma_{\bar{x}} \approx \frac{s}{\sqrt n}
+</script>
+</div>
+<p>where</p>
+<p><span><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> is the sample standard deviation
+<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> is the size of the sample.</p>
+<h3 id="confidence_interval">Confidence interval<a class="headerlink" href="#confidence_interval" title="Permanent link">#</a></h3>
+<p>When we use samples to project population estimates, we cannot be CERTAIN that it will be accurate. There is an amount of uncertainty that needs to be factored in/calculated.</p>
+<p>So we come up with a range and state that the population parameter (e.g. population means <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span>) would fall within this range. This is called the <strong>confidence interval</strong></p>
+<h4>Definition</h4>
+<p>A confidence interval is the <em>range of numbers</em> that is believed to include an unknown population parameter.</p>
+<h4>Confidence level</h4>
+<p>Let's recall the empirical split.</p>
+<div class="admonition note">
+<p class="admonition-title">Recall Empirical rule/split</p>
+<p>The empirical rules state that for a normal distribution, nearly all of the data will fall within three standard deviations of the mean.</p>
+<ul>
+<li>68% data will fall within 1 standard deviation</li>
+<li>95% data will fall within 2 standard deviation</li>
+<li>99.7% data will fall within 3 standard deviation</li>
+</ul>
+<p>This rule is called as the <strong>3 sigma rule</strong> or <strong>68-95-99.7 rule</strong> </p>
+<p><img alt="" src="https://i.imgur.com/GMNSUCq.png" /></p>
+</div>
+<p>We know that if a population is normally distributed, then 68% of the data will fall under 1 standard deviation. This also means that we are 68% confident that the population mean is within the 1 standard deviation range. Similarly, a 95% confidence level means that the population mean will be within the 2 standard deviation range.</p>
+<p>So Confidence levels are expressed as a percentage (for example, a 95% confidence level). It means that should you repeat an experiment or survey over and over again, 95 percent of the time your results will match the results you get from a population.</p>
+<h4>Formula</h4>
+<p>The formula for computing the confidence interval is</p>
+<div>
+<div class="MathJax_Preview">
+CI = \mu \pm z *SE
+</div>
+<script type="math/tex; mode=display">
+CI = \mu \pm z *SE
+</script>
+</div>
+<p>where
+<span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> is the mean, <span><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> is the quantile, <span><span class="MathJax_Preview">SE</span><script type="math/tex">SE</script></span> is the standard error</p>
+<p>Most of the time, the population mean is not known. In that case, the formula becomes</p>
+<div>
+<div class="MathJax_Preview">
+CI = \bar{x} \pm z *SE
+</div>
+<script type="math/tex; mode=display">
+CI = \bar{x} \pm z *SE
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">\bar{x}</span><script type="math/tex">\bar{x}</script></span> is the mean of the sampling distribution.</p>
+<p>Substituting the standard error formula (mentioned above), we get</p>
+<div>
+<div class="MathJax_Preview">
+CI = \bar{x} \pm z * \frac{\sigma}{\sqrt n}
+</div>
+<script type="math/tex; mode=display">
+CI = \bar{x} \pm z * \frac{\sigma}{\sqrt n}
+</script>
+</div>
+<p>This would give the confidence interval - the range within which the population parameter would fall.</p>
+<h3 id="margin_of_error">Margin of error<a class="headerlink" href="#margin_of_error" title="Permanent link">#</a></h3>
+<p>The margin of error is the range of the expected variation for a given survey result. If we keep repeating the survey using the same methodology, the results of the survey would fall within that range of variation.</p>
+<p>In short, half of the confidence interval is called the margin of error. </p>
+<p>The margin of error (ME) is denoted by the formula <span><span class="MathJax_Preview">z * SE</span><script type="math/tex">z * SE</script></span> which is </p>
+<div>
+<div class="MathJax_Preview">
+ME = z * \frac{\sigma}{\sqrt n}
+</div>
+<script type="math/tex; mode=display">
+ME = z * \frac{\sigma}{\sqrt n}
+</script>
+</div>
+<p>The following image represents the confidence interval and the margin of error in a sampling distribution.</p>
+<p><img alt="" src="https://i.imgur.com/gc1Tobd.png" /></p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
+<p>A <mark>survey</mark> was taken of US companies that do business with firms in India. One of the survey questions was: Approximately how many years has your company been trading with firms in India? A random <mark>sample of 44 responses</mark> to this question yielded a <mark>mean of 10.455 years</mark>. Suppose the <mark>population standard deviation</mark> for this question is 7.7 years, construct a <mark>90% confidence</mark> interval of the <ins class="critic">mean number of years</ins> that a company has been trading in India <ins class="critic">for the population</ins> of US companies trading with firms in India. </p>
+<h4>Known parameters</h4>
+<div>
+<div class="MathJax_Preview">
+n = 44 \\
+\bar{x} = 10.455 \\
+\sigma = 7.7 \\
+confidence \space level = 90%
+</div>
+<script type="math/tex; mode=display">
+n = 44 \\
+\bar{x} = 10.455 \\
+\sigma = 7.7 \\
+confidence \space level = 90%
+</script>
+</div>
+<p>z value for 90% confidence interval  is 1.64</p>
+<h4>To find: confidence interval that has the population mean</h4>
+<h4>Solution approach</h4>
+<p>We know the formula for the confidence interval </p>
+<div>
+<div class="MathJax_Preview">
+CI = \bar{x} \pm z * \frac{\sigma}{\sqrt n}
+</div>
+<script type="math/tex; mode=display">
+CI = \bar{x} \pm z * \frac{\sigma}{\sqrt n}
+</script>
+</div>
+<p>substituting, we get</p>
+<div>
+<div class="MathJax_Preview">
+CI = 10.455 \pm 1.64 * \frac{7.7}{\sqrt 44}
+</div>
+<script type="math/tex; mode=display">
+CI = 10.455 \pm 1.64 * \frac{7.7}{\sqrt 44}
+</script>
+</div>
+<p>which is </p>
+<div>
+<div class="MathJax_Preview">
+CI = [8.545 , 12.365]
+</div>
+<script type="math/tex; mode=display">
+CI = [8.545 , 12.365]
+</script>
+</div>
+<p>The analyst is 90% confident that the actual population mean number of trading years of firms would be between 8.545 and 12.365.</p>
+<p><img alt="" src="https://i.imgur.com/eSOZiT4.png" /></p>
+<h3 id="example_2">Example 2<a class="headerlink" href="#example_2" title="Permanent link">#</a></h3>
+<p>The lung function in <mark>57 people</mark> is tested using FEVI (Forced Expiratory Volume in 1 Second) measurements. The <mark>mean FEVI value for this sample</mark> is 4.062 litres and <mark>standard deviation</mark>, s is 0.67 litres. Construct the 95% Confidence Interval.</p>
+<h4>Data</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.85</td>
+<td>3.42</td>
+<td>3.7</td>
+<td>4.14</td>
+<td>4.47</td>
+<td>4.9</td>
+</tr>
+<tr>
+<td>2.85</td>
+<td>3.48</td>
+<td>3.75</td>
+<td>4.16</td>
+<td>4.5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2.98</td>
+<td>3.5</td>
+<td>3.78</td>
+<td>4.2</td>
+<td>4.5</td>
+<td>5.1</td>
+</tr>
+<tr>
+<td>3.04</td>
+<td>3.54</td>
+<td>3.83</td>
+<td>4.2</td>
+<td>4.56</td>
+<td>5.1</td>
+</tr>
+<tr>
+<td>3.1</td>
+<td>3.54</td>
+<td>3.9</td>
+<td>4.3</td>
+<td>4.68</td>
+<td>5.2</td>
+</tr>
+<tr>
+<td>3.1</td>
+<td>3.57</td>
+<td>3.96</td>
+<td>4.3</td>
+<td>4.7</td>
+<td>5.3</td>
+</tr>
+<tr>
+<td>3.19</td>
+<td>3.6</td>
+<td>4.05</td>
+<td>4.32</td>
+<td>4.71</td>
+<td>5.43</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>3.6</td>
+<td>4.08</td>
+<td>4.44</td>
+<td>4.78</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td>3.69</td>
+<td>4.1</td>
+<td>4.47</td>
+<td>4.8</td>
+<td>3.39</td>
+<td>3.7</td>
+</tr>
+<tr>
+<td>4.14</td>
+<td>4.47</td>
+<td>4.8</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4>Known parameters</h4>
+<div>
+<div class="MathJax_Preview">
+\bar{x} =  4.062 \\
+s = 0.67 \\
+n = 57
+</div>
+<script type="math/tex; mode=display">
+\bar{x} =  4.062 \\
+s = 0.67 \\
+n = 57
+</script>
+</div>
+<p>The z value for a 95% confidence level is 1.96</p>
+<h4>Solution approach</h4>
+<p>We know the formula for the confidence interval </p>
+<div>
+<div class="MathJax_Preview">
+CI = \bar{x} \pm z * \frac{\sigma}{\sqrt n}
+</div>
+<script type="math/tex; mode=display">
+CI = \bar{x} \pm z * \frac{\sigma}{\sqrt n}
+</script>
+</div>
+<p>substituting, we get</p>
+<div>
+<div class="MathJax_Preview">
+CI = 4.062 \pm 1.96 * \frac{0.67}{\sqrt 57}
+</div>
+<script type="math/tex; mode=display">
+CI = 4.062 \pm 1.96 * \frac{0.67}{\sqrt 57}
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
+CI = [3.89, 4.23]
+</div>
+<script type="math/tex; mode=display">
+CI = [3.89, 4.23]
+</script>
+</div>
+<h3 id="additional_material">Additional material<a class="headerlink" href="#additional_material" title="Permanent link">#</a></h3>
+<p>What happens to confidence interval as confidence level changes? Refer to <a href="../../exercises/exercise06">this article</a> for the answer.</p>
+<h2 id="z-score">Z-Score<a class="headerlink" href="#z-score" title="Permanent link">#</a></h2>
+<p>Z-score denotes the number of units of standard deviation from the mean the data point is.</p>
+<p>A Z-score will also help in finding the probability i.e. area under the curve of where the data point would fall in the normal distribution</p>
+<p>More info <a href="../../exercises/exercise05">here</a></p>
+<h4>Formula</h4>
+<p>Z-score is derived using the formula</p>
+<div>
+<div class="MathJax_Preview">
+z = \frac{x - \mu}{\sigma}
+</div>
+<script type="math/tex; mode=display">
+z = \frac{x - \mu}{\sigma}
+</script>
+</div>
+<p>where x is the data point we are interested in, <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> is the mean and <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> is the standard deviation.</p>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">#</a></h3>
+<p>Take a look at the weight of newborn babies. Suppose that the <mark>mean
+weight of newborns is 7.5 pounds</mark> and the <mark>standard deviation is 1.25 pounds</mark>. Say you’re interested in <ins class="critic">determining the probability</ins> that a newborn weighs less than 6 pounds. How do you do that?</p>
+<h4>Known parameters</h4>
+<div>
+<div class="MathJax_Preview">
+\mu = 7.5 \\
+\sigma = 1.25 \\
+data \space  point \space x = 6
+</div>
+<script type="math/tex; mode=display">
+\mu = 7.5 \\
+\sigma = 1.25 \\
+data \space  point \space x = 6
+</script>
+</div>
+<p>To find the probability of the new-born weighing less than 6 pounds</p>
+<h4>Solution approach</h4>
+<p>We know the formula of the z-score.</p>
+<div>
+<div class="MathJax_Preview">
+z = \frac{x - \mu}{\sigma}
+</div>
+<script type="math/tex; mode=display">
+z = \frac{x - \mu}{\sigma}
+</script>
+</div>
+<p>substituting the values, we get</p>
+<div>
+<div class="MathJax_Preview">
+z = \frac{6 - 7.5}{1.25} = -1.20
+</div>
+<script type="math/tex; mode=display">
+z = \frac{6 - 7.5}{1.25} = -1.20
+</script>
+</div>
+<p>The graph would look like the below</p>
+<p><img alt="" src="https://i.imgur.com/jADvfZx.png" /></p>
+<p>To find the probability, the z-table is used. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are two Z-tables - one for a positive value of Z and other for a negative value of Z.</p>
+</div>
+<p>Here, the value of Z is -1.20 which is on the negative side and hence, we will be using the negative z table.</p>
+<p>-1.20 is read in the table as -1.2 in the rows and 0 in the columns - highlighted below. </p>
+<p>The probability that the baby is born less than 6 pounds is 0.1150 or 11.5%.</p>
+<p><img alt="" src="https://i.imgur.com/WYtLrLQ.png" /></p>
+<h4>What is the probability that the new-born baby might weigh more than 10 pounds?</h4>
+<p>Let's visualize it.</p>
+<p><img alt="" src="https://i.imgur.com/FaLRkI1.png" /></p>
+<h4>Solution approach</h4>
+<p>Let's compute the Z-score</p>
+<p>We know the formula of the z-score.</p>
+<div>
+<div class="MathJax_Preview">
+z = \frac{x - \mu}{\sigma}
+</div>
+<script type="math/tex; mode=display">
+z = \frac{x - \mu}{\sigma}
+</script>
+</div>
+<p>substituting the values, we get</p>
+<div>
+<div class="MathJax_Preview">
+z = \frac{10 - 7.5}{1.25} = 2.0
+</div>
+<script type="math/tex; mode=display">
+z = \frac{10 - 7.5}{1.25} = 2.0
+</script>
+</div>
+<p>The graph would look like the below - the shaded area is the probability of newborn weighing <strong>less than 10 pounds</strong></p>
+<p>Looking into the z-table for positive scores, we get the probability value as 0.97725 i.e 97.7% of the newborn is less than or equal to 10 pounds.</p>
+<p>The question is about the probability of babies weighing <strong>more than 10 pounds</strong></p>
+<p><img alt="" src="https://i.imgur.com/lgbC0Fg.png" /></p>
+<p>To find that, we have to subtract the babies weighing less than or equal to 10 pounds from 1 i.e.</p>
+<p>babies weighing more than 10 pounds = 1 - babies weighing less than 10 pounds</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are subtracting from 1 because the total probability is equal to 1</p>
+</div>
+<p>So we get</p>
+<p>Babies weighing more than 10 pounds <span><span class="MathJax_Preview">= 1 - 0.9772 = 0.0228</span><script type="math/tex">= 1 - 0.9772 = 0.0228</script></span> or <span><span class="MathJax_Preview">2.2\%</span><script type="math/tex">2.2\%</script></span></p>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h3>
+<p>To summarize, we started with what is inferential statistics - using the samples to estimate the population, what is a parameter and a statistic, confidence interval and confidence level, standard error and the margin of error, Z- scores and a few examples in each of these.</p>
+<h4>Next post</h4>
+<p><a href="../hypothesis_testing_01">Hypothesis Testing</a></p>
+                
+                  
+                
+				<hr/>
+				<!--
+				custom code begins
+				<hr/>
+				
+				<div class=".md-typeset__table">
+				<table>
+				  <tr>
+					<td><b>Author</b></td>
+					<td><b>hazeez</b></td>
+					<td><b>Date Modified</b></td>
+					<td><b>Mar 17, 2020</b></td>
+				  </tr>
+				</table>
+				</div>
+				
+			    custom code ends --->
+				
+              
+              
+                
+
+
+  <h4 id="__comments">Comments</h4>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://hazeez.github.io/study/statistics/Inferential_stats_basics/";
+      this.page.identifier =
+        "/statistics/Inferential_stats_basics/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//hazeez.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+	  
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../" title="_Stats Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                _Stats Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../hypothesis_testing_01/" title="Hypothesis Testing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Hypothesis Testing
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Creative Commons (CC) license
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.48c2c9de.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../../assets/javascript/jquery-min.js"></script>
+      
+        <script src="../../assets/javascript/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascript/raphael.min.js"></script>
+      
+        <script src="../../assets/javascript/flowchart.min.js"></script>
+      
+        <script src="../../assets/javascript/jquery-plugin.js"></script>
+      
+        <script src="../../assets/javascript/extra.js"></script>
+      
+    
+  </body>
+</html>
