@@ -106,15 +106,8 @@ Variables are the fancy name of data in statistics.
 
 Variables can be classified as _Qualitative_ or _Quantitative_
 
-```mermaid
-graph TD
-A[Variables]  --> B(Qualitative)
-A[Variables]  --> C(Quantitative)
-B[Qualitative]  --> D(Nominal)
-B[Qualitative]  --> E(Ordinal)
-C[Quantitative]  --> F(Discrete)
-C[Quantitative]  --> G(Continuous)
-```
+![](https://i.imgur.com/auPmmPP.png)
+
 #### Nominal variables
 
 Variables that have a name is called as _nominal_ variables
