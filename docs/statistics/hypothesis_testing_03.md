@@ -1,16 +1,17 @@
 title: Test statistic - Z & t
 author: hazeez
-date: Mar 12, 2020
-date_modified: Mar 15, 2020
+date: Mar 15, 2020
+date_modified: 
 
 
 # Test statistic - Z & t
 
 > In the [previous article](../hypothesis_testing_02), we used test statistic as a value to compare against the critical value. This helps us to accept or reject our null hypothesis.
-> In this article, we will see what is a test statistic and how to compute it.
+> In this article, we will see what test statistic is and how to compute it.
 
 !!! Note
 	We are in the fourth step of the hypothesis testing process 
+	
 	- Find the test statistic
 
 ## What is a test statistic?
@@ -49,7 +50,7 @@ Let us see the _Z_ test first.
 Z test is used when the following conditions are met.
 
 1. The sample size `n` should be greater than 30 i.e. $n > 30$
-2. The population standard deviation should be known
+2. The population standard deviation $\sigma$ should be known
 3. The variable should be continuous (remember, this is a continuous sampling distribution)
 
 ### Formula for Z test
@@ -177,14 +178,13 @@ $$
 t \space statistic \space (or \space t\space score), t= \frac{\bar{x} - \mu}{s /\sqrt n}
 $$
 
-where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation[^1] and  $n$ is the number of samples.
-[^1] Since we don't know the population standard deviation in a 't' test, we use the sample standard deviation
+where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation and  $n$ is the number of samples. Since we don't know the population standard deviation in a 't' test, we use the sample standard deviation
 
 #### Characteristics of the 't' distribution
 
-- it has degrees-of-freedom parameter $df$
-- it is symmetric and bell-shaped
-- has wider tails than the Z distribution
+- It has degrees-of-freedom parameter $df$
+- It is symmetric and bell-shaped
+- Has wider tails than the Z distribution
 
 !!! Extra_research
 
@@ -222,14 +222,19 @@ A stock market analyst wants to estimate the average return on a certain stock. 
 
 #### What we know here?
 
-Sample of 15 days i.e. $s = 15$ (since sample is less than 30, _t_ test is to be used)
+Sample of 15 days i.e. $s = 15$ (since sample is less than 30, _t_ test is to be used).
 We need to use _t_ distribution with $n-1$ degrees of freedom. So, $df = 14$.
+
 Sample standard deviation $s = 3.5$
+
 Sample mean $\bar{x} = 10.37$
+
 Confidence level is 95%. So the level of significance deduced is 5%.
 
-!!! Remember the formula
+!!! Note "Remember the formula"
+
 	confidence level = 1 - $\alpha$ which means
+	
 	$\alpha$ = 100 - confidence level
 
 #### Solution

@@ -29,7 +29,7 @@ $$
 \chi ^2 = \frac{(n-1)s ^2}{\sigma ^2}
 $$
 
-where $df$ is the degree of freedom,  $s$ is the sample standard deviation and $\sigma$ is the population standard deviation and $n$ is the number of samples.
+where $n - 1$ is the $df$ (degree of freedom),  $s$ is the sample standard deviation and $\sigma$ is the population standard deviation and $n$ is the number of samples.
 
 #### Interpretation of $\chi ^2$
 
@@ -81,7 +81,7 @@ Let's follow the hypothesis testing process
 
 2. Find the level of significance
 	
-	The level of significance is already provided $\alpha = 0.05$
+	The level of significance is already provided $\alpha = 0.01$
 	
 	!!! Tip
 		If the level of significance is not provided, take the default $\alpha = 0.05$
@@ -379,7 +379,7 @@ Let us calculate the mean of each of the groups and the total mean (which is tot
 		- How far individual values vary from their respective group mean.
 
 !!! Note
-	We will compute the F score both manually as well as using excel. If you want to move on with excel computation only, you may skip the below section and can proceed with computation with excel (using data-analysis addin) only.
+	We will compute the F score both manually as well as using excel. If you want to move on with excel computation only, you may skip the below section and can proceed with computation with excel (using data-analysis addin).
 
 ### Formula
 

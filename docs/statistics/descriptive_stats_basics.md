@@ -1,7 +1,7 @@
 title: Descriptive Statistics
 author: hazeez
-date: Mar 18, 2020
-date_modified: Mar 19, 2020
+date: Mar 19, 2020
+date_modified:
 
 # Descriptive Statistics
 
@@ -397,7 +397,7 @@ Use the `PERCENTRANK.INC` function to find the percentile for each value in a ra
 
 Quartile means dividing data % into 4 parts
 
-- QI - First Quartile - 25th percentile 
+- Q1 - First Quartile - 25th percentile 
 - Q2 - Second Quartile - 50th percentile (Median) 
 - Q3 - Third Quartile - 75th percentile
 
@@ -427,7 +427,9 @@ CV= \frac{\sigma}{\mu}
 $$
 
 where:
+
 $\sigma$ = standard deviation
+
 $\mu$ = mean​
 
 ### Example
@@ -522,7 +524,9 @@ We have two measures that will help us determine the association between two var
 
 ### Covariance
 
-_Covariance_ is a measure of how much two random variables vary together. It's similar to variance, but where variance tells you how a single variable varies, covariance tells you how two variables vary together.
+_Covariance_ is a measure of how much two random variables vary together. It's similar to variance, but where variance tells you _how a single variable varies_, covariance tells you _how two variables vary together_.
+
+ here is no meaning of covariance numerical value only sign is useful.
 
 Since covariance is the variance for two variables, the formula is
 
@@ -532,11 +536,11 @@ $$
 
 $X_i$ = Observation point of variable 
 
-$\bar{X}$ = Mean of all observations(X)
+$\bar{X}$ = Mean of all observations (X)
 
 $Y_i$ = Observation point of variable Y
 
-$\bar{Y}$ = Mean of all observations(Y)
+$\bar{Y}$ = Mean of all observations (Y)
 
 $n$ = Number of observations
 

@@ -30,7 +30,7 @@ We know what the null and the alternate hypothesis are, level of significance, a
 What we don't know about at this point is
 
 - Step 4 - Find critical values and 
-- Step 5 - find the test statistic.
+- Step 5 - Find the test statistic.
 
 Good! Let's see what a critical value is! 
 
@@ -111,11 +111,11 @@ My broadband company claims that the minimum internet speed they are providing i
 Let's write the null and alternate hypotheses for this!
 
 $$
-	 \mathbf{H}_\mathbf{0}: speed \ge 150 Mbps \\
-	  \mathbf{H}_\mathbf{1}: speed < 150 Mbps
+	 \mathbf{H}_\mathbf{0}: speed \ge \space 150 Mbps \\
+	  \mathbf{H}_\mathbf{1}: speed < \space 150 Mbps
 $$
 
-What we are trying to prove is our alternate hypothesis with evidence that the speed is less than 150 Mbps.
+What we are trying to prove is our alternate hypothesis with evidence is that the speed is less than 150 Mbps.
 
 So we see the symbol of alternate hypothesis i.e - if it is less than `<` 150 Mbps, it is called a _lower tail_ test.
 
@@ -129,8 +129,8 @@ The project manager claims that the software defects raised are resolved within 
 The null and alternate hypothesis is mentioned below
 
 $$
- \mathbf{H}_\mathbf{0}: Resolution\space  period \le 5 days \\
-  \mathbf{H}_\mathbf{1}: Resolution\space period > 5 days
+ \mathbf{H}_\mathbf{0}: Resolution\space  period \le 5 \space days \\
+  \mathbf{H}_\mathbf{1}: Resolution\space period > 5 \space days
 $$
 
 We see that the alternate hypothesis is greater than `>` 5 days. Hence, it is an _upper-tail_ test.
@@ -159,7 +159,7 @@ Here we see the symbol of the alternate hypothesis is $\ne$ which means the test
 
 So the critical region / tails are split over both the ends.
 
-Both the ends contain $\alpha/2$, making a total of $\alpha$ - which is the level of significance. Refer to the [previous article](..\hypothesis_testing_01\#level_of_significance).
+Both the ends contain $\alpha/2$, making a total of $\alpha$ - which is the level of significance. Refer to the [previous article](..\hypothesis_testing_01\#level_of_significance) for level of significance.
 
 ![](https://i.imgur.com/5tayxLc.png)
 
@@ -174,6 +174,8 @@ Let's understand what a critical value is and then we will see how to compute th
 We know what a critical region or a rejection region is! So critical value should be near or in that critical region.
 
 To take an analogy, the critical values of water - i.e. the boiling point is 100 deg Celcius and the freezing point is 0 deg Celcius. It is an important measure that helps us make important decisions.
+
+Similarly, critical value in statistics helps us to take important decisions.
 
 #### Definition of critical value
 

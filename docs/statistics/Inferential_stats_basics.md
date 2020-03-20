@@ -1,11 +1,11 @@
 title: Inferential Stats - Basics
 author: hazeez
-date: Mar 17, 2020
-date_modified: Mar 18, 2020
+date: Mar 18, 2020
+date_modified:
 
 # Inferential Statistics
 
-In real-life situations, we may not be able to know the entire population in which case, we use the _known_ random sample to extract information about the _unknown_ population from which the sample is drawn.
+In real-life situations, we may not be able to know the entire population; in which case, we use the _known_ random sample to extract information about the _unknown_ population from which the sample is drawn.
 
 To put it simply, using the sample to come up with an estimation of the population is called as _Inferential statistics_
 
@@ -19,7 +19,7 @@ A numerical measure of the sample is called a **_sample statistic_**, or simply 
 
 Examples of sample statistics are the sample mean, sample variance, sample standard deviation, etc.
 
-In inferential statistics, population parameters are estimated by sample statistics.
+In inferential statistics, population parameters are _estimated_ by sample statistics.
 
 When a simple statistic is used to estimate the population parameter, the statistic is called an **_estimator_** of the parameter.
 
@@ -39,13 +39,15 @@ $$
 S^2 \space \space \space \overrightarrow{estimates} \space \space \space  \sigma^2 
 $$
 
+i.e the sample mean estimates the population mean and the sample variance estimates the population variance.
+
 ## Confidence levels and confidence intervals
 
 To understand confidence level and confidence intervals, we will need to understand what a population distribution and a sampling distribution is.
 
 ### Population distribution
 
-The population is the entire set of values/data points that we are interested in. For example, if we know the age of all Indian residents, it is called the population.
+The population is the _entire set of values/data points_ that we are interested in. For example, if we know the age of all Indian residents, it is called the population.
 
 The population characteristics are mean $\mu$, standard deviation $\sigma$, median, percentiles, etc.
 
@@ -53,7 +55,7 @@ The population characteristics are mean $\mu$, standard deviation $\sigma$, medi
 
 ### Sampling distribution
 
-The sample is a subset of the population which is used to estimate the population characteristic. 
+The sample is a _subset of the population_ which is used to estimate the population characteristic. 
 
 This sample has a few characteristics like mean $\bar{x}$, standard deviation $s$, etc. 
 
@@ -88,6 +90,7 @@ $$
 where
 
 $\sigma$ is the standard deviation of the population
+
 $n$ is the size of the sample
 
 Since the standard deviation of the population is rarely known, the standard error of the mean is usually estimated as the sample standard deviation divided by the square root of the sample size i.e.
@@ -129,7 +132,7 @@ Let's recall the empirical split.
 
 We know that if a population is normally distributed, then 68% of the data will fall under 1 standard deviation. This also means that we are 68% confident that the population mean is within the 1 standard deviation range. Similarly, a 95% confidence level means that the population mean will be within the 2 standard deviation range.
 
-So Confidence levels are expressed as a percentage (for example, a 95% confidence level). It means that should you repeat an experiment or survey over and over again, 95 percent of the time your results will match the results you get from a population.
+So confidence levels are expressed as a percentage (for example, a 95% confidence level). It means that should you repeat an experiment or survey over and over again, 95 percent of the time your results will match the results you get from a population.
 
 #### Formula
 
@@ -263,13 +266,13 @@ $$
 CI = [3.89, 4.23]
 $$
 
-### Additional material
+!!! Note "Additional material"
 
-What happens to confidence interval as confidence level changes? Refer to [this article](../../exercises/exercise06) for the answer.
+	What happens to confidence interval as confidence level changes? Refer to [this article](../../exercises/exercise06) for the answer.
 
 ## Z-Score
 
-Z-score denotes the number of units of standard deviation from the mean the data point is.
+Z-score denotes the _number of units of standard deviation from the mean_ the data point is.
 
 A Z-score will also help in finding the probability i.e. area under the curve of where the data point would fall in the normal distribution
 
@@ -327,7 +330,7 @@ Here, the value of Z is -1.20 which is on the negative side and hence, we will b
 
 -1.20 is read in the table as -1.2 in the rows and 0 in the columns - highlighted below. 
 
-The probability that the baby is born less than 6 pounds is 0.1150 or 11.5%.
+The probability that the baby is born less than 6 pounds is 0.1150 or 11.5%. [See image below]
 
 ![](https://i.imgur.com/WYtLrLQ.png)
 
@@ -361,9 +364,9 @@ The question is about the probability of babies weighing **more than 10 pounds**
 
 ![](https://i.imgur.com/lgbC0Fg.png)
 
-To find that, we have to subtract the babies weighing less than or equal to 10 pounds from 1 i.e.
+To find that, we have to subtract the babies weighing less than or equal to 10 pounds from 1 i.e. 
 
-babies weighing more than 10 pounds = 1 - babies weighing less than 10 pounds
+_babies weighing more than 10 pounds = 1 - babies weighing less than 10 pounds_
 
 !!! Note
 	We are subtracting from 1 because the total probability is equal to 1

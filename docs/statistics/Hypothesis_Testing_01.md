@@ -1,7 +1,7 @@
 title: Hypothesis Testing
 author: hazeez
-date: Mar 09, 2020
-date_modified: Mar 10, 2020
+date: Mar 10, 2020
+date_modified:
 
 # Hypothesis Testing
 
@@ -70,8 +70,8 @@ My broadband company claims that the minimum internet speed they are providing i
 Let's write the null and alternate hypothesis for this!
 
 $$
-	 \mathbf{H}_\mathbf{0}: speed \ge 150 Mbps \\
-	  \mathbf{H}_\mathbf{1}: speed < 150 Mbps
+	 \mathbf{H}_\mathbf{0}: speed \ge 150 \space Mbps \\
+	  \mathbf{H}_\mathbf{1}: speed < 150 \space Mbps
 $$
 
 **Example 2**
@@ -81,17 +81,17 @@ The project manager claims that the software defects raised are resolved within 
 Can we write the null and alternate hypothesis for this?
 
 $$
- \mathbf{H}_\mathbf{0}: Resolution\space  period \le 5 days \\
-  \mathbf{H}_\mathbf{1}: Resolution\space period > 5 days
+ \mathbf{H}_\mathbf{0}: Resolution\space  period \le 5 \space days \\
+  \mathbf{H}_\mathbf{1}: Resolution\space period > 5 \space days
 $$
 
 #### Let's see how we can prove the alternate hypothesis
 
 **Example 1**
 
-To check the internet speed, I visit [Speed Test](http://speedtest.net) from my home computer and measure the speed. I do this 'n' number of times and find that the mean speed is around 100 Mbps.
+To check the internet speed, I visit [Speed Test](http://speedtest.net) website from my home computer and measure the speed. I do this $n$ number of times and find that the mean speed is around 100 Mbps.
 
-So we reject the null hypothesis and accept the alternate hypothesis - which is the internet speed is less than 150 Mbps
+So we reject the null hypothesis and accept the alternate hypothesis - which is, the internet speed is less than 150 Mbps
 
 **Example 2**
 
@@ -111,7 +111,7 @@ In the above two cases, taking the samples was easy and our agreement / rejectio
 
 In real life scenarios, we need to estimate a population parameter based on the sample and things might go wrong. That is to say, we might reject the null hypothesis when it is actually true or we might accept the null hypothesis when it is otherwise. This depends on the sample we take and if we don't have enough samples (or worse picked up wrong samples), things might go wrong.
 
-Say for example, the null hypothesis states that the mean of the population is greater than or equal to 500 i.e. 
+Say for example, the null hypothesis state that the mean of the population is greater than or equal to 500 i.e. 
 
 $$
  \mathbf{H}_\mathbf{0}: \mu \ge 500
