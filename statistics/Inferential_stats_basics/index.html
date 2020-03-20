@@ -498,13 +498,6 @@
   
 </li>
         
-			<li class="md-nav__item">
-  <a href="#additional_material" title="Additional material" class="md-nav__link">
-    Additional material
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -724,13 +717,6 @@
   
 </li>
         
-			<li class="md-nav__item">
-  <a href="#additional_material" title="Additional material" class="md-nav__link">
-    Additional material
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -794,23 +780,23 @@
 						</span>
 						<p>
 						
-						<h6 class="author_date">By <b>hazeez </b> on Mar 17, 2020 in
-							<a href="../">Statistics </a>
+						<h6 class="author_date">By <b>hazeez </b> 
 						</h6>
-						<h6 class="author_date">Date updated: Mar 18, 2020</h6>
+						<h6 class="author_date">Mar 18, 2020 in
+							<a href="../">Statistics </a></h6>
 						</p>
 					</div>
 				
 			    <!-- custom code ends --->
                 <h1 id="inferential_statistics">Inferential Statistics<a class="headerlink" href="#inferential_statistics" title="Permanent link">#</a></h1>
-<p>In real-life situations, we may not be able to know the entire population in which case, we use the <em>known</em> random sample to extract information about the <em>unknown</em> population from which the sample is drawn.</p>
+<p>In real-life situations, we may not be able to know the entire population; in which case, we use the <em>known</em> random sample to extract information about the <em>unknown</em> population from which the sample is drawn.</p>
 <p>To put it simply, using the sample to come up with an estimation of the population is called as <em>Inferential statistics</em></p>
 <h2 id="parameter_and_statistic">Parameter and Statistic<a class="headerlink" href="#parameter_and_statistic" title="Permanent link">#</a></h2>
 <p>A numerical measure of a population is called a <strong><em>population parameter</em></strong> or more simply, a <strong><em>parameter</em></strong>.</p>
 <p>Examples of parameters are population mean, population variance, population standard deviation, etc.</p>
 <p>A numerical measure of the sample is called a <strong><em>sample statistic</em></strong>, or simply a <strong><em>statistic</em></strong>.</p>
 <p>Examples of sample statistics are the sample mean, sample variance, sample standard deviation, etc.</p>
-<p>In inferential statistics, population parameters are estimated by sample statistics.</p>
+<p>In inferential statistics, population parameters are <em>estimated</em> by sample statistics.</p>
 <p>When a simple statistic is used to estimate the population parameter, the statistic is called an <strong><em>estimator</em></strong> of the parameter.</p>
 <h3 id="notations_of_parameter_and_statistic">Notations of parameter and statistic<a class="headerlink" href="#notations_of_parameter_and_statistic" title="Permanent link">#</a></h3>
 <table>
@@ -860,14 +846,15 @@ S^2 \space \space \space \overrightarrow{estimates} \space \space \space  \sigma
 S^2 \space \space \space \overrightarrow{estimates} \space \space \space  \sigma^2 
 </script>
 </div>
+<p>i.e the sample mean estimates the population mean and the sample variance estimates the population variance.</p>
 <h2 id="confidence_levels_and_confidence_intervals">Confidence levels and confidence intervals<a class="headerlink" href="#confidence_levels_and_confidence_intervals" title="Permanent link">#</a></h2>
 <p>To understand confidence level and confidence intervals, we will need to understand what a population distribution and a sampling distribution is.</p>
 <h3 id="population_distribution">Population distribution<a class="headerlink" href="#population_distribution" title="Permanent link">#</a></h3>
-<p>The population is the entire set of values/data points that we are interested in. For example, if we know the age of all Indian residents, it is called the population.</p>
+<p>The population is the <em>entire set of values/data points</em> that we are interested in. For example, if we know the age of all Indian residents, it is called the population.</p>
 <p>The population characteristics are mean <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span>, standard deviation <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span>, median, percentiles, etc.</p>
 <p><img alt="" src="https://i.imgur.com/walJM6I.png" /></p>
 <h3 id="sampling_distribution">Sampling distribution<a class="headerlink" href="#sampling_distribution" title="Permanent link">#</a></h3>
-<p>The sample is a subset of the population which is used to estimate the population characteristic. </p>
+<p>The sample is a <em>subset of the population</em> which is used to estimate the population characteristic. </p>
 <p>This sample has a few characteristics like mean <span><span class="MathJax_Preview">\bar{x}</span><script type="math/tex">\bar{x}</script></span>, standard deviation <span><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>, etc. </p>
 <p>Samples are used to draw inferences about the population. This is done by drawing samples and computing the sample statistics. When the sample statistics are plotted, the distribution (represented as a histogram) is called the sampling distribution. </p>
 <div class="admonition note">
@@ -895,8 +882,8 @@ SE = \sigma_{\bar{x}} = \frac{\sigma}{\sqrt n}
 </script>
 </div>
 <p>where</p>
-<p><span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> is the standard deviation of the population
-<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> is the size of the sample</p>
+<p><span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> is the standard deviation of the population</p>
+<p><span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> is the size of the sample</p>
 <p>Since the standard deviation of the population is rarely known, the standard error of the mean is usually estimated as the sample standard deviation divided by the square root of the sample size i.e.</p>
 <div>
 <div class="MathJax_Preview">
@@ -928,7 +915,7 @@ SE = \sigma_{\bar{x}} \approx \frac{s}{\sqrt n}
 <p><img alt="" src="https://i.imgur.com/GMNSUCq.png" /></p>
 </div>
 <p>We know that if a population is normally distributed, then 68% of the data will fall under 1 standard deviation. This also means that we are 68% confident that the population mean is within the 1 standard deviation range. Similarly, a 95% confidence level means that the population mean will be within the 2 standard deviation range.</p>
-<p>So Confidence levels are expressed as a percentage (for example, a 95% confidence level). It means that should you repeat an experiment or survey over and over again, 95 percent of the time your results will match the results you get from a population.</p>
+<p>So confidence levels are expressed as a percentage (for example, a 95% confidence level). It means that should you repeat an experiment or survey over and over again, 95 percent of the time your results will match the results you get from a population.</p>
 <h4>Formula</h4>
 <p>The formula for computing the confidence interval is</p>
 <div>
@@ -1162,10 +1149,12 @@ CI = [3.89, 4.23]
 CI = [3.89, 4.23]
 </script>
 </div>
-<h3 id="additional_material">Additional material<a class="headerlink" href="#additional_material" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Additional material</p>
 <p>What happens to confidence interval as confidence level changes? Refer to <a href="../../exercises/exercise06">this article</a> for the answer.</p>
+</div>
 <h2 id="z-score">Z-Score<a class="headerlink" href="#z-score" title="Permanent link">#</a></h2>
-<p>Z-score denotes the number of units of standard deviation from the mean the data point is.</p>
+<p>Z-score denotes the <em>number of units of standard deviation from the mean</em> the data point is.</p>
 <p>A Z-score will also help in finding the probability i.e. area under the curve of where the data point would fall in the normal distribution</p>
 <p>More info <a href="../../exercises/exercise05">here</a></p>
 <h4>Formula</h4>
@@ -1224,7 +1213,7 @@ z = \frac{6 - 7.5}{1.25} = -1.20
 </div>
 <p>Here, the value of Z is -1.20 which is on the negative side and hence, we will be using the negative z table.</p>
 <p>-1.20 is read in the table as -1.2 in the rows and 0 in the columns - highlighted below. </p>
-<p>The probability that the baby is born less than 6 pounds is 0.1150 or 11.5%.</p>
+<p>The probability that the baby is born less than 6 pounds is 0.1150 or 11.5%. [See image below]</p>
 <p><img alt="" src="https://i.imgur.com/WYtLrLQ.png" /></p>
 <h4>What is the probability that the new-born baby might weigh more than 10 pounds?</h4>
 <p>Let's visualize it.</p>
@@ -1253,8 +1242,8 @@ z = \frac{10 - 7.5}{1.25} = 2.0
 <p>Looking into the z-table for positive scores, we get the probability value as 0.97725 i.e 97.7% of the newborn is less than or equal to 10 pounds.</p>
 <p>The question is about the probability of babies weighing <strong>more than 10 pounds</strong></p>
 <p><img alt="" src="https://i.imgur.com/lgbC0Fg.png" /></p>
-<p>To find that, we have to subtract the babies weighing less than or equal to 10 pounds from 1 i.e.</p>
-<p>babies weighing more than 10 pounds = 1 - babies weighing less than 10 pounds</p>
+<p>To find that, we have to subtract the babies weighing less than or equal to 10 pounds from 1 i.e. </p>
+<p><em>babies weighing more than 10 pounds = 1 - babies weighing less than 10 pounds</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We are subtracting from 1 because the total probability is equal to 1</p>
@@ -1279,7 +1268,7 @@ z = \frac{10 - 7.5}{1.25} = 2.0
 					<td><b>Author</b></td>
 					<td><b>hazeez</b></td>
 					<td><b>Date Modified</b></td>
-					<td><b>Mar 17, 2020</b></td>
+					<td><b>Mar 18, 2020</b></td>
 				  </tr>
 				</table>
 				</div>
