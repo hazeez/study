@@ -4,7 +4,7 @@ date: Mar 08, 2020
 
 # Confidence level Vs the accuracy of estimation of the population mean
 
-Does the more the confidence level in the confidence interval mean more the accurate prediction of the estimation of the population mean?
+Does higher the confidence level in the confidence interval mean more the accurate prediction of the estimation of the population mean?
 
 ## Confidence Interval
 
@@ -40,12 +40,12 @@ $$
 $$
 - confidence interval
 $$
-Z = 1.96 (for the value of 95 percent)
+Z = 1.96 (for \space the \space value \space of \space 95 \space percent)
 $$
 
 #### To be found:
 
-Confidence interval of within which the population mean i.e. the average number of online television shows are watched by the entire population
+Confidence interval within which the population mean i.e. the average number of online television shows are watched by the entire population
 
 #### Let's picturize it
 
@@ -99,3 +99,5 @@ So it is better to always have a high confidence level to get more accurate esti
 	Increase the sample size i.e. increase the sample size `n=100` provided above to `n=200`. 
 
 The confidence interval becomes `[6.0565, 6.9434]`
+
+Though the confidence interval is narrower, the population mean will be falling within this range 95% of the times as 95% is the confidence level.
