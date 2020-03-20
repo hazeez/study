@@ -1,7 +1,7 @@
 title: Hypothesis Test Process
 author: hazeez
-date: Mar 12, 2020
-date_modified: Mar 14, 2020
+date: Mar 14, 2020
+date_modified: 
 
 # Hypothesis Tests
 
