@@ -366,9 +366,10 @@ where
 $N$ is the percentile we are interested in and
 $n$ is the number of values
 
-!!! Key points
+!!! Note "Key points"
 
 	If i is decimal then round off to next value
+	
 	If i is an integer then take the average of i and i+1 value
 
 #### Computing percentile in Excel
