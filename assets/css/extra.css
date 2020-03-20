@@ -276,8 +276,8 @@ h6.author_date {
 }
 
 #author_profile_photo {
-	margin-left: 15px;
-	margin-right: 15px;
+	margin-top: 2px;
+	margin-right: 10px;
 	border: 1px solid lightgray;
 }
 
@@ -287,4 +287,12 @@ h6.author_date {
 }
 .md-header {
 	background: red;
+}
+
+img#author_profile_photo {
+	border-radius: 50%;
+}
+
+.md-content__inner {
+	padding-top: 0px;
 }
