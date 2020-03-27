@@ -61,8 +61,8 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|PT+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700|PT+Mono">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
@@ -105,7 +105,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="pink">
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="red">
   
     <svg class="md-svg">
       <defs>
@@ -121,10 +121,13 @@
         Skip to content
       </a>
     
-    
+
+
+	
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
+	
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://hazeez.github.io/study" title="Data Science Notes" class="md-header-nav__button md-logo">
           
@@ -149,7 +152,7 @@
           
         </div>
       </div>
-          
+	  
 	  
 	  <div class="md-flex__cell md-flex__cell--shrink">
         
@@ -181,15 +184,97 @@
       </div>
 	  
       
+	  
+	  
+	  
     </div>
   </nav>
 </header>
     
+	
     <div class="md-container">
       
         
       
       
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../blog/covid19-dataset-analysis/" title="Blog" class="md-tabs__link">
+          Blog
+		  </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../exercises/" title="Exercises" class="md-tabs__link">
+          Exercises
+		  </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../probability/probability_theory/" title="Probability" class="md-tabs__link">
+          Probability
+		  </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../descriptive_stats_basics/" title="Statistics" class="md-tabs__link md-tabs__link--active">
+          Statistics
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+
+  
+      
+	  
+	  
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
@@ -234,10 +319,50 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      <strong>Exercises</strong>
+      <strong>Blog</strong>
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
+        Blog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/covid19-dataset-analysis/" title="Covid19 Data Analysis" class="md-nav__link">
+      Covid19 Data Analysis
+    </a>
+  </li>
+
+			
+        
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      <strong>Exercises</strong>
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
         Exercises
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -311,19 +436,17 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-4">
       <strong>Probability</strong>
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-4">
         Probability
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-			
         
 			
 			  
@@ -337,6 +460,8 @@
     </a>
   </li>
 
+			
+        
 			
         
       </ul>
@@ -353,13 +478,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       <strong>Statistics</strong>
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         Statistics
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -844,6 +969,82 @@ confidence \space level = (1 - 0.05) \space = 0.95
         </div>
       </main>
 	  
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../blog/covid19-dataset-analysis/" title="Blog" class="md-tabs__link">
+          Blog
+		  </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../exercises/" title="Exercises" class="md-tabs__link">
+          Exercises
+		  </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../probability/probability_theory/" title="Probability" class="md-tabs__link">
+          Probability
+		  </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../descriptive_stats_basics/" title="Statistics" class="md-tabs__link md-tabs__link--active">
+          Statistics
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+
+  
+      
       
         
 <footer class="md-footer">

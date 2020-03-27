@@ -1,0 +1,1269 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://hazeez.github.io/study/blog/covid19-dataset-analysis/">
+      
+      
+        <meta name="author" content="h">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Covid19 Data Analysis</title>
+      
+    
+	
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700|PT+Mono">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/css/mermaid.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-160625988-1", "hazeez.github.io")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#analysis_of_covid-19_dataset" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+
+
+	
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+	
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://hazeez.github.io/study" title="Data Science Notes" class="md-header-nav__button md-logo">
+          
+            <img src="../../assets/images/profile_pic_white_bg.png" width="24" height="24">
+          
+        </a>
+      </div>
+      
+	  <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+	  
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Data Science Notes
+            </span>
+            <span class="md-header-nav__topic">
+              Covid19 Data Analysis
+            </span>
+          
+        </div>
+      </div>
+	  
+	  
+	  <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+	  
+      
+	  
+	  
+	  
+    </div>
+  </nav>
+</header>
+    
+	
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Blog" class="md-tabs__link md-tabs__link--active">
+          Blog
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../exercises/" title="Exercises" class="md-tabs__link">
+          Exercises
+		  </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../probability/probability_theory/" title="Probability" class="md-tabs__link">
+          Probability
+		  </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../statistics/descriptive_stats_basics/" title="Statistics" class="md-tabs__link">
+          Statistics
+		  </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+
+  
+      
+	  
+	  
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://hazeez.github.io/study" title="Data Science Notes" class="md-nav__button md-logo">
+      
+        <img src="../../assets/images/profile_pic_white_bg.png" width="48" height="48">
+      
+    </a>
+    Data Science Notes
+  </label>
+  
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      <strong>Blog</strong>
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Blog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Covid19 Data Analysis
+      </label>
+    
+    <a href="./" title="Covid19 Data Analysis" class="md-nav__link md-nav__link--active">
+      Covid19 Data Analysis
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+	
+
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" title="Objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool_to_be_used" title="Tool to be used" class="md-nav__link">
+    Tool to be used
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics" title="Metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data_challenges" title="Data challenges" class="md-nav__link">
+    Data challenges
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#data_clean-ups" title="Data clean-ups" class="md-nav__link">
+    Data clean-ups
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#understanding_the_data" title="Understanding the data" class="md-nav__link">
+    Understanding the data
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#manual_tweaks" title="Manual tweaks" class="md-nav__link">
+    Manual tweaks
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#additional_cleanups" title="Additional cleanups" class="md-nav__link">
+    Additional cleanups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution_approach" title="Solution Approach" class="md-nav__link">
+    Solution Approach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#give_me_six_hours_to_cut_a_tree_and_i_will_spend_the_first_four_to_sharpen_the_axe" title="Give me six hours to cut a tree and I will spend the first four to sharpen the axe" class="md-nav__link">
+    Give me six hours to cut a tree and I will spend the first four to sharpen the axe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#and_when_you_want_something_all_the_universe_conspires_in_helping_you_to_achieve_it" title="And, when you want something, all the universe conspires in helping you to achieve it." class="md-nav__link">
+    And, when you want something, all the universe conspires in helping you to achieve it.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#first_iteration" title="First iteration" class="md-nav__link">
+    First iteration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in_three_words_i_can_sum_up_everything_i_have_learned_about_life_it_goes_on" title="In three words, I can sum up everything I have learned about life: it goes on!" class="md-nav__link">
+    In three words, I can sum up everything I have learned about life: it goes on!
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#second_iteration" title="Second iteration" class="md-nav__link">
+    Second iteration
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#third_iteration" title="Third iteration" class="md-nav__link">
+    Third iteration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to_improve_is_to_change_to_be_perfect_is_to_change_often" title="To improve is to change. To be perfect is to change often." class="md-nav__link">
+    To improve is to change. To be perfect is to change often.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final_result" title="Final result" class="md-nav__link">
+    Final result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what_next" title="What next?" class="md-nav__link">
+    What next?
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#generic_observation" title="Generic observation" class="md-nav__link">
+    Generic observation
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#western_countries" title="Western countries" class="md-nav__link">
+    Western countries
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#developing_countries" title="Developing countries" class="md-nav__link">
+    Developing countries
+  </a>
+  
+</li>
+        
+			<li class="md-nav__item">
+  <a href="#african_countries" title="African countries" class="md-nav__link">
+    African countries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+			<li class="md-nav__item">
+  <a href="#download_covid19_dashboard" title="Download Covid19 Dashboard" class="md-nav__link">
+    Download Covid19 Dashboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      <!-- 
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+       -->
+    </ul>
+  
+</nav>
+    
+  </li>
+
+			
+        
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      <strong>Exercises</strong>
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Exercises
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/" title="Exercises Index" class="md-nav__link">
+      Exercises Index
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/exercise05/" title="Exercise05" class="md-nav__link">
+      Exercise05
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/exercise06/" title="Exercise06" class="md-nav__link">
+      Exercise06
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/exercises-todo-class5/" title="Exercises to do - Class 5" class="md-nav__link">
+      Exercises to do - Class 5
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      <strong>Probability</strong>
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Probability
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../probability/probability_theory/" title="Probability theory" class="md-nav__link">
+      Probability theory
+    </a>
+  </li>
+
+			
+        
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      <strong>Statistics</strong>
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/descriptive_stats_basics/" title="Descriptive Statistics" class="md-nav__link">
+      Descriptive Statistics
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/Inferential_stats_basics/" title="Inferential Stats - Basics" class="md-nav__link">
+      Inferential Stats - Basics
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/hypothesis_testing_01/" title="Hypothesis Testing" class="md-nav__link">
+      Hypothesis Testing
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/hypothesis_testing_02/" title="Hypothesis Test Process" class="md-nav__link">
+      Hypothesis Test Process
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/hypothesis_testing_03/" title="Test statistic - Z & t" class="md-nav__link">
+      Test statistic - Z & t
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/hypothesis_testing_04/" title="Test statistic - Chi-square & F" class="md-nav__link">
+      Test statistic - Chi-square & F
+    </a>
+  </li>
+
+			
+        
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+			  
+                
+                
+				<!-- custom code begins --->
+				
+					<div class="author_info">         
+						<span class="left">
+						<img id = "author_profile_photo" src="../../assets/images/profile_photo_ss.jpg" width="36" height="36">
+						</span>
+						<p>
+						
+						<h6 class="author_date">By <b>hazeez </b> 
+						</h6>
+						<h6 class="author_date">Mar 27, 2020 in
+							<a href="../">Blog </a></h6>
+						</p>
+					</div>
+				
+			    <!-- custom code ends --->
+                <h1 id="analysis_of_covid-19_dataset">Analysis of COVID-19 dataset<a class="headerlink" href="#analysis_of_covid-19_dataset" title="Permanent link">#</a></h1>
+<blockquote>
+<p>A personal account of my experience - the thought process, challenges and solution approach is documented in this post. The idea is to express that data analysis / science can be tricky and not everyone gets it right the first time. It takes multiple iterations to come up with something decent while navigating the challenges faced.</p>
+</blockquote>
+<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">#</a></h2>
+<p>The objective of this exercise is to analyze the COVID-19 cases and report the findings.</p>
+<p>The data for the same can be downloaded from <a href="https://www.tableau.com/covid-19-coronavirus-data-resources">Tableau Website</a>.</p>
+<p>The data source has approximately 114,000 rows of COVID-19 cases all over the world. The following data is provided - the date, country, region, the case status (active, confirmed, recovered, deaths) information and the location details.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a point in time exercise. The dataset is of Mar 21, 2020 and the analysis is based on this data. Any interpretations are based on this date and might not reflect the current trend.</p>
+</div>
+<h2 id="tool_to_be_used">Tool to be used<a class="headerlink" href="#tool_to_be_used" title="Permanent link">#</a></h2>
+<p>The data will be analyzed via Microsoft Excel and insights will be provided. </p>
+<p>Why Excel? </p>
+<p>Because, at this point, I knew only Excel (40% I presume). But, I thought that it was enough to do this exercise. Actually speaking, the choice of the tool doesn't matter. What matters is the analysis!</p>
+<p>I took stock of what all Excel stuff I knew and whether it would be sufficient to do my analysis!? I didn't know yet. </p>
+<p>The following features of Excel may be used to make analysis easier was my guess.</p>
+<ul>
+<li>pivot table</li>
+<li>basic functions</li>
+<li>graphs</li>
+</ul>
+<p>In the retrospective, I was grossly wrong on my Excel skills and I had to do some learning along the way to achieve what I wanted. </p>
+<h2 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">#</a></h2>
+<p>At the start of the analysis, I was not having a definitive list of what metrics I would be reporting on - as I was just having a raw dataset.</p>
+<p>The possible things that came up rationally is to report on certain key metrics that are easy to report like</p>
+<ul>
+<li>Top 10 countries with most confirmed cases</li>
+<li>Top 10 countries with most deaths</li>
+<li>Top 10 countries with most recovered cases</li>
+<li>Time series analysis of the growth pattern across countries</li>
+<li>Geological location of cases concentrated</li>
+</ul>
+<p>Time series data is the complex one here. Why complex? Anything with dates' - my understanding is that it can be complex. </p>
+<p>Geological location - well, I don't have much experience in plotting data on maps. But, apart from that, the rest is easy to report.</p>
+<p>Will the analysis be interesting? Will I capture the essence of the dataset? Not sure yet!</p>
+<p>My understanding is that data analysis does not have a definitive ending. What metrics to report on depends on the amount of time we have at hand and what metrics the business will be interested in.</p>
+<p>If we think that way, the top three in the above list does not add much business value plus point 5 is just cosmetic. Time series analysis is the one the business will be much interested in as they can see the trend and can take decisions if such diseases spread next time. I presume China did this as they played along with the SARS playbook which they drafted when it hit China in 2003.</p>
+<p>I didn't overthink at this point as to what metrics to report unless I look into the data and understand it.</p>
+<p>I had to get the ball rolling as overthinking can lead to a thought-loop and I will end up where I have started.</p>
+<p>So, I started with the first step - the data clean-up and understanding process. </p>
+<h2 id="data_challenges">Data challenges<a class="headerlink" href="#data_challenges" title="Permanent link">#</a></h2>
+<h3 id="data_clean-ups">Data clean-ups<a class="headerlink" href="#data_clean-ups" title="Permanent link">#</a></h3>
+<p>The first thing to notice was that the data needed a clean-up. The first column date had two different formats when imported into Excel. I don't know why this happens in Excel. </p>
+<p>Not a good start! Ugh! </p>
+<p>Upon Googling, I found that this is a known problem in Excel (for large datasets?). </p>
+<p>The first challenge - I have to bring it to a consistent format to present a meaningful analysis.</p>
+<p><img alt="" src="https://i.imgur.com/2Qq0kao.png" /></p>
+<p>I had to further see which of the two formats needed a clean-up. Upon applying the filter, I got to see that <code class="codehilite"><span class="err">mm/dd/yyyy</span></code> was not properly picked up and it needs clean-up.</p>
+<p><img alt="" src="https://i.imgur.com/tHVpOpa.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Date problem in Excel</p>
+<p>Though the data in the Tableau website is correct, when opened locally in Excel, Excel might change the day to month and month to day.</p>
+<p>This would change the date value e.g. march 11, 2020 will change to November 03, 2020, as the day and month might get swapped.</p>
+<p>We have to correct the data before we start working on the data. The solution to the problem is documented <a href="https://www.macroption.com/Excel-reverse-date/">here</a></p>
+</div>
+<h3 id="understanding_the_data">Understanding the data<a class="headerlink" href="#understanding_the_data" title="Permanent link">#</a></h3>
+<p>Understanding the data is critical - what data is captured in the spreadsheet and how to interpret it!?</p>
+<p>First of all, the date column was not sorted. I had to sort on the date - Column A to set the date in ascending order. This would give me the ability to see how the total cases were captured. Is it incremental or cumulative cases reported per day? </p>
+<p>Then, I did a quick pivot table analysis to check the cases of a few countries; one being Afghanistan. </p>
+<p>Afghanistan - as per my analysis with a quick pivot table suggested that there were a total of 418 cases.</p>
+<p><img alt="" src="https://i.imgur.com/q7mh2od.png" /></p>
+<p>To understand if the above numbers were correct, I cross-verified with the coronavirus numbers published by <a href="https://coronavirus.jhu.edu/map.html">John Hopkins University's Corona Dashboard</a></p>
+<p>What I found was that the total cases for Afghanistan was only 40! (see image below - as of date Mar 23, 2020)</p>
+<p><img alt="" src="https://i.imgur.com/JOPPnxR.png" /></p>
+<p>The data-set which I downloaded was also accurate but, my interpretation of the data was wrong.</p>
+<p>The cases were captured by date and the latest date across any country was the cumulative total on that date. </p>
+<p>When I did a pivot table and computed by "Sum of total cases", I got a grossly wrong number. Instead, the total cases have to be set to "Max of total cases" in the pivot table to get the correct number.</p>
+<p>I did that and I could see that the data was in-line with the data provided in the John Hopkins University website.</p>
+<p>But there was one more problem!</p>
+<h3 id="manual_tweaks">Manual tweaks<a class="headerlink" href="#manual_tweaks" title="Permanent link">#</a></h3>
+<p>When I took the "Max of total cases", it would not work for countries like China, US, France, etc as they have multiple districts and province numbers reported separately in each row.</p>
+<p>What do I mean?</p>
+<p>Well, for countries like America, it had multiple rows - one for each State in the US like Arizona, Washington, New York, etc. But, for countries like India, Japan, etc there was just one row for the entire country.</p>
+<p>So, if I take the China data and compute the data based on "Max of total cases", it would only report numbers from the Wuhan province as it had the most confirmed cases. For most of the countries like India, Japan etc, I had to go with the "Max of total cases" route and for other countries like China, the US etc, I had to compute based on "Sum of total cases".</p>
+<p>This data pre-processing took hours as I didn't expect the pattern of data to change based on countries. At the end, I found it and manually tweaked the data. It was a boring process but I had to do and correct it.</p>
+<p><strong>Lesson learned:</strong> Always double check the data.</p>
+<h3 id="additional_cleanups">Additional cleanups<a class="headerlink" href="#additional_cleanups" title="Permanent link">#</a></h3>
+<p>Concerning data, one more clean up was necessary. The total number of cases were broken down into categories like "Confirmed", "Active", "Recovered" and "Deaths" and all these numbers were reported in "Rows". [See image below]</p>
+<p><img alt="" src="https://i.imgur.com/PEcYYpw.png" /></p>
+<p>What I need was - the data to be represented in columns (like the image below) so that aggregating the numbers would be easier. </p>
+<p><img alt="" src="https://i.imgur.com/jdEVTCw.png" /></p>
+<p>To get it in this format, I had to do a pivot table on the raw data and for each country, I had to translate data in this format. I had to break this task into two days as the dataset had 168 countries and each country had approximately 80 rows of data. </p>
+<p>Once I had this data cleaned and prepared, I was ready to launch the analysis.</p>
+<h2 id="solution_approach">Solution Approach<a class="headerlink" href="#solution_approach" title="Permanent link">#</a></h2>
+<blockquote>
+<h2 id="give_me_six_hours_to_cut_a_tree_and_i_will_spend_the_first_four_to_sharpen_the_axe">Give me six hours to cut a tree and I will spend the first four to sharpen the axe<a class="headerlink" href="#give_me_six_hours_to_cut_a_tree_and_i_will_spend_the_first_four_to_sharpen_the_axe" title="Permanent link">#</a></h2>
+<p>― <em>Abraham Lincoln</em></p>
+</blockquote>
+<p>Anybody can cut a tree when enough time is given. But, the challenge is to cut a tree in six hours which not everyone can do. The approach has to be different.</p>
+<p>My thought process at this point was - how can I efficiently analyze the data!? The dataset is huge; 110K rows which I had aggregated to 9700+ rows for 160+ countries.</p>
+<p>In short, I thought how can I sharpen the axe so that I can cut down the tree in minimal time. I have a week to complete the analysis. </p>
+<p>I can take the traditional route and make one worksheet for each country and each sheet can have <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> number of pivot tables and graphs which can be analyzed further.</p>
+<p>I started with this approach and whenever I saved the file, it took almost 10 seconds to save. The reason behind is the master data, cleaned up data was all in one file.</p>
+<p>I had to move the master data to another sheet to save some time plus size of the file itself. But, that didn't help much.</p>
+<p>Since I had multiple sheets and multiple graphs, I had to scramble across sheets to find the required data and in the process, I got mad. Yeah! too much data can make you mad - at times. There has to be a better way!</p>
+<p>What if I can create one master sheet and have it as a base template? When I change a country from a drop-down list, the dataset has to change and the graph should refresh automatically. Sounded better!</p>
+<p>Well, there was a problem! </p>
+<p>I didn't know how to do it. I had never worked with Excel dynamic ranges or drop-down lists. I began my research and learned a few topics and watched some videos. (References at the end of this article.)</p>
+<blockquote>
+<h2 id="and_when_you_want_something_all_the_universe_conspires_in_helping_you_to_achieve_it">And, when you want something, all the universe conspires in helping you to achieve it.<a class="headerlink" href="#and_when_you_want_something_all_the_universe_conspires_in_helping_you_to_achieve_it" title="Permanent link">#</a></h2>
+<p>― <em>Paulo Coelho</em></p>
+</blockquote>
+<p>One thing leads to another, that thing leads to another and finally, I learned the following functions and features in Excel that helped me to get it done.</p>
+<h4>Functions learnt</h4>
+<ul>
+<li>MATCH</li>
+<li>INDEX</li>
+<li>OFFSET</li>
+<li>ADDRESS</li>
+<li>SMALL</li>
+</ul>
+<h4>Features learnt</h4>
+<ul>
+<li>Using <KBD>F9</KBD> key in formula bar</li>
+<li>Name manager</li>
+<li>Array Formulas</li>
+<li>Maps in Excel</li>
+<li>Controls like text box, list box.</li>
+<li>Graph features like Markers</li>
+<li>Tweaks like<ul>
+<li>Highlighting a specific bar in a bar chart</li>
+<li>Adding vertical lines to any chart to highlight a certain date</li>
+</ul>
+</li>
+</ul>
+<h4>Extra stuff learnt</h4>
+<ul>
+<li>Dashboards in Excel</li>
+<li>Preparing layouts in Powerpoint (Yes! Powerpoint) and bring that to Excel</li>
+<li>Design principles</li>
+</ul>
+<p>All these topics were learnt <em>as and when it required</em> in preparing the holy grail - the Excel dashboard. </p>
+<h3 id="first_iteration">First iteration<a class="headerlink" href="#first_iteration" title="Permanent link">#</a></h3>
+<p>I prepared a time-series chart in a separate sheet to show the confirmed cases, active and recovered cases over time, plotted the map for the specific country (Excel makes it very easy), another time series to show the recovery % and death %, Next 10 countries in the list to show how the selected country is doing with respect to its counterparts, list countries based on their recovery and death percentage - who is doing good? and who is doing bad?</p>
+<p>And yes! the final thing - Add a list of countries and make all the above charts dynamic. Woohoo!</p>
+<p>The first iteration is the one below!</p>
+<p><img alt="" src="https://i.imgur.com/hRkxdUq.png" /></p>
+<p>Clicking each country refreshed the graph, highlighted the specific country in the Recovery % graph and the Death % graph (highlighted in Cyan and Red respectively in the above image).</p>
+<p>I played around with it and saw what analysis I could get from it. Well! the basic analysis were there - what I needed!</p>
+<blockquote>
+<h2 id="in_three_words_i_can_sum_up_everything_i_have_learned_about_life_it_goes_on">In three words, I can sum up everything I have learned about life: it goes on!<a class="headerlink" href="#in_three_words_i_can_sum_up_everything_i_have_learned_about_life_it_goes_on" title="Permanent link">#</a></h2>
+<p>― <em>Robert Frost</em></p>
+</blockquote>
+<p>Like the quote said, life moved on and a curious question popped up. I wanted to narrow down to a particular period to see how many people were affected in a particular period. </p>
+<p>This would give me the ability to see how pre-lockdown and post-lockdown trends vary and answer whether the lockdown was effective or not!? </p>
+<p>Such questions cannot be answered by the current dashboard as it didn't have a provision to narrow down a time-period say e.g. From Feb 21<sup>st</sup> to Mar 7<sup>th</sup>. This sort of ability can help me breakdown the data into different time-periods like weeks, months and analyze.</p>
+<h3 id="second_iteration">Second iteration<a class="headerlink" href="#second_iteration" title="Permanent link">#</a></h3>
+<p>I knew the solution would be to give some sort of date range as input - a start date and an end date.</p>
+<p>I had to introduce a couple of combo boxes and based on the <em>from date</em> and <em>to date</em>, the results should also filter and give me numbers for that week.</p>
+<p>I chose to keep the current graph but added one more graph to the bottom to show the trend and numbers for the period. With some combo boxes, <code class="codehilite"><span class="err">INDEX</span></code>, <code class="codehilite"><span class="err">MATCH</span></code>, <code class="codehilite"><span class="err">OFFSET</span></code> functions and the Name Manager feature, I was able to do it.</p>
+<p>The second iteration of the dashboard looked like the one below.</p>
+<p><img alt="" src="https://i.imgur.com/heKBwDK.png" /></p>
+<p>I changed the layout to accommodate more graphs. <code class="codehilite"><span class="err">1</span></code> is the <em>From date</em>, <code class="codehilite"><span class="err">2</span></code> is the <em>To date</em>. Clicking each of these will change the graph <code class="codehilite"><span class="err">4</span></code> and <code class="codehilite"><span class="err">5</span></code> accordingly. Countries list <code class="codehilite"><span class="err">3</span></code> moved to the top. <code class="codehilite"><span class="err">6</span></code> is the numbers on the <em>From date</em> and  <em>To date</em> respectively. <code class="codehilite"><span class="err">7</span></code> and <code class="codehilite"><span class="err">8</span></code> represents Death % and Recovery %.</p>
+<p>Not bad at all! I took it for a test and everything seems to be in place.</p>
+<h3 id="third_iteration">Third iteration<a class="headerlink" href="#third_iteration" title="Permanent link">#</a></h3>
+<blockquote>
+<h2 id="to_improve_is_to_change_to_be_perfect_is_to_change_often">To improve is to change. To be perfect is to change often.<a class="headerlink" href="#to_improve_is_to_change_to_be_perfect_is_to_change_often" title="Permanent link">#</a></h2>
+<p>― <em>Sir Winston Churchill</em> </p>
+</blockquote>
+<p>Again, I stumbled upon a thought. I am not doing this for myself. I am doing this for everyone who does not have the time to clean the data and do the analysis. </p>
+<p>Can I add a visual-cue to the graph to indicate the <em>From date</em> and <em>To date</em> so that the users know which window they are looking into? So, I decided to introduce a couple of vertical lines into the graph to show the dates. </p>
+<p>Also, I wanted to add a line to indicate when the first infected case was reported? This would give me an indication as to when the infection started and how much time the countries had to make decisions before the infections grew exponentially.</p>
+<p><img alt="" src="https://i.imgur.com/cdXhBbc.png" /></p>
+<p>I tested it and it worked fine. Now, I can find out when the infection started and can narrow down to the period when the first death occurred. I can then find (from Google) when the lockdown period was announced and can describe the trends before and after - and how much lead-time the countries had before going on lockdown and what they could have done differently to minimize the infection.</p>
+<h2 id="final_result">Final result<a class="headerlink" href="#final_result" title="Permanent link">#</a></h2>
+<p>This is how the Excel based COVID19 Dashboard looks like. Here is a gif that tells you how it looks like in action.</p>
+<p><img alt="" src="https://media.giphy.com/media/SUdASbhSLsVUmkNBrm/giphy.gif" /></p>
+<h2 id="what_next">What next?<a class="headerlink" href="#what_next" title="Permanent link">#</a></h2>
+<p>So, I was happy with the result - not only because of what I could churn out but also I learnt so much in the process. It was time-consuming but, worth it!</p>
+<p>Now you may ask where is my analysis!? </p>
+<p>Here is the generic analysis - the one that businesses would expect - one-liners mostly. Detailed analysis would make a separate post.</p>
+<h3 id="generic_observation">Generic observation<a class="headerlink" href="#generic_observation" title="Permanent link">#</a></h3>
+<ul>
+<li>Every country had enough lead time for them from the day of the first infection to when the growth in infection started exponentially.</li>
+<li>From the samples studied like the US, Italy, Spain, France, etc, the death rates (not the number of deaths) have gone up - which is worrying. As of Mar 22, 2020, India's death rate was 2% but, it has gone upto 2.2% now (Mar 27, 2020)</li>
+</ul>
+<h3 id="western_countries">Western countries<a class="headerlink" href="#western_countries" title="Permanent link">#</a></h3>
+<ul>
+<li>European countries like Italy, France, Spain, Germany all had infections within a 1 week window.</li>
+<li>Germany has managed better than the US and the United Kingdom despite having a large number of confirmed cases. Germany's death rate is less than 1%.</li>
+<li>Switzerland - a neighbor sharing borders with Italy was infected almost a month later than Italy.  On 25<sup>th</sup> Feb 2020, when Italy had almost 300+ confirmed cases, Switzerland had the first confirmed case reported. Still, It didn't introduce the lockdown till March 2<sup>nd</sup> week. It costed Switzerland with 6575 confirmed cases.</li>
+<li>The US is one of the worst mis-managed country with 307 deaths and 17 recoveries despite having a well-established health care system. The death rate to the recovery rate is too high. This is due to bad decisions like undermining the seriousness of the situation, not practicing social-distancing, not enforcing lockdowns etc.</li>
+</ul>
+<h3 id="developing_countries">Developing countries<a class="headerlink" href="#developing_countries" title="Permanent link">#</a></h3>
+<ul>
+<li>Most Middle-east countries have managed the virus much better than European countries despite having lesser resources. </li>
+<li>Iran was affected most because of economic sanctions. With 8% of confirmed cases dead, it has closed the gap between the <em>active</em> cases and <em>recovered</em> cases with 37% recoveries - only next to China and Bahrain.</li>
+<li>Most developing countries have death rates above 5%. E.g Algeria at 11%, Indonesia, Bangladesh, Iran, Iraq at 8%, Mauritius, Ukraine, Jamaica, etc above 6%. This might be largely due to poor health-care infrastructure.</li>
+</ul>
+<h3 id="african_countries">African countries<a class="headerlink" href="#african_countries" title="Permanent link">#</a></h3>
+<ul>
+<li>African countries are outliers (less number of cases so far) but, if they are affected, the death rates could be higher than other countries to as close as 20% due to poor health care infrastructure. At the time of analysis, the infection count is less but, once it starts, the fatality rate would be higher than other nations.</li>
+</ul>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<p>This exercise was time consuming yet, rewarding. On the learning front, some key take-aways</p>
+<ul>
+<li>Data analysis comprises a lot of data-preparation activity (read that as 'nasty' work) which is about 60% to 80% but, by the time it is over, we may already get a feel of the data. It is boring work we have to live with. </li>
+<li>Useful data (cleaned data) will give a lot of insights and there is no end to how much value we can churn from it. It is only a matter of time - we need to decide what is most important and what is not. We have to prioritize based on business objectives.</li>
+<li>Sharpening the axe (building right tools - in this case, a dashboard) is an important skill and if we do it faster, cutting the tree (analysis) will be a breeze. </li>
+<li>Excel is a versatile tool. It may trick with its simplicity but, it provides so much for people who look into it deeply enough.</li>
+<li>Data science - in other words, means you have to keep learning new tools, techniques and assimilate whatever is thrown-upon on you faster.</li>
+</ul>
+<h4>References</h4>
+<ul>
+<li><a href="https://coronavirus.jhu.edu/map.html">John Hopkins University - Corona Website</a></li>
+<li><a href="https://www.covid19india.org/">COVID India Tracker Website</a></li>
+<li><a href="https://youtu.be/22jcw5slQJk">Excel Dynamic Dropdown Video</a></li>
+<li><a href="https://youtu.be/cKkXtyjleX4">Excel Dashboard Tutorial</a></li>
+</ul>
+<h3 id="download_covid19_dashboard">Download Covid19 Dashboard<a class="headerlink" href="#download_covid19_dashboard" title="Permanent link">#</a></h3>
+<p>The Excel dashboard discussed in this post can be downloaded from the following link.</p>
+<ul>
+<li><a href="https://github.com/hazeez/IDS13/raw/master/class06/COVID-19-Cases-Dashboard.xlsx">Excel - COVID19 Dashboard</a></li>
+</ul>
+                
+                  
+                
+				<hr/>
+				<!--
+				custom code begins
+				<hr/>
+				
+				<div class=".md-typeset__table">
+				<table>
+				  <tr>
+					<td><b>Author</b></td>
+					<td><b>hazeez</b></td>
+					<td><b>Date Modified</b></td>
+					<td><b>Mar 27, 2020</b></td>
+				  </tr>
+				</table>
+				</div>
+				
+			    custom code ends --->
+				
+              
+              
+                
+
+
+  <h4 id="__comments">Comments</h4>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://hazeez.github.io/study/blog/covid19-dataset-analysis/";
+      this.page.identifier =
+        "/blog/covid19-dataset-analysis/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//hazeez.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+	  
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Blog" class="md-tabs__link md-tabs__link--active">
+          Blog
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../exercises/" title="Exercises" class="md-tabs__link">
+          Exercises
+		  </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../probability/probability_theory/" title="Probability" class="md-tabs__link">
+          Probability
+		  </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../statistics/descriptive_stats_basics/" title="Statistics" class="md-tabs__link">
+          Statistics
+		  </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+
+  
+      
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../" title="_Blog Home" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                _Blog Home
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Creative Commons (CC) license
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.48c2c9de.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../../assets/javascript/jquery-min.js"></script>
+      
+        <script src="../../assets/javascript/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascript/raphael.min.js"></script>
+      
+        <script src="../../assets/javascript/flowchart.min.js"></script>
+      
+        <script src="../../assets/javascript/jquery-plugin.js"></script>
+      
+        <script src="../../assets/javascript/extra.js"></script>
+      
+    
+  </body>
+</html>
