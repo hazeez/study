@@ -287,11 +287,11 @@ Here is the generic analysis - the one that businesses would expect - one-liners
 - European countries like Italy, France, Spain, Germany all had infections within a 1 week window.
 - Germany has managed better than the US and the United Kingdom despite having a large number of confirmed cases. Germany's death rate is less than 1%.
 - Switzerland - a neighbor sharing borders with Italy was infected almost a month later than Italy.  On 25th Feb 2020, when Italy had almost 300+ confirmed cases, Switzerland had the first confirmed case reported. Still, It didn't introduce the lockdown till March 2nd week. It costed Switzerland with 6575 confirmed cases.
-- The US is one of the worst mis-managed country with 307 deaths and 17 recoveries despite having a well-established health care system. The death rate to the recovery rate is too high. This is due to bad decisions like undermining the seriousness of the situation, not practicing social-distancing, not enforcing lockdowns etc.
+- The US is one of the worst mis-managed countries with 307 deaths and 17 recoveries despite having a well-established health care system. The death rate to the recovery rate is too high. This is due to bad decisions like undermining the seriousness of the situation, not practicing social-distancing, not enforcing lockdowns etc.
 
 ### Developing countries
 
-- Most Middle-east countries have managed the virus much better than European countries despite having lesser resources. 
+- Most Middle-east countries have managed the virus much better than European countries despite having lesser resources. They have lesser death rate and good recovery rates when compared to European countries.
 - Iran was affected most because of economic sanctions. With 8% of confirmed cases dead, it has closed the gap between the _active_ cases and _recovered_ cases with 37% recoveries - only next to China and Bahrain.
 - Most developing countries have death rates above 5%. E.g Algeria at 11%, Indonesia, Bangladesh, Iran, Iraq at 8%, Mauritius, Ukraine, Jamaica, etc above 6%. This might be largely due to poor health-care infrastructure.
 
