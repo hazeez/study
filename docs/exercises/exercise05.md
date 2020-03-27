@@ -1,6 +1,8 @@
+---
 title: Exercise05
 Author: hazeez
 Date: Mar 09, 2020
+---
 
 # Normal Distribution is a probability distribution.
 

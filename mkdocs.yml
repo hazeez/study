@@ -13,13 +13,13 @@ theme:
   # shortcuts:
     # search: 191   # /
   feature:
-    tabs: false
+    tabs: true
   font: 
-    text: "Roboto"
+    text: "Fira Sans"
     code: "PT Mono"
   palette:
     primary: 'Indigo'
-    accent: 'Pink'
+    accent: 'Red'
 #repo_name: 'hazeez/IDS13'
 #repo_url: 'https://github.com/hazeez/IDS13'
 #edit_url: false

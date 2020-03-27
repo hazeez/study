@@ -1,7 +1,8 @@
 title: Probability theory
 author: hazeez
 date: Mar 15, 2020
-date_modified: Mar 16, 2020
+date_modified:
+hero:
 
 # Probability
 
@@ -28,7 +29,7 @@ set S that are not members of set A. Represented by $\bar{A}$
 
 #### Intersection of a set
 
-Denoted by $A \cap B$, the intersection is the set containing all elements that are members of both A and B.
+Denoted by $A \cap B$, the intersection is the set containing all elements that are members present in both A and B.
 
 ![](https://i.imgur.com/lgdCCj2.png)
 
