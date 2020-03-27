@@ -3,6 +3,10 @@ author: hazeez
 date: Mar 22, 2020
 date_modified: 
 
+!!! Warning
+
+	This is a Work In Progress article
+
 Types of Analytics
 
 - Descriptive
