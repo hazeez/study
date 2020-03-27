@@ -309,6 +309,15 @@ This exercise was time consuming yet, rewarding. On the learning front, some key
 - Excel is a versatile tool. It may trick with its simplicity but, it provides so much for people who look into it deeply enough.
 - Data science - in other words, means you have to keep learning new tools, techniques and assimilate whatever is thrown-upon on you faster.
 
+### What does it have for others?
+
+Well, you can download the COVID19 Excel dashboard (link below) and can come up with your analysis. That way, this is open-ended and gives you the opportunity to explore more and come up with analysis. In short, this is my version of the sharpened axe you can take and go for cutting the tree!
+
+If you have any feedback on how this can be improved, let me know. Thanks for reading! 
+
+Be socially responsible, practice social-distancing and stay safe!
+
+
 #### References
 
 - [John Hopkins University - Corona Website](https://coronavirus.jhu.edu/map.html)
