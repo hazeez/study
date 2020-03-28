@@ -30,6 +30,7 @@ plugins:
   - awesome-pages:
       filename: .pages
       collapse_single_pages: true
+  - mknotebooks
   #- pdf-export:
   #    verbose: false
   #    media_type: print

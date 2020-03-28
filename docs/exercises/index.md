@@ -13,3 +13,8 @@ title: Exercises Index
 | Statistics | 03    | [Exercise05](../exercises/exercise05/) | Normal Distribution Vs Probability Distribution |
 | Statistics | 03    | [Exercise06](../exercises/exercise06/) | Confidence Interval                             |
 
+## Python Exercises
+
+| Course     | Class | Exercise Number + Link                 | Exercise Description                            |
+| ---------- | ----- | -------------------------------------- | ----------------------------------------------- |
+| Python     | 01    | [Exercise01](../exercises/python/exercise01/) | Python variables and datatypes           |
