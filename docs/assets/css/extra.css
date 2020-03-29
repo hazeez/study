@@ -294,3 +294,14 @@ img#author_profile_photo {
 	padding-top: 0px;
 }
 
+.output_subarea > pre{
+overflow: auto;
+border-left: 2px solid rgb(165,216,221);
+margin-left: 15px;
+}
+
+.output_area {
+	font-size: 0.8rem;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
