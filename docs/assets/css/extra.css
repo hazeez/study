@@ -130,6 +130,7 @@ code {
   padding-top: 0px;
 }
 
+
 div.index_header {
   border-bottom: 1px solid #EDEDED;
   width: 15rem;
@@ -244,6 +245,7 @@ div.index_header {
 
 .md-typeset .codehilite code, .md-typeset .codehilite pre, .md-typeset .highlight code, .md-typeset .highlight pre {
 	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .md-typeset blockquote {
@@ -295,7 +297,7 @@ img#author_profile_photo {
 }
 
 .output_subarea > pre{
-overflow: auto;
+/*overflow: auto;*/
 border-left: 2px solid rgb(165,216,221);
 margin-left: 15px;
 }
@@ -304,4 +306,16 @@ margin-left: 15px;
 	font-size: 0.8rem;
 	font-weight: bold;
 	margin-bottom: 30px;
+}
+
+pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.md-typeset .codehilitetable .linenodiv, .md-typeset .highlighttable .linenodiv {
+	padding-bottom: 5px;
 }
