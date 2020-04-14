@@ -4,3 +4,7 @@ docs/python/.ipynb_checkpoints
 docs/exercises/python/.ipynb_checkpoints
 docs/python/python-basics-02.ipynb
 *.md.tmp
+*.json
+*.xlsx
+*.csv
+*.db
