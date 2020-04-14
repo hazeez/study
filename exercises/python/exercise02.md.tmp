@@ -1,0 +1,545 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var scriptElement = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    scriptElement.src = widgetRendererSrc;
+    document.body.appendChild(scriptElement);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+# Solutions for Exercises - Python Basics
+
+#### The solution is provided after each exercise question
+
+---
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+## Exercise Question 1
+
+Write a Python program to find those numbers which are divisible by 7 and multiple of 5, between 1500 and 2700 (both included).
+
+---
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+### Solution for Question 1
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+for i in range(1500, 2700):
+    if i % 7 == 0:
+        if i % 5 == 0:
+            print(i)
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1505
+1540
+1575
+1610
+1645
+1680
+1715
+1750
+1785
+1820
+1855
+1890
+1925
+1960
+1995
+2030
+2065
+2100
+2135
+2170
+2205
+2240
+2275
+2310
+2345
+2380
+2415
+2450
+2485
+2520
+2555
+2590
+2625
+2660
+2695
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+---
+
+
+## Exercise Question 2
+
+Write a Python program to construct the following pattern, using a nested for loop.¶
+
+### Solution for Question 2
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+for i in range(1,10):
+    if i > 5:
+        for j in range(1,5):
+            print('* '* (i-(j*2)))
+            i += 1
+            continue
+        break
+    else:
+        print('* '* i)
+        
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+---
+
+## Exercise Question 3
+
+Write a Python program to count the number of even and odd numbers from a series of numbers.
+
+### Solution for Question 3
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+list_odd_even = list(range(1,10))
+even_num = 0
+odd_num = 0
+
+for i in list_odd_even:
+    if i % 2 == 0:
+        even_num += 1
+    else:
+        odd_num += 1
+
+print("Number of even numbers :", even_num)
+print("Number of odd numbers :", odd_num)
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of even numbers : 4
+Number of odd numbers : 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+---
+
+## Exercise Question 4
+
+Write a Python program to find numbers between 100 and 400 (both included) where each digit of a number is an even number. The numbers obtained should be printed in a comma-separated sequence
+
+### Solution for Question 4
+
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+range_100_400 = list(range(100,400))
+list_output = []
+
+for i in range_100_400:
+    if int(str(i)[0]) % 2 == 0:
+        if int(str(i)[1]) % 2 == 0:
+            if int(str(i)[2]) % 2 == 0:
+                list_output.append(i)
+                
+print(list_output)
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[200, 202, 204, 206, 208, 220, 222, 224, 226, 228, 240, 242, 244, 246, 248, 260, 262, 264, 266, 268, 280, 282, 284, 286, 288]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+--- 
+
+## Exercise Question 5
+
+Write a Python program to calculate a dog's age in dog's years.
+
+Note: For the first two years, a dog year is equal to 10.5 human years. After that, each dog year equals 4 human years.
+    
+### Solution for Question 5
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+human_years = 0
+dog_years = 0
+dog_age_input = input("Input a dog's age in human years:")
+
+if int(dog_age_input) > 2:
+    dog_years = int(dog_age_input) - 2
+    human_years += 2 * 10.5
+    human_years += dog_years * 4
+elif int(dog_age_input) < 3:
+    if int(dog_age_input) == 2:
+        human_years += 2 * 10.5
+    else:
+        human_years += 10.5
+
+print("The dog's age in dog's years is", int(human_years))
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Input a dog&#39;s age in human years:20
+The dog&#39;s age in dog&#39;s years is 93
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+---
+
+## Exercise Question 6
+
+Write a Python function to find the Max of three numbers
+
+### Solution for Question 6
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+def find_max(list_of_num):
+    return max(list_of_num)
+
+find_max([3,6,-5])
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+---
+
+## Exercise Question 7
+
+Write a Python function that takes a number as a parameter and check the number is prime or not
+
+### Solution for Question 7
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+def prime(num):
+    factor = 0
+    
+    for i in range(2,num+1):
+        if num % i == 0:
+            factor += 1
+            print(i, factor)
+            if factor > 1:
+                return False
+    return True
+```
+
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+---
+
+## Exercise Question 8
+
+Write a Python function that accepts a string and calculate the number of upper case letters and lower case letters
+
+### Solution for Question 8
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+def upper_lower_case_letters(input_str):
+    upper_case_letters = 0
+    lower_case_letters = 0
+    
+    for i in range(0,len(input_str)):
+        if input_str[i] != " ":
+            if input_str[i].isupper():
+                upper_case_letters += 1
+            else:
+                lower_case_letters += 1
+    return upper_case_letters, lower_case_letters
+        
+uc, lc = upper_lower_case_letters("Inceptz is One of The BeSt Places TO LEarn DataSciEnce")
+print("No of upper case characters :", uc)
+print("No of lower case characters :", lc)
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>No of upper case characters : 13
+No of lower case characters : 32
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+---
+
+## Exercise Question 9
+
+Write a Python program to reverse a string.
+
+### Solution for Question 9
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+given_string = "Hello, World!"
+print(given_string[-1::-1])
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>!dlroW ,olleH
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+---
+
+## Exercise Question 10
+
+Write a Python program to find the greatest common divisor (gcd) of two integers.
+
+### Solution for Question 10
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+# Python program to find H.C.F of two numbers
+
+# define a function
+def compute_hcf(x, y):
+
+# choose the smaller number
+    if x > y:
+        smaller = y
+    else:
+        smaller = x
+    for i in range(1, smaller+1):
+        if((x % i == 0) and (y % i == 0)):
+            hcf = i 
+    return hcf
+
+num1 = 54 
+num2 = 24
+
+print("The H.C.F. is", compute_hcf(num1, num2))
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The H.C.F. is 6
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+

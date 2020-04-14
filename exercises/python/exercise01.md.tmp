@@ -1,0 +1,521 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var scriptElement = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    scriptElement.src = widgetRendererSrc;
+    document.body.appendChild(scriptElement);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+# Solutions for Exercises - Python Basics
+
+#### The solution is provided after each exercise question
+
+---
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+## Exercise Question 1
+
+Given an input list removes the element at index 4 and add it to the 2nd position and also, at the end of the list
+
+For example: List = [54, 44, 27, 79, 91, 41]
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Original list  [34, 54, 67, 89, 11, 43, 94]
+List After removing element at index 4  [34, 54, 67, 89, 43, 94]
+List after Adding element at index 2  [34, 54, 11, 67, 89, 43, 94]
+List after Adding element at last  [34, 54, 11, 67, 89, 43, 94, 11]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+### Solution for Question 1
+
+---
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+given_list = [34, 54, 67, 89, 11, 43, 94]
+
+# remove the element at index 4
+# add the removed element to the second position
+# add the removed element to the last position
+
+# first step - find the element at index 4
+
+element4 = given_list[4] # this would give the 4th element - output 11
+
+# remove the 4th element from the given_list
+
+given_list.remove(element4) # will remove 11 from the given list - output [34, 54, 67, 89, 43, 94]
+
+# second step - add the removed element to the 2nd position in the given list
+
+given_list.insert(2, element4) # will add 11 to the given list at index 2 - output [34, 54, 11, 67, 89, 43, 94]
+
+
+# third step - add the removed element to the last position
+
+given_list.append(element4) # will add 11 to the given list at the last position - output [34, 54, 11, 67, 89, 43, 94, 11]
+
+print(given_list)
+
+
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[34, 54, 11, 67, 89, 43, 94, 11]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+## Exercise Question 2
+
+Given a two list of equal size create a list of unique elements from both the lists into a seperate list
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>First List  [2, 3, 4, 5, 6, 7, 8]
+Second List  [4, 9, 16, 25, 36, 49, 64]
+[64, 2, 3, 4, 5, 6, 7, 8, 9, 36, 16, 49, 25]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+### Solution for Question 2
+
+---
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+# two lists are given. Need to create a list of unique elements from both the lists
+
+first_list = [2, 3, 4, 5, 6, 7, 8]
+second_list = [4, 9, 16, 25, 36, 49, 64]
+
+# python gives the ability to concatenate two lists using the + symbol
+
+consolidated_list = first_list + second_list # output = [2, 3, 4, 5, 6, 7, 8, 4, 9, 16, 25, 36, 49, 64]
+
+# since we need uniqe elements, we need to create a set out of this list as set can keep only unique elements
+# so, we need to type cast the list as set. We can use the set function to do it.
+
+unique_list = set(consolidated_list)
+
+print(unique_list)
+
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{64, 2, 3, 4, 5, 6, 7, 8, 9, 36, 16, 49, 25}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+## Exercise Question 3
+
+Remove duplicate from a list and create a tuple and find the minimum and maximum number (Hint: Try Functions Min() and Max() ) 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Original list [87, 52, 44, 53, 54, 87, 52, 53]
+unique list [44, 52, 53, 54, 87]
+tuple  (44, 52, 53, 54, 87)
+Minimum number is:  44
+Maximum number is:  87
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+### Solution for Question 3
+
+---
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+# Remove duplicate from the given list
+# create a tuple of that unique list
+# find min number and max number of the tuple
+
+original_list = [87, 52, 44, 53, 54, 87, 52, 53]
+
+# to remove the duplicates, we can type cast to set
+
+unique_list = set(original_list) # output - {44, 52, 53, 54, 87}
+
+# create a tuple of unique list by type casting to tuple using the tuple function
+
+unique_tuple = tuple(unique_list) # output - (44, 52, 53, 54, 87)
+
+# find the maximum number from the tuple - use the max function
+
+max_number = max(unique_tuple)
+
+# find the minimum number from the tuple - use the min function
+
+min_number = min(unique_tuple)
+
+# output the values
+
+print("Minimum number is:", min_number)
+print("Maximum number is:", max_number)
+
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Minimum number is: 44
+Maximum number is: 87
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+## Exercise Question 4
+
+Display the each word in the string Count the number of words in a string and display it (Including the white spaces) 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+#Printing each words seperately 
+a = "what's up?"
+print(*a)
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>w h a t &#39; s   u p ?
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The sample string: Welcome to Python
+Printing each words seperately:  W e l c o m e   t o   P y t h o n
+The Length of the string 17
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+### Solution for Question 4
+
+---
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+# Sample string given - welcome to python
+# display each word in the string
+# count the number of words in the string
+# display the string with whitespaces
+
+sample_string = "Welcome to Python"
+
+# to print each letters seperately, use the * before the string
+
+print(*sample_string)
+
+# to find the length of the string, use the len function
+
+len_of_string = len(sample_string)
+
+print("The length of the string is:", len_of_string)
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>W e l c o m e   t o   P y t h o n
+The length of the string is: 17
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+##  Exercise Question 5
+
+Write a Python program to access dictionary keys element by index. i.e. Use indexing methods to print the first key
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The dictionary is:  {&#39;physics&#39;: 80, &#39;math&#39;: 90, &#39;chemistry&#39;: 86}
+The key element accesed by index:  physics
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+### Solution for Question 5
+
+---
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+# dictionary object is given
+# Need to find the key of the first element (80)
+
+sample_dict = {'physics': 80, 'math': 90, 'chemistry': 86}
+
+# We know that the dict is a key value pair and we can get the respective keys and values using keys() and values()
+
+dict_keys = sample_dict.keys() # this would give a dict object with physics, math and chemistry
+dict_values = sample_dict.values() # this would give 80, 90 and 86
+
+# Since the object is of type dict_keys and dict_values, we need to convert it into a list using type casting
+
+key_list = list(dict_keys) # output - ['physics', 'math', 'chemistry']
+value_list = list(dict_values) # output - [80, 90, 86]
+
+# since we need to use indexing methods, we need to find the index of the first element in the dict
+
+first_element_index = value_list.index(80) # index of physics - output 0
+
+# for this index, we need to find the corresponding key
+
+first_element_key = key_list[first_element_index] # output is physics
+
+print("The key element accesed by index:", first_element_key)
+
+
+
+
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The key element accesed by index: physics
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+
