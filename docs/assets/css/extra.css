@@ -299,13 +299,14 @@ img#author_profile_photo {
 .output_subarea > pre{
 /*overflow: auto;*/
 border-left: 2px solid rgb(165,216,221);
-margin-left: 15px;
+margin-left: 33px;
 }
 
 .output_area {
 	font-size: 0.8rem;
 	font-weight: bold;
 	margin-bottom: 30px;
+  /*background-color: #ffffed;*/
 }
 
 pre {

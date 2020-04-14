@@ -2,7 +2,6 @@ title: Probability theory
 author: hazeez
 date: Mar 15, 2020
 date_modified:
-hero:
 
 # Probability
 

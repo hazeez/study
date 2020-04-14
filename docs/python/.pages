@@ -1,2 +1,4 @@
 arrange:
   - python-basics-01.ipynb
+  - python-basics-02.ipynb
+  - numpy-basics.ipynb
