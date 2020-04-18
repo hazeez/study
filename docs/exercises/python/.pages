@@ -1,3 +1,7 @@
 collapse: false
 arrange:
   - exercise01.ipynb
+  - exercise02.ipynb
+  - numpy-exercises.ipynb
+  - pandas-exercises.ipynb
+  - adv-functions-exercise.ipynb
